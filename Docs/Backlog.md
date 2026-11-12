@@ -80,6 +80,5 @@ Objetivo propuesto: una escena simple con cambio de ambiente al desplazarse, una
 |Fecha|Tarea|Resultado comprobado|Commit o evidencia|
 |-|-|-|-|
 |11/11/2026|H0-01 / H0-02|Proyecto local revisado: Unity 6000.3.10f1, URP 17.3.0, sin cambios pendientes ni cachés versionadas.|23196e4|
-
-
-
+|12/11/2026|H3-A0|Evento de prueba reproducido desde Unity; proyecto FMOD y bancos guardados.|cfa7c26|
+|12/11/2026|H1-01|Mago animado, movimiento relativo a su orientación, colisiones y cámara superior probados.|bfce002|

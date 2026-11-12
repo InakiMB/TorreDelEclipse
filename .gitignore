@@ -75,6 +75,9 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 # Carpetas locales temporales de FMOD Studio
-/Audio/FMOD/.cache/
-/Audio/FMOD/.user/
-/Audio/FMOD/.unsaved/
+/Audio/FMOD/**/.cache/
+/Audio/FMOD/**/.user/
+/Audio/FMOD/**/.unsaved/
+
+# Soluciones generadas por Unity para el editor de codigo
+*.slnx
