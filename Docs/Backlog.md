@@ -2,7 +2,7 @@
 
 Responsable de todas las tareas: **Iñaki Bertran (InakiMB)**. Trabajo individual.
 
-Actualizado al **12/11/2026**: Hitos 0 y 1 completos; Hito 2 pendiente. Lista provisional hasta que la cátedra indique su sistema de producción. Mantener en cada tarea el estado y una evidencia: commit, captura o prueba reproducible. Estados: Pendiente / En curso / Preparado / Hecho. Preparado significa que existe el material, pero falta incorporarlo o verificarlo en el proyecto.
+Actualizado al **12/11/2026**: Hitos 0, 1 y 2 completos; Producción pendiente. Lista provisional hasta que la cátedra indique su sistema de producción. Mantener en cada tarea el estado y una evidencia: commit, captura o prueba reproducible. Estados: Pendiente / En curso / Preparado / Hecho. Preparado significa que existe el material, pero falta incorporarlo o verificarlo en el proyecto.
 
 ## Hito 0 - Preproducción
 
@@ -25,15 +25,15 @@ Actualizado al **12/11/2026**: Hitos 0 y 1 completos; Hito 2 pendiente. Lista pr
 
 ## Hito 2 - Vertical slice
 
-El prototipo ya permite recibir daño, morir, despejar el encuentro y reiniciar. Este hito incorpora la progresión y el flujo completo de victoria y derrota del nivel.
+La versión corta del prototipo integra combate a distancia y cuerpo a cuerpo, loot, consumo de pociones, apertura de un acceso y victoria o derrota con reinicio. El escenario final, la terraza y el jefe siguen pendientes en Producción.
 
 |ID|Tarea|Estado|Terminado cuando|
 |-|-|-|-|
-|H2-01|Golpe de bastón|Pendiente|El ataque cuerpo a cuerpo tiene alcance limitado, daño y recuperación; convive con el proyectil.|
-|H2-02|Loot y pociones|Pendiente|Los enemigos pueden dejar una poción con probabilidad configurable, inicialmente 25%; se recoge, se cuenta y se consume para recuperar vida sin superar el máximo.|
-|H2-03|Objetivo y progresión|Pendiente|Derrotar a los enemigos requeridos abre un acceso e informa el nuevo objetivo.|
-|H2-04|Victoria, derrota y reinicio|Pendiente|Se gana y pierde; reiniciar restablece jugador, enemigos, objetos y progreso.|
-|H2-05|Validar el ciclo completo|Pendiente|Una sesión corta integra exploración, amenazas, daño, recursos, progreso y final de partida.|
+|H2-01|Golpe de bastón|Hecho|El ataque cuerpo a cuerpo tiene alcance limitado, daño y recuperación; convive con el proyectil.|
+|H2-02|Loot y pociones|Hecho|Los enemigos pueden dejar una poción con probabilidad configurable, inicialmente 25%; se recoge, se cuenta y se consume para recuperar vida sin superar el máximo.|
+|H2-03|Objetivo y progresión|Hecho|Derrotar a los enemigos requeridos abre un acceso e informa el nuevo objetivo.|
+|H2-04|Victoria, derrota y reinicio|Hecho|Se gana y pierde en el prototipo; reiniciar restablece jugador, enemigos, objetos y progreso.|
+|H2-05|Validar el ciclo completo|Hecho|Una sesión corta integra exploración, amenazas, daño, recursos, progreso y final de partida.|
 
 ## Hito 3 - Producción
 
@@ -93,3 +93,8 @@ Objetivo propuesto: una escena simple con cambio de ambiente al desplazarse, una
 |12/11/2026|H1-03|Dos enemigos persiguen mediante NavMesh, atacan y reciben daño; jugador y enemigos pueden morir.|b582c7a; prueba confirmada por el autor.|
 |12/11/2026|H1-04|Encuentro repetible con panel de vida, zona despejada, derrota y reinicio mediante R o botón.|b582c7a; prueba confirmada por el autor.|
 |12/11/2026|H1-01, ajuste de control|WASD independiente del apuntado con mouse, respuesta inmediata y diagonales con velocidad normalizada.|b582c7a; prueba confirmada por el autor.|
+|12/11/2026|H2-01|Bastón probado con animación, preparación, recuperación, arco frontal y bloqueo por obstáculos; convive con los proyectiles.|40a4b6b; prueba confirmada por el autor.|
+|12/11/2026|H2-02|Loot con probabilidad 25%, recogida con E, inventario y curación con Q sin superar el máximo.|40a4b6b; prueba confirmada por el autor.|
+|12/11/2026|H2-03|Eliminar a los dos enemigos desactiva la barrera y habilita la interacción con la salida.|40a4b6b; prueba confirmada por el autor.|
+|12/11/2026|H2-04|Victoria del prototipo mediante la salida, derrota por falta de vida y reinicio completo con R o botón.|40a4b6b; prueba confirmada por el autor.|
+|12/11/2026|H2-05|Ciclo corto de combate, daño, recursos, progresión y resultado terminado y probado.|40a4b6b; prueba confirmada por el autor.|

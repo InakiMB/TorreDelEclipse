@@ -1,6 +1,6 @@
 # Torre del Eclipse - Game Concept
 
-Borrador v0.4 | 12/11/2026 | Desarrollo individual
+Borrador v0.5 | 12/11/2026 | Desarrollo individual
 
 Autor: Iñaki Bertran. Desarrollo individual.
 
@@ -14,11 +14,11 @@ Premisa y experiencia. Un mago entra en una antigua torre ocupada por fuerzas ho
 
 2.1. Mecánicas principales. El jugador combina proyectiles mágicos y golpes de bastón. Se prevén guerreros cuerpo a cuerpo, magos a distancia y apoyos que curan o potencian aliados; cada tipo tendrá vida, daño, velocidad y cadencia propios. El prototipo implementa la base del perseguidor.
 
-Recursos e interacción. Los enemigos pueden dejar pociones de vida. El jugador las recoge y decide cuándo consumirlas. Una interfaz indica cuántas tiene disponibles. Al eliminar a los defensores de la planta baja se habilita el acceso a la terraza, con una señal visual y sonora.
+Recursos e interacción. Los enemigos tienen 25% de probabilidad configurable de dejar una poción. Se recoge con E y se consume con Q para recuperar vida sin superar el máximo; la interfaz muestra las disponibles. Se prevén cajas o barriles que, al romperse con disparos, dejan una poción garantizada. Despejar la planta baja habilita el acceso a la terraza, con una señal visual y sonora.
 
 Jefe, victoria y derrota. El guardián de la terraza presenta ataques reconocibles que el jugador puede evitar mediante el movimiento. Su diseño detallado se definirá con el autor antes de implementarlo. Derrotarlo completa el nivel; quedarse sin vida provoca la derrota y permite reiniciar la partida.
 
-Controles. WASD mueve en direcciones fijas de pantalla; el mouse apunta de forma independiente. Clic izquierdo dispara; R reinicia el prototipo. Se prevén clic derecho para el bastón, E para interactuar y Q para usar una poción.
+Controles. WASD mueve en direcciones fijas de pantalla; el mouse apunta de forma independiente. Clic izquierdo dispara, clic derecho golpea con el bastón, E interactúa, Q consume una poción y R reinicia el prototipo.
 
 2.2. Flujo de juego. Menú inicial - explorar la planta baja - combatir y utilizar recursos - desbloquear el ascenso - enfrentar al jefe - victoria o derrota. Se prevé un nivel completo con dos zonas principales y al menos tres minutos de juego efectivo.
 

@@ -9,12 +9,12 @@ Este registro identifica los autores, fuentes y licencias de los recursos incorp
 | Recurso | Autor y fuente | Licencia | Ubicación | Uso y estado |
 |---|---|---|---|---|
 | Retro Fantasy Kit, versión 2.0 | **Kenney** — [Página del pack](https://kenney.nl/assets/retro-fantasy-kit) | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) | `Assets/Art/External/KenneyRetroFantasy/` | Modelos y texturas retro importados para exterior y terraza de la torre; textura de piedra para el prototipo. |
-| RPG Character Pack — Wizard | **Quaternius** — [Página del pack](https://quaternius.com/packs/rpgcharacters.html) | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) | `Assets/Art/External/QuaterniusWizard/` | Modelo del mago, bastón, texturas y animaciones incluidas en `Wizard.fbx`. Se utiliza en el personaje jugable para reposo, desplazamiento y muerte. |
+| RPG Character Pack — Wizard | **Quaternius** — [Página del pack](https://quaternius.com/packs/rpgcharacters.html) | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) | `Assets/Art/External/QuaterniusWizard/` | Modelo del mago, bastón, texturas y animaciones incluidas en `Wizard.fbx`. Se utiliza en el personaje jugable para reposo, desplazamiento, ataque con bastón y muerte. |
 | PSX Style Modular Low Poly Dungeon — Free Edition | **BlenderVoyage** — [Página del pack](https://blendervoyage.itch.io/psx-style-modular-low-poly-dungeon) | [Creative Commons Attribution 4.0 International — CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | `Assets/Art/External/BlenderVoyageDungeon/` | Piezas y texturas importadas para construir la planta baja: paredes, pisos, columnas, escaleras, puertas y otros elementos del pack gratuito. |
 
 Se seleccionaron los modelos FBX y texturas de los paquetes originales, se reorganizaron sus carpetas y se configuraron materiales e importación para Unity URP y el aspecto retro del proyecto. Las licencias originales de Kenney y Quaternius se conservan como `License.txt` junto a sus recursos. Cada carpeta incluye un `Source.txt` con el origen del pack; el de BlenderVoyage contiene también el enlace a CC BY 4.0 y su atribución.
 
-Las cápsulas de los enemigos y la esfera del proyectil son primitivas de Unity con materiales configurados en el proyecto. Representan objetos de prueba y se reemplazarán durante la producción visual.
+Las cápsulas de los enemigos, las esferas del proyectil, poción y marcador de salida, y el cubo de la barrera son primitivas de Unity con materiales configurados en el proyecto. Representan objetos de prueba y se reemplazarán durante la producción visual.
 
 ## Audio
 
