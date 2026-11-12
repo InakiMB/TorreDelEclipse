@@ -7,6 +7,7 @@ public sealed class PlayerMovement : MonoBehaviour
 {
     [SerializeField, Min(0.1f)] private float moveSpeed = 5f;
     [SerializeField] private float gravity = -25f;
+    [SerializeField] private Camera viewCamera = null;
 
     private CharacterController characterController;
     private float verticalSpeed;
@@ -14,6 +15,13 @@ public sealed class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
+        if (viewCamera == null) viewCamera = Camera.main;
+
+        if (viewCamera == null)
+        {
+            Debug.LogError("PlayerMovement necesita una View Camera en el Inspector.", this);
+            enabled = false;
+        }
     }
 
     private void OnEnable()
@@ -23,16 +31,23 @@ public sealed class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (!characterController.enabled || Time.deltaTime <= 0f)
+        if (!characterController.enabled || viewCamera == null || Time.deltaTime <= 0f)
         {
             return;
         }
 
         Vector2 input = ReadMovement();
-        Vector3 velocity =
-    (transform.right * input.x + transform.forward * input.y) * moveSpeed;
 
-        // Move no aplica gravedad por su cuenta.
+        // Los ejes de movimiento pertenecen a la vista, independientemente del apuntado.
+        Vector3 forward = Vector3.ProjectOnPlane(viewCamera.transform.forward, Vector3.up);
+        if (forward.sqrMagnitude < 0.0001f)
+        {
+            forward = Vector3.ProjectOnPlane(viewCamera.transform.up, Vector3.up);
+        }
+        forward.Normalize();
+        Vector3 right = Vector3.Cross(Vector3.up, forward).normalized;
+        Vector3 velocity = (right * input.x + forward * input.y) * moveSpeed;
+
         if (characterController.isGrounded && verticalSpeed < 0f)
         {
             verticalSpeed = -2f;
@@ -46,10 +61,7 @@ public sealed class PlayerMovement : MonoBehaviour
     private static Vector2 ReadMovement()
     {
         Keyboard keyboard = Keyboard.current;
-        if (keyboard == null)
-        {
-            return Vector2.zero;
-        }
+        if (keyboard == null) return Vector2.zero;
 
         Vector2 input = Vector2.zero;
         if (keyboard.wKey.isPressed) input.y += 1f;
@@ -57,7 +69,6 @@ public sealed class PlayerMovement : MonoBehaviour
         if (keyboard.dKey.isPressed) input.x += 1f;
         if (keyboard.aKey.isPressed) input.x -= 1f;
 
-        // Evita que dos teclas diagonales aumenten la velocidad.
         return Vector2.ClampMagnitude(input, 1f);
     }
 }

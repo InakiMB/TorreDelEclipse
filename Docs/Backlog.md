@@ -19,9 +19,9 @@ Lista provisional hasta que la cátedra indique su sistema de producción. Mante
 |ID|Tarea|Estado inicial|Terminado cuando|
 |-|-|-|-|
 |H1-01|Escenario de prueba, movimiento y cámara|Hecho|El jugador se mueve con WASD, colisiona con paredes y se ve desde arriba.|
-|H1-02|Proyectil mágico|Pendiente|Se apunta y dispara; el proyectil acierta, causa daño y desaparece correctamente.|
-|H1-03|Enemigo y sistema de salud|Pendiente|El enemigo detecta, se aproxima, ataca, recibe daño y muere; el jugador puede recibir daño.|
-|H1-04|Primera versión jugable|Pendiente|Se puede abrir y repetir la secuencia moverse-combatir-recibir daño-eliminar enemigo sin errores bloqueantes.|
+|H1-02|Proyectil mágico|Hecho|Se apunta y dispara; el proyectil acierta, causa daño y desaparece correctamente.|
+|H1-03|Enemigo y sistema de salud|Hecho|El enemigo detecta, se aproxima, ataca, recibe daño y muere; el jugador puede recibir daño.|
+|H1-04|Primera versión jugable|Hecho|Se puede abrir y repetir la secuencia moverse-combatir-recibir daño-eliminar enemigo sin errores bloqueantes.|
 
 ## Hito 2 - Vertical slice
 
@@ -45,7 +45,11 @@ El audio se prepara en paralelo desde el comienzo para la muestra del viernes. E
 |H3-A3|Música adaptativa|Pendiente|En combate cambia la música y al finalizar vuelve a exploración; la transición responde al estado del juego.|
 |H3-A4|Efectos, variación y procesamiento|Pendiente|Hay efectos del mundo y de interfaz; pasos/impactos usan variaciones; el procesamiento tiene una función demostrable.|
 |H3-01|Planta baja y terraza|Pendiente|Ambas zonas forman un recorrido coherente, accesible y sin puntos que bloqueen al jugador.|
-|H3-02|Variante de enemigo y jefe|Pendiente|Las amenazas son distinguibles y el jefe tiene ataques legibles y evitables.|
+|H3-E1|Guerrero enemigo|Pendiente|Persigue y ataca cuerpo a cuerpo; dispone de vida, daño, velocidad y cadencia configurables y se distingue visual y sonoramente.|
+|H3-E2|Mago enemigo|Pendiente|Se posiciona a distancia y lanza proyectiles evitables; sus valores de combate son configurables y su ataque tiene una señal audiovisual reconocible.|
+|H3-E3|Enemigo de apoyo|Pendiente|Se posiciona cerca de aliados y los cura o potencia con alcance y tiempo de espera definidos; vida y velocidad son configurables, el efecto es reconocible y termina o deja de renovarse al morir el apoyo.|
+|H3-J0|Definir el jefe con el autor|Pendiente|Antes de diseñarlo e implementarlo, consultar a Iñaki y acordar apariencia, identidad, arena, movimientos, ataques, fases, defensas, debilidades, vida, daño, dificultad, señales visuales, sonidos, música, recompensas y cierre del nivel.|
+|H3-02|Combinar variantes y desarrollar jefe|Pendiente|Guerrero, mago y apoyo cumplen roles diferentes en un encuentro; sus valores se ajustan tras probarlos y el jefe tiene ataques legibles y evitables.|
 |H3-03|Menús, HUD y volumen|Pendiente|Play, Créditos, Opciones y Exit funcionan; se muestran vida, pociones y objetivos; el volumen general controla todo el audio.|
 |H3-04|Integrar modelos y efectos|Pendiente|Se distinguen ataques, enemigos y objetos desde la cámara superior; se registran las fuentes.|
 
@@ -82,3 +86,6 @@ Objetivo propuesto: una escena simple con cambio de ambiente al desplazarse, una
 |11/11/2026|H0-01 / H0-02|Proyecto local revisado: Unity 6000.3.10f1, URP 17.3.0, sin cambios pendientes ni cachés versionadas.|23196e4|
 |12/11/2026|H3-A0|Evento de prueba reproducido desde Unity; proyecto FMOD y bancos guardados.|cfa7c26|
 |12/11/2026|H1-01|Mago animado, movimiento relativo a su orientación, colisiones y cámara superior probados.|bfce002|
+
+
+

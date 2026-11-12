@@ -82,4 +82,4 @@ El desarrollo sigue preproducción, core gameplay, vertical slice, producción, 
 
 ## Alcance de la versión base
 
-Un mago jugable, un nivel con planta baja y terraza, ambos tipos de combate, pociones, enemigos, jefe, menús, audio adaptativo y flujo completo de victoria/derrota con reinicio. La vara secreta y su acertijo son ampliaciones; guerrero y arquero quedan para después de completar y probar la base.
+Un mago jugable, un nivel con planta baja y terraza, ambos tipos de combate, pociones, tres tipos de enemigos comunes (guerrero cuerpo a cuerpo, mago a distancia y apoyo que cura o potencia aliados), jefe, menús, audio adaptativo y flujo completo de victoria/derrota con reinicio. Cada tipo de enemigo tendrá valores propios de vida, daño, velocidad y tiempo entre acciones; estas variantes siguen pendientes de implementación y prueba. La vara secreta y su acertijo son ampliaciones; guerrero y arquero quedan para después de completar y probar la base.

@@ -5,15 +5,13 @@ using UnityEngine.InputSystem;
 [DefaultExecutionOrder(200)]
 public sealed class PlayerAim : MonoBehaviour
 {
-    [SerializeField] private Camera viewCamera;
-    [SerializeField, Min(1f)] private float turnSpeed = 1080f;
+    [SerializeField] private Camera viewCamera = null;
+    [SerializeField] private Transform aimOrigin = null;
+    [SerializeField, Min(0f)] private float aimDeadZone = 0.05f;
 
     private void Awake()
     {
-        if (viewCamera == null)
-        {
-            viewCamera = Camera.main;
-        }
+        if (viewCamera == null) viewCamera = Camera.main;
 
         if (viewCamera == null)
         {
@@ -31,30 +29,18 @@ public sealed class PlayerAim : MonoBehaviour
         }
 
         Vector2 screenPosition = mouse.position.ReadValue();
-        if (!viewCamera.pixelRect.Contains(screenPosition))
-        {
-            return;
-        }
+        if (!viewCamera.pixelRect.Contains(screenPosition)) return;
 
-        // El mouse apunta sobre un plano horizontal a la altura del jugador.
+        // Usar el mismo origen y altura que el disparo alinea su recorrido con el cursor.
+        Vector3 origin = aimOrigin != null ? aimOrigin.position : transform.position;
+        Plane aimingPlane = new Plane(Vector3.up, origin);
         Ray ray = viewCamera.ScreenPointToRay(screenPosition);
-        Plane aimingPlane = new Plane(Vector3.up, transform.position);
-        if (!aimingPlane.Raycast(ray, out float distance))
-        {
-            return;
-        }
+        if (!aimingPlane.Raycast(ray, out float distance)) return;
 
-        Vector3 direction = ray.GetPoint(distance) - transform.position;
+        Vector3 direction = ray.GetPoint(distance) - origin;
         direction.y = 0f;
-        if (direction.sqrMagnitude < 0.01f)
-        {
-            return;
-        }
+        if (direction.sqrMagnitude <= aimDeadZone * aimDeadZone) return;
 
-        Quaternion desiredRotation = Quaternion.LookRotation(direction);
-        transform.rotation = Quaternion.RotateTowards(
-            transform.rotation,
-            desiredRotation,
-            turnSpeed * Time.deltaTime);
+        transform.rotation = Quaternion.LookRotation(direction, Vector3.up);
     }
 }
