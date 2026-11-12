@@ -18,7 +18,7 @@ Lista provisional hasta que la cátedra indique su sistema de producción. Mante
 
 |ID|Tarea|Estado inicial|Terminado cuando|
 |-|-|-|-|
-|H1-01|Escenario de prueba, movimiento y cámara|Pendiente|El jugador se mueve con WASD, colisiona con paredes y se ve desde arriba.|
+|H1-01|Escenario de prueba, movimiento y cámara|Hecho|El jugador se mueve con WASD, colisiona con paredes y se ve desde arriba.|
 |H1-02|Proyectil mágico|Pendiente|Se apunta y dispara; el proyectil acierta, causa daño y desaparece correctamente.|
 |H1-03|Enemigo y sistema de salud|Pendiente|El enemigo detecta, se aproxima, ataca, recibe daño y muere; el jugador puede recibir daño.|
 |H1-04|Primera versión jugable|Pendiente|Se puede abrir y repetir la secuencia moverse-combatir-recibir daño-eliminar enemigo sin errores bloqueantes.|
@@ -39,7 +39,7 @@ El audio se prepara en paralelo desde el comienzo para la muestra del viernes. E
 
 |ID|Tarea|Estado inicial|Terminado cuando|
 |-|-|-|-|
-|H3-A0|Prueba de conexión FMOD-Unity|Pendiente|Un evento de prueba se escucha al iniciar la escena en Unity; no quedan errores rojos.|
+|H3-A0|Prueba de conexión FMOD-Unity|Hecho|Un evento de prueba se escucha al iniciar la escena en Unity; no quedan errores rojos.|
 |H3-A1|Preparar audios en Reaper|Pendiente|Se conservan sesiones y fuentes; se exportan clips editados y se registran sus créditos.|
 |H3-A2|Ambiente variable|Pendiente|El ambiente cambia perceptiblemente al recorrer dos zonas sin cargar otra escena.|
 |H3-A3|Música adaptativa|Pendiente|En combate cambia la música y al finalizar vuelve a exploración; la transición responde al estado del juego.|
