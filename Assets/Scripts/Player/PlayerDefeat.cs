@@ -4,21 +4,12 @@ using UnityEngine;
 [RequireComponent(typeof(Health))]
 public sealed class PlayerDefeat : MonoBehaviour
 {
-    [SerializeField] private Animator visualAnimator;
-
+    [SerializeField] private Animator visualAnimator = null;
     private Health health;
-    private PlayerMovement movement;
-    private PlayerAim aim;
-    private PlayerSpellCaster spellCaster;
-    private PlayerAnimation animationController;
 
     private void Awake()
     {
         health = GetComponent<Health>();
-        movement = GetComponent<PlayerMovement>();
-        aim = GetComponent<PlayerAim>();
-        spellCaster = GetComponent<PlayerSpellCaster>();
-        animationController = GetComponent<PlayerAnimation>();
         if (visualAnimator == null) visualAnimator = GetComponentInChildren<Animator>();
     }
 
@@ -34,13 +25,8 @@ public sealed class PlayerDefeat : MonoBehaviour
 
     private void OnDied()
     {
-        if (movement != null) movement.enabled = false;
-        if (aim != null) aim.enabled = false;
-        if (spellCaster != null) spellCaster.enabled = false;
-        if (animationController != null) animationController.enabled = false;
-
+        PlayerControlLock.Freeze(gameObject);
         if (visualAnimator == null) return;
-        visualAnimator.SetFloat("Speed", 0f);
         foreach (AnimatorControllerParameter parameter in visualAnimator.parameters)
         {
             if (parameter.name == "Die" && parameter.type == AnimatorControllerParameterType.Trigger)
@@ -49,7 +35,6 @@ public sealed class PlayerDefeat : MonoBehaviour
                 return;
             }
         }
-
         visualAnimator.enabled = false;
     }
 }

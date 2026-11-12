@@ -12,6 +12,7 @@ public sealed class Health : MonoBehaviour, IDamageable
 
     public event Action<int, int> Changed;
     public event Action<int> Damaged;
+    public event Action<int> Healed;
     public event Action Died;
 
     private void Awake()
@@ -21,19 +22,24 @@ public sealed class Health : MonoBehaviour, IDamageable
 
     public void TakeDamage(int amount)
     {
-        if (amount <= 0 || IsDead)
-        {
-            return;
-        }
+        if (amount <= 0 || IsDead) return;
 
         int actualDamage = Mathf.Min(amount, CurrentHealth);
         CurrentHealth -= actualDamage;
         Changed?.Invoke(CurrentHealth, maxHealth);
         Damaged?.Invoke(actualDamage);
+        if (IsDead) Died?.Invoke();
+    }
 
-        if (IsDead)
-        {
-            Died?.Invoke();
-        }
+    public int Heal(int amount)
+    {
+        if (amount <= 0 || IsDead) return 0;
+
+        int actualHealing = Mathf.Min(amount, maxHealth - CurrentHealth);
+        if (actualHealing <= 0) return 0;
+        CurrentHealth += actualHealing;
+        Changed?.Invoke(CurrentHealth, maxHealth);
+        Healed?.Invoke(actualHealing);
+        return actualHealing;
     }
 }

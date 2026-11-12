@@ -93,4 +93,6 @@ El desarrollo sigue preproducción, core gameplay, vertical slice, producción, 
 
 Un mago jugable, un nivel con planta baja y terraza, ambos tipos de combate, pociones, tres tipos de enemigos comunes (guerrero cuerpo a cuerpo, mago a distancia y apoyo que cura o potencia aliados), jefe, menús, audio adaptativo y flujo completo de victoria/derrota con reinicio. Cada tipo de enemigo tendrá valores propios de vida, daño, velocidad y tiempo entre acciones; las variantes finales siguen pendientes.
 
+Las pociones tendrán dos fuentes previstas: enemigos con una probabilidad inicial de caída del 25%, configurable, y cajas o barriles que, al romperse con disparos, dejan exactamente una poción garantizada. Los objetos destructibles se incorporarán durante Producción.
+
 El diseño del jefe se definirá con el autor antes de implementarlo. La vara secreta y su acertijo son ampliaciones; guerrero y arquero jugables quedan para después de completar y probar la base.

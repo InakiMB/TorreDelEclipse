@@ -30,7 +30,7 @@ El prototipo ya permite recibir daño, morir, despejar el encuentro y reiniciar.
 |ID|Tarea|Estado|Terminado cuando|
 |-|-|-|-|
 |H2-01|Golpe de bastón|Pendiente|El ataque cuerpo a cuerpo tiene alcance limitado, daño y recuperación; convive con el proyectil.|
-|H2-02|Loot y pociones|Pendiente|Un enemigo deja una poción, se recoge, se cuenta y se consume para recuperar vida sin superar el máximo.|
+|H2-02|Loot y pociones|Pendiente|Los enemigos pueden dejar una poción con probabilidad configurable, inicialmente 25%; se recoge, se cuenta y se consume para recuperar vida sin superar el máximo.|
 |H2-03|Objetivo y progresión|Pendiente|Derrotar a los enemigos requeridos abre un acceso e informa el nuevo objetivo.|
 |H2-04|Victoria, derrota y reinicio|Pendiente|Se gana y pierde; reiniciar restablece jugador, enemigos, objetos y progreso.|
 |H2-05|Validar el ciclo completo|Pendiente|Una sesión corta integra exploración, amenazas, daño, recursos, progreso y final de partida.|
@@ -54,6 +54,7 @@ El audio se prepara en paralelo desde el comienzo para la muestra del viernes. E
 |H3-02|Combinar variantes y desarrollar jefe|Pendiente|Guerrero, mago y apoyo cumplen roles diferentes en un encuentro; sus valores se ajustan tras probarlos y el jefe tiene ataques legibles y evitables.|
 |H3-03|Menús, HUD y volumen|Pendiente|Play, Créditos, Opciones y Exit funcionan; se muestran vida, pociones y objetivos; el volumen general controla todo el audio.|
 |H3-04|Integrar modelos y efectos|Pendiente|Se distinguen ataques, enemigos y objetos desde la cámara superior; se registran las fuentes.|
+|H3-I1|Cajas o barriles destructibles con poción garantizada|Pendiente|Reciben daño de los proyectiles, se rompen una sola vez y dejan exactamente una poción con probabilidad 100%; tienen feedback de impacto y rotura, y se restauran al reiniciar el nivel.|
 
 ## Hito 4 - Feature complete
 

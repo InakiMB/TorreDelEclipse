@@ -11,8 +11,8 @@ public sealed class PlayerSpellCaster : MonoBehaviour
     [SerializeField] private Transform castOrigin = null;
     [SerializeField, Min(1)] private int damage = 25;
     [SerializeField, Min(0.05f)] private float fireInterval = 0.35f;
-
     private Health health;
+    private PlayerStaffAttack staffAttack;
     private Camera viewCamera;
     private float nextShotTime;
 
@@ -21,6 +21,7 @@ public sealed class PlayerSpellCaster : MonoBehaviour
     private void Awake()
     {
         health = GetComponent<Health>();
+        staffAttack = GetComponent<PlayerStaffAttack>();
         viewCamera = Camera.main;
         if (projectilePrefab == null || castOrigin == null)
         {
@@ -33,15 +34,9 @@ public sealed class PlayerSpellCaster : MonoBehaviour
     {
         Mouse mouse = Mouse.current;
         if (health.IsDead || mouse == null || Time.deltaTime <= 0f
-            || !mouse.leftButton.isPressed || Time.time < nextShotTime)
-        {
-            return;
-        }
-
-        if (viewCamera != null && !viewCamera.pixelRect.Contains(mouse.position.ReadValue()))
-        {
-            return;
-        }
+            || !mouse.leftButton.isPressed || Time.time < nextShotTime
+            || (staffAttack != null && staffAttack.IsAttacking)) return;
+        if (viewCamera != null && !viewCamera.pixelRect.Contains(mouse.position.ReadValue())) return;
 
         Vector3 direction = transform.forward;
         direction.y = 0f;
