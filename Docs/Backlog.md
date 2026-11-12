@@ -12,7 +12,7 @@ Lista provisional hasta que la cátedra indique su sistema de producción. Mante
 |H0-02|Iniciar historial Git|Hecho|Existe el commit 23196e4; Assets, Packages y ProjectSettings están versionados; las cachés quedan excluidas.|
 |H0-03|Identificar autor y alcance|Hecho|Iñaki Bertran figura como único responsable; el concepto distingue base y ampliaciones.|
 |H0-04|Preparar Game Concept|Hecho|El PDF de dos carillas y su versión editable están revisados e incorporados al repositorio.|
-|H0-05|Incorporar documentación y backlog|En Curso|README y Docs están confirmados en un commit y visibles en GitHub; todos los trabajos tienen responsable, hito y criterio.|
+|H0-05|Incorporar documentación y backlog|Hecho|README y Docs están confirmados en un commit y visibles en GitHub; todos los trabajos tienen responsable, hito y criterio.|
 
 ## Hito 1 - Core gameplay
 
