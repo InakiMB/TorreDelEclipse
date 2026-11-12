@@ -1,6 +1,6 @@
 # Torre del Eclipse
 
-Proyecto individual de **Iñaki Bertran** para Programación de Videojuegos II y Audio y Sonido para Videojuegos. Nombre del juego provisional.
+Proyecto individual de **Iñaki Bertran** para Programación de Videojuegos II y Audio y Sonido para Videojuegos.
 
 ## Experiencia prevista
 
