@@ -1,12 +1,12 @@
-# Backlog inicial - Torre del Eclipse
+# Backlog - Torre del Eclipse
 
 Responsable de todas las tareas: **Iñaki Bertran (InakiMB)**. Trabajo individual.
 
-Lista provisional hasta que la cátedra indique su sistema de producción. Mantener en cada tarea el estado y una evidencia: commit, captura o prueba reproducible. Estados: Pendiente / En curso / Preparado / Hecho. Preparado significa que existe el material, pero falta incorporarlo o verificarlo en el proyecto.
+Actualizado al **12/11/2026**: Hitos 0 y 1 completos; Hito 2 pendiente. Lista provisional hasta que la cátedra indique su sistema de producción. Mantener en cada tarea el estado y una evidencia: commit, captura o prueba reproducible. Estados: Pendiente / En curso / Preparado / Hecho. Preparado significa que existe el material, pero falta incorporarlo o verificarlo en el proyecto.
 
 ## Hito 0 - Preproducción
 
-|ID|Tarea|Estado inicial|Terminado cuando|
+|ID|Tarea|Estado|Terminado cuando|
 |-|-|-|-|
 |H0-01|Crear proyecto Unity|Hecho|Abre con 6000.3.10f1 y plantilla Universal 3D.|
 |H0-02|Iniciar historial Git|Hecho|Existe el commit 23196e4; Assets, Packages y ProjectSettings están versionados; las cachés quedan excluidas.|
@@ -16,16 +16,18 @@ Lista provisional hasta que la cátedra indique su sistema de producción. Mante
 
 ## Hito 1 - Core gameplay
 
-|ID|Tarea|Estado inicial|Terminado cuando|
+|ID|Tarea|Estado|Terminado cuando|
 |-|-|-|-|
-|H1-01|Escenario de prueba, movimiento y cámara|Hecho|El jugador se mueve con WASD, colisiona con paredes y se ve desde arriba.|
+|H1-01|Escenario de prueba, movimiento y cámara|Hecho|El jugador se mueve con WASD en direcciones fijas de pantalla, apunta con mouse de forma independiente, colisiona con paredes y se ve desde arriba.|
 |H1-02|Proyectil mágico|Hecho|Se apunta y dispara; el proyectil acierta, causa daño y desaparece correctamente.|
 |H1-03|Enemigo y sistema de salud|Hecho|El enemigo detecta, se aproxima, ataca, recibe daño y muere; el jugador puede recibir daño.|
 |H1-04|Primera versión jugable|Hecho|Se puede abrir y repetir la secuencia moverse-combatir-recibir daño-eliminar enemigo sin errores bloqueantes.|
 
 ## Hito 2 - Vertical slice
 
-|ID|Tarea|Estado inicial|Terminado cuando|
+El prototipo ya permite recibir daño, morir, despejar el encuentro y reiniciar. Este hito incorpora la progresión y el flujo completo de victoria y derrota del nivel.
+
+|ID|Tarea|Estado|Terminado cuando|
 |-|-|-|-|
 |H2-01|Golpe de bastón|Pendiente|El ataque cuerpo a cuerpo tiene alcance limitado, daño y recuperación; convive con el proyectil.|
 |H2-02|Loot y pociones|Pendiente|Un enemigo deja una poción, se recoge, se cuenta y se consume para recuperar vida sin superar el máximo.|
@@ -37,7 +39,7 @@ Lista provisional hasta que la cátedra indique su sistema de producción. Mante
 
 El audio se prepara en paralelo desde el comienzo para la muestra del viernes. Esto no cambia el orden de los hitos de jugabilidad.
 
-|ID|Tarea|Estado inicial|Terminado cuando|
+|ID|Tarea|Estado|Terminado cuando|
 |-|-|-|-|
 |H3-A0|Prueba de conexión FMOD-Unity|Hecho|Un evento de prueba se escucha al iniciar la escena en Unity; no quedan errores rojos.|
 |H3-A1|Preparar audios en Reaper|Pendiente|Se conservan sesiones y fuentes; se exportan clips editados y se registran sus créditos.|
@@ -55,7 +57,7 @@ El audio se prepara en paralelo desde el comienzo para la muestra del viernes. E
 
 ## Hito 4 - Feature complete
 
-|ID|Tarea|Estado inicial|Terminado cuando|
+|ID|Tarea|Estado|Terminado cuando|
 |-|-|-|-|
 |H4-01|Revisar requisitos|Pendiente|Todos los sistemas obligatorios están implementados y hay al menos tres minutos de juego efectivo.|
 |H4-02|Corregir y balancear|Pendiente|Se prueban victoria, derrota, reinicio y audio; no hay errores bloqueantes; el jefe se puede vencer sin la vara.|
@@ -63,14 +65,14 @@ El audio se prepara en paralelo desde el comienzo para la muestra del viernes. E
 
 ## Hito 5 - Release
 
-|ID|Tarea|Estado inicial|Terminado cuando|
+|ID|Tarea|Estado|Terminado cuando|
 |-|-|-|-|
 |H5-01|Generar y probar ejecutable|Pendiente|El juego funciona fuera del editor, con sonido, volumen y todos los finales.|
 |H5-02|Preparar entrega|Pendiente|Incluye ejecutable, repositorio final, documentación, créditos y proyectos completos de Unity y FMOD con sus fuentes.|
 
 ## Ampliaciones - solo después de completar la base
 
-|ID|Tarea|Estado inicial|Terminado cuando|
+|ID|Tarea|Estado|Terminado cuando|
 |-|-|-|-|
 |X-01|Acertijo y vara secreta|Pendiente|Las pistas permiten resolver el acertijo; la vara se obtiene y solo permite un rayo por partida, con feedback audiovisual.|
 |X-02|Guerrero y arquero|Pendiente|Se seleccionan y completan el nivel sin romper el ciclo de juego ni la entrega base.|
@@ -86,6 +88,7 @@ Objetivo propuesto: una escena simple con cambio de ambiente al desplazarse, una
 |11/11/2026|H0-01 / H0-02|Proyecto local revisado: Unity 6000.3.10f1, URP 17.3.0, sin cambios pendientes ni cachés versionadas.|23196e4|
 |12/11/2026|H3-A0|Evento de prueba reproducido desde Unity; proyecto FMOD y bancos guardados.|cfa7c26|
 |12/11/2026|H1-01|Mago animado, movimiento relativo a su orientación, colisiones y cámara superior probados.|bfce002|
-
-
-
+|12/11/2026|H1-02|Proyectiles mágicos probados: lanzamiento, daño, colisión con el escenario y desaparición.|b582c7a; prueba confirmada por el autor.|
+|12/11/2026|H1-03|Dos enemigos persiguen mediante NavMesh, atacan y reciben daño; jugador y enemigos pueden morir.|b582c7a; prueba confirmada por el autor.|
+|12/11/2026|H1-04|Encuentro repetible con panel de vida, zona despejada, derrota y reinicio mediante R o botón.|b582c7a; prueba confirmada por el autor.|
+|12/11/2026|H1-01, ajuste de control|WASD independiente del apuntado con mouse, respuesta inmediata y diagonales con velocidad normalizada.|b582c7a; prueba confirmada por el autor.|

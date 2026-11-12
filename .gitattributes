@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Conservar los PDF sin conversiones de saltos de linea.
+*.pdf binary

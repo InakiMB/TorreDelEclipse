@@ -1,8 +1,8 @@
-﻿# Torre del Eclipse - Game Concept
+# Torre del Eclipse - Game Concept
 
-Borrador v0.3 | 11/11/2026 | Desarrollo individual
+Borrador v0.4 | 12/11/2026 | Desarrollo individual
 
-Autor: Iñaki Bertran. Desarrollo individual. Nombre del juego provisional.
+Autor: Iñaki Bertran. Desarrollo individual.
 
 ## 1. Visión general del juego
 
@@ -12,21 +12,21 @@ Premisa y experiencia. Un mago entra en una antigua torre ocupada por fuerzas ho
 
 ## 2. Jugabilidad
 
-2.1. Mecánicas principales. El jugador se desplaza libremente y combina proyectiles mágicos a distancia con golpes de bastón cuerpo a cuerpo. Ambos ataques causan daño y cumplen una función en combate. Los enemigos detectan al jugador, se aproximan o posicionan, atacan, reciben daño y mueren.
+2.1. Mecánicas principales. El jugador combina proyectiles mágicos y golpes de bastón. Se prevén guerreros cuerpo a cuerpo, magos a distancia y apoyos que curan o potencian aliados; cada tipo tendrá vida, daño, velocidad y cadencia propios. El prototipo implementa la base del perseguidor.
 
 Recursos e interacción. Los enemigos pueden dejar pociones de vida. El jugador las recoge y decide cuándo consumirlas. Una interfaz indica cuántas tiene disponibles. Al eliminar a los defensores de la planta baja se habilita el acceso a la terraza, con una señal visual y sonora.
 
-Jefe, victoria y derrota. El guardián de la terraza presenta ataques reconocibles que el jugador puede evitar mediante el movimiento. Derrotarlo completa el nivel; quedarse sin vida provoca la derrota y permite reiniciar la partida.
+Jefe, victoria y derrota. El guardián de la terraza presenta ataques reconocibles que el jugador puede evitar mediante el movimiento. Su diseño detallado se definirá con el autor antes de implementarlo. Derrotarlo completa el nivel; quedarse sin vida provoca la derrota y permite reiniciar la partida.
 
-Controles propuestos. WASD para moverse; mouse para apuntar; clic izquierdo para el proyectil; clic derecho para el bastón; E para interactuar y Q para usar una poción.
+Controles. WASD mueve en direcciones fijas de pantalla; el mouse apunta de forma independiente. Clic izquierdo dispara; R reinicia el prototipo. Se prevén clic derecho para el bastón, E para interactuar y Q para usar una poción.
 
 2.2. Flujo de juego. Menú inicial - explorar la planta baja - combatir y utilizar recursos - desbloquear el ascenso - enfrentar al jefe - victoria o derrota. Se prevé un nivel completo con dos zonas principales y al menos tres minutos de juego efectivo.
 
 ## 3. Arte y estilo visual
 
-Fantasía medieval oscura: piedra envejecida, arcos altos, telas deterioradas, antorchas y símbolos arcanos. Se propone una paleta fría con luces ámbar y acentos violetas para la magia. La cámara superior debe permitir distinguir enemigos, proyectiles y objetos interactuables.
+Fantasía medieval oscura con aspecto low poly y texturas retro PS1/PS2: piedra envejecida, arcos altos, telas deterioradas, antorchas y símbolos arcanos. Se propone una paleta fría con luces ámbar y acentos violetas para la magia. La cámara superior debe permitir distinguir enemigos, proyectiles y objetos interactuables.
 
-3.1. Elementos clave. Mago con bastón, enemigos de siluetas legibles, pociones destacadas, acceso bloqueado y una terraza abierta para el jefe. Se utilizarán modelos y animaciones existentes de estilo coherente; la IA podrá apoyar retratos, iconos o texturas, con revisión de sus condiciones de uso.
+3.1. Elementos clave. El mago utiliza el Wizard de Quaternius; exterior y terraza se construirán con Kenney Retro Fantasy Kit y los interiores con el dungeon PSX de BlenderVoyage. Se conservarán sus licencias y atribuciones. Enemigos, magia y objetos deben distinguirse desde la cámara superior.
 
 ## 4. Audio
 
@@ -46,7 +46,7 @@ Durante la partida. Vida del mago, cantidad de pociones, objetivo actual y vida 
 
 ## 6. Consideraciones técnicas y de desarrollo
 
-Herramientas previstas. Unity 6.3 LTS con Universal 3D, C#, Reaper y FMOD Studio 2.04 con su integración compatible. Git y GitHub registrarán la evolución. Las tareas indicarán responsable, estado, hito y criterio de finalización; se adaptarán al sistema que indique la cursada.
+Herramientas. Unity 6000.3.10f1 con URP, C#, Reaper y FMOD Studio 2.04.00 con su integración de Unity. Git y GitHub registrarán la evolución. Las tareas indicarán responsable, estado, hito y criterio de finalización; se adaptarán al sistema que indique la cursada.
 
 Arquitectura y producción. Separar movimiento, combate, salud, objetos y audio en componentes con responsabilidades claras. Aplicar los conceptos de Programación II según el problema que resuelvan. Avanzar por preproducción, core gameplay, vertical slice, producción, feature complete y release, con pruebas en cada etapa.
 
@@ -56,4 +56,4 @@ Ampliación prioritaria. Un acertijo breve de tres runas revela una vara oculta.
 
 ## 7. Juegos similares para referencia
 
-Baldur's Gate 3: Alzaluna como referencia espacial, visual y de descubrimiento de secretos. Diablo II: lectura del espacio desde arriba y ciclo de exploración, combate y recursos. Las referencias orientan la experiencia y la selección de materiales.
+Baldur's Gate 3: Alzaluna como referencia espacial, visual y de descubrimiento de secretos. Diablo II: lectura del espacio desde arriba y ciclo de exploración, combate y recursos. Enter the Gungeon: movimiento y apuntado independientes. Las referencias orientan la experiencia y la selección de materiales.
