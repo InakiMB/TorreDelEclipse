@@ -8,7 +8,7 @@ Juego de acción 3D con cámara superior. Un mago despeja la planta baja de una 
 
 ## Estado actual
 
-**Hitos 0, 1 y 2 completos. Producción pendiente.** Actualizado al **12/11/2026**.
+**Hitos 0, 1 y 2 completos. Producción en curso, con maqueta de audio integrada.** Actualizado al **13/11/2026**.
 
 Implementado y probado por el autor en `Assets/Scenes/PrototipoTorre.unity`:
 
@@ -23,12 +23,14 @@ Implementado y probado por el autor en `Assets/Scenes/PrototipoTorre.unity`:
 - Loot de pociones con 25% de probabilidad por enemigo, recogida mediante E, inventario y curación mediante Q sin superar la vida máxima.
 - Objetivo del prototipo: eliminar a los dos enemigos, habilitar el acceso y utilizar la salida con E para ganar.
 - Panel con vida, pociones, enemigos, objetivo, mensajes de interacción y resultado. Reiniciar restablece jugador, enemigos, loot y barrera.
-- Integración inicial FMOD-Unity: el evento `PruebaConexion` se reproduce en la escena `PruebaAudio`.
+- Audio FMOD integrado al prototipo: ambiente variable por posición, música de exploración/combate y efectos de acciones, daño, recursos y resultados.
+- Trece eventos de la maqueta, con variantes para pasos, hechizos, bastón, impactos y heridas. Se conserva la prueba independiente `PruebaConexion` en `PruebaAudio`.
+- Cuatro grupos de mezcla (música, ambiente, efectos e interfaz) y componente de volumen general y por grupo incorporado a `AudioSystems`. La pantalla de Opciones sigue pendiente.
 - Packs retro importados y fuentes de recursos documentadas.
 
 La escena permite repetir un ciclo corto de combate, recursos, progresión y victoria o derrota. Los enemigos, proyectil, pociones y salida utilizan representaciones de prueba; sus modelos y efectos finales siguen pendientes. La victoria actual completa el recorrido del prototipo. El nivel definitivo continúa hacia la terraza y termina al derrotar al jefe.
 
-Siguen pendientes el escenario definitivo, las variantes de enemigos, el jefe, las cajas o barriles destructibles, los menús finales y el audio adaptativo. El sonido disponible hasta ahora es la prueba de conexión.
+Siguen pendientes el escenario definitivo, las variantes de enemigos, el jefe, las cajas o barriles destructibles y los menús finales. La maqueta sonora ya responde a la jugabilidad; el balance final, el audio de los sistemas futuros, la importación de los pasos editados y la comprobación del volumen persistente quedan para las siguientes pruebas.
 
 ## Controles actuales
 
@@ -63,8 +65,16 @@ Cada enemigo realiza una tirada independiente de loot: el 25% no garantiza una p
 - Input System **1.18.0** y AI Navigation **2.0.10**.
 - FMOD Studio **2.04.00**; integración de Unity `com.fmod.fmod-for-unity.v204`, versión **2.4.0**.
 - Proyecto de audio: `Audio/FMOD/TorreDelEclipseAudio/TorreDelEclipseAudio.fspro`.
-- Reaper para la edición, producción y mezcla del audio que se incorporará.
+- Reaper para la edición y procesamiento: sesiones `Ambientes.rpp`, `Musica.rpp` y `Pasos.rpp`, con sus medios vinculados, en `Audio/ExportadosFMOD/Reaper/`.
 - Git y GitHub para el historial de desarrollo.
+
+## Audio del prototipo
+
+El ambiente mezcla interior y exterior según la posición del jugador mediante el parámetro local `Zona`. La música utiliza dos capas sincronizadas de ocho compases, a 90 BPM y 4/4; `Combate` aumenta cuando un enemigo detecta al mago y vuelve a exploración cuando deja de haber enemigos activos en combate. Al reiniciar se liberan las instancias anteriores.
+
+Los eventos están incluidos en `Master.bank`; los grupos `Musica`, `Ambiente`, `Efectos` e `Interfaz` permiten controlar sus volúmenes por separado. `AudioVolumeSettings` guarda las preferencias; su comprobación entre sesiones y la interfaz de Opciones quedan pendientes. Los efectos del mundo se reproducen en su posición y los avisos de acceso, victoria y derrota indican el progreso.
+
+Se conservan 25 fuentes originales de síntesis, las 25 exportaciones de trabajo, tres sesiones de Reaper y el proyecto editable de FMOD. El [registro de audio](Docs/Audio.md) detalla eventos, parámetros, mezcla, archivos y estado de verificación.
 
 ## Arte y recursos
 
@@ -82,22 +92,25 @@ Las licencias, enlaces, usos y atribuciones figuran en [Fuentes y créditos](Doc
 - [Concepto editable](Docs/GameConcept.md).
 - [Tareas, hitos y criterios de finalización](Docs/Backlog.md).
 - [Fuentes y créditos de recursos](Docs/Fuentes.md).
+- [Diseño e integración de la maqueta de audio](Docs/Audio.md).
 
 ## Organización
 
-- `Assets/Scripts`: componentes de movimiento, apuntado, cámara, animación, combate, salud, enemigos, inventario, interacción, objetivos y panel de prototipo.
+- `Assets/Scripts`: componentes de movimiento, apuntado, cámara, animación, combate, salud, enemigos, inventario, interacción, objetivos, panel de prototipo y audio.
 - `Assets/Art`: modelos, texturas, materiales y controladores de animación.
 - `Assets/Prefabs`: objetos reutilizables, incluidos el proyectil mágico y la poción.
 - `Assets/Scenes`: escenas de prueba y desarrollo, y datos de navegación del escenario.
-- `Audio/Fuentes`: fuentes sonoras de trabajo.
+- `Audio/Fuentes`: fuentes sonoras originales, inventario y registro de procedencia.
+- `Audio/ExportadosFMOD/Bloque06`: los 25 WAV destinados a FMOD.
+- `Audio/ExportadosFMOD/Reaper`: sesiones editables y carpeta `Media` con sus audios vinculados.
 - `Audio/FMOD`: proyecto completo de FMOD, fuentes y bancos exportados.
-- `Docs`: concepto, planificación y fuentes.
+- `Docs`: concepto, planificación, fuentes y registro de audio.
 
-Las carpetas temporales de Unity y FMOD se excluyen del historial; se conservan los proyectos editables y los bancos necesarios para reproducir la prueba de audio.
+Las carpetas temporales de Unity y FMOD se excluyen del historial; se conservan los proyectos editables y los bancos necesarios para reproducir el audio del prototipo.
 
 ## Hitos y entregas
 
-El desarrollo sigue preproducción, core gameplay, vertical slice, producción, feature complete y release. La preparación de audio avanza en paralelo para una primera muestra el **13/11/2026**. Entrega final de ambas materias: **20/11/2026**.
+El desarrollo sigue preproducción, core gameplay, vertical slice, producción, feature complete y release. La maqueta de audio integrada está preparada para la muestra del **13/11/2026**. Entrega final de ambas materias: **20/11/2026**.
 
 ## Alcance de la versión base
 

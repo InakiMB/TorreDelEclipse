@@ -15,11 +15,228 @@ MonoBehaviour:
   Path: Audio/FMOD/TorreDelEclipseAudio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639300414487703628
+  lastModified: 639301395682244377
   FileSizes:
   - Name: Desktop
-    Value: 3680
+    Value: 754144
   Exists: 1
+--- !u!114 &-9175438747307085563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Baston
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/Baston
+  Guid:
+    Data1: -667737521
+    Data2: 1248406256
+    Data3: -1245637985
+    Data4: 304291975
+  Banks:
+  - {fileID: -9194930288831458847}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-8142080131759271008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Recoger
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/Recoger
+  Guid:
+    Data1: -65579540
+    Data2: 1118696815
+    Data3: 320632224
+    Data4: -878514496
+  Banks:
+  - {fileID: -9194930288831458847}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 650
+--- !u!114 &-7852516619254524947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Herida
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/Herida
+  Guid:
+    Data1: -540949061
+    Data2: 1075742372
+    Data3: 760283266
+    Data4: -1363863003
+  Banks:
+  - {fileID: -9194930288831458847}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-7346052449625781331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/AMB/Torre
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/AMB/Torre
+  Guid:
+    Data1: 1555984440
+    Data2: 1110385769
+    Data3: -1064896376
+    Data4: 1734017000
+  Banks:
+  - {fileID: -9194930288831458847}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 181988870041282784}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 16000
+--- !u!114 &-7187074469099194801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Victoria
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/UI/Victoria
+  Guid:
+    Data1: -212618888
+    Data2: 1291214615
+    Data3: -275639390
+    Data4: 1863329663
+  Banks:
+  - {fileID: -9194930288831458847}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2500
+--- !u!114 &-6510974983378494887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Curar
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/Curar
+  Guid:
+    Data1: -1439943567
+    Data2: 1207591650
+    Data3: 2047621513
+    Data4: -1729296315
+  Banks:
+  - {fileID: -9194930288831458847}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1400
+--- !u!114 &-5191523010255421719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Imapcto
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/Imapcto
+  Guid:
+    Data1: -131562981
+    Data2: 1210435687
+    Data3: 472060567
+    Data4: -1247429591
+  Banks:
+  - {fileID: -9194930288831458847}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-4426693566292760653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Derrota
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/UI/Derrota
+  Guid:
+    Data1: 551096970
+    Data2: 1120589407
+    Data3: 1395455384
+    Data4: 1692926675
+  Banks:
+  - {fileID: -9194930288831458847}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2300
 --- !u!114 &-2092580249895906811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,6 +264,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 600
+--- !u!114 &-233141872264628915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Hechizo
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/Hechizo
+  Guid:
+    Data1: 580488827
+    Data2: 1193562776
+    Data3: -961143645
+    Data4: -566856438
+  Banks:
+  - {fileID: -9194930288831458847}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,16 +308,212 @@ MonoBehaviour:
   - {fileID: -9194930288831458847}
   EditorEvents:
   - {fileID: -2092580249895906811}
+  - {fileID: -5191523010255421719}
+  - {fileID: -7346052449625781331}
+  - {fileID: 6421907929919360949}
+  - {fileID: -9175438747307085563}
+  - {fileID: -6510974983378494887}
+  - {fileID: -7187074469099194801}
+  - {fileID: -233141872264628915}
+  - {fileID: -4426693566292760653}
+  - {fileID: 5509326034131014337}
+  - {fileID: 3750042997838833044}
+  - {fileID: -7852516619254524947}
+  - {fileID: 5532285050842049746}
+  - {fileID: -8142080131759271008}
   EditorParameters: []
   MasterBanks:
   - {fileID: -9194930288831458847}
   StringsBanks:
   - {fileID: 8128512609427801552}
   cacheVersion: 132096
-  cacheTime: 639300414487716847
+  cacheTime: 639301395682264364
   SerializableEventsDict:
   - key: event:/PruebaConexion
     index: 0
+  - key: event:/SFX/Imapcto
+    index: 1
+  - key: event:/AMB/Torre
+    index: 2
+  - key: event:/UI/Acceso
+    index: 3
+  - key: event:/SFX/Baston
+    index: 4
+  - key: event:/SFX/Curar
+    index: 5
+  - key: event:/UI/Victoria
+    index: 6
+  - key: event:/SFX/Hechizo
+    index: 7
+  - key: event:/UI/Derrota
+    index: 8
+  - key: event:/SFX/Muerte
+    index: 9
+  - key: event:/MUS/Torre
+    index: 10
+  - key: event:/SFX/Herida
+    index: 11
+  - key: event:/SFX/Pasos
+    index: 12
+  - key: event:/SFX/Recoger
+    index: 13
+--- !u!114 &181988870041282784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Torre/Zona
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Zona
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 285047348
+    data2: 3277972692
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &3750042997838833044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MUS/Torre
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/MUS/Torre
+  Guid:
+    Data1: 178353316
+    Data2: 1275183926
+    Data3: 1070397082
+    Data4: 823754439
+  Banks:
+  - {fileID: -9194930288831458847}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 6354122013970455394}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 21333
+--- !u!114 &5509326034131014337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Muerte
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/Muerte
+  Guid:
+    Data1: -80872541
+    Data2: 1202623131
+    Data3: -1050620270
+    Data4: 1265230759
+  Banks:
+  - {fileID: -9194930288831458847}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
+--- !u!114 &5532285050842049746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Pasos
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/Pasos
+  Guid:
+    Data1: 1232345027
+    Data2: 1253996077
+    Data3: 929878974
+    Data4: 371420108
+  Banks:
+  - {fileID: -9194930288831458847}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &6354122013970455394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Torre/Combate
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Combate
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 266261893
+    data2: 3971267228
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &6421907929919360949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Acceso
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/UI/Acceso
+  Guid:
+    Data1: -2026796216
+    Data2: 1078439575
+    Data3: 1616491931
+    Data4: 1745579356
+  Banks:
+  - {fileID: -9194930288831458847}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1600
 --- !u!114 &8128512609427801552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89,8 +529,8 @@ MonoBehaviour:
   Path: Audio/FMOD/TorreDelEclipseAudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639300414487716847
+  lastModified: 639301395682264364
   FileSizes:
   - Name: Desktop
-    Value: 788
+    Value: 1580
   Exists: 1

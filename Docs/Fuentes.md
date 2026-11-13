@@ -22,7 +22,23 @@ Las cápsulas de los enemigos, las esferas del proyectil, poción y marcador de 
 |---|---|---|---|
 | `Audio/Fuentes/PruebaConexion.wav` | Señal sintética preparada con asistencia de Codex, sin grabaciones de terceros. | Creada para esta prueba técnica. | Comprobar que FMOD se escucha dentro de Unity; no es el diseño sonoro definitivo. FMOD conserva una copia importada en `Audio/FMOD/TorreDelEclipseAudio/Assets/PruebaConexion.wav`. |
 
-La música, los ambientes y los efectos finales están pendientes de producción o selección. Los enlaces de música de Baldur's Gate 3 y Diablo compartidos como referencias no corresponden a archivos incorporados al juego.
+### Maqueta sonora integrada el 13/11/2026
+
+Se incorporaron **25 WAV originales de síntesis procedural preparados para Torre del Eclipse**, sin grabaciones, voces, samples ni composiciones extraídas de terceros. Se utilizaron ruido filtrado, osciladores, envolventes, barridos y secuencias de notas y percusión por síntesis. Los pasos y las heridas representan acciones de forma abstracta; no son grabaciones de personas.
+
+| Familia | Archivos originales | Uso |
+|---|---|---|
+| Ambiente | `AMB_Interior.wav`, `AMB_Exterior.wav` | Capas de interior y exterior; loops estéreo de 16 segundos. |
+| Música | `MUS_Exploracion.wav`, `MUS_Combate.wav` | Capas sincronizadas, estéreo, 90 BPM, 4/4 y ocho compases (21,333333 s). |
+| Variantes de efectos | `Paso_01..03`, `Hechizo_01..03`, `Baston_01..03`, `Impacto_01..03`, `Herida_01..03` | Quince WAV mono para acciones y daño, con selección de variantes en FMOD. |
+| Recursos y muerte | `Muerte.wav`, `Recoger.wav`, `Curar.wav` | Muerte, recogida y consumo de poción. |
+| Progreso y resultado | `Acceso.wav`, `Victoria.wav`, `Derrota.wav` | Señales de acceso desbloqueado y fin del prototipo. |
+
+Las fuentes PCM de 16 bits y 48 kHz están en `Audio/Fuentes/Bloque06/Originales/`. Su procedencia, método y características se conservan en [Fuentes del bloque](../Audio/Fuentes/Bloque06/Fuentes.md) e [Inventario](../Audio/Fuentes/Bloque06/Inventario.json). No se atribuye a estos archivos una licencia de un proveedor externo.
+
+Iñaki realizó la edición y el procesamiento en Reaper de ambientes, música y pasos. Se conservan las tres sesiones `.rpp` y sus siete medios vinculados en `Audio/ExportadosFMOD/Reaper/`; incluyen ReaEQ. Las 25 exportaciones de trabajo destinadas a FMOD están en `Audio/ExportadosFMOD/Bloque06/`: siete exportaciones PCM de 24 bits y el resto PCM de 16 bits, todas a 48 kHz. FMOD conserva los tres pasos originales mono; las versiones editadas de pasos quedan pendientes de revisión de formato e importación. Las copias importadas y los eventos, parámetros y mezcla están en `Audio/FMOD/TorreDelEclipseAudio/`.
+
+La maqueta ya está integrada en el prototipo y puede ajustarse durante la producción final. Los enlaces de música de Baldur's Gate 3 y Diablo compartidos como referencias no corresponden a archivos incorporados al juego. El [registro de audio](Audio.md) identifica el uso de cada evento y el estado de verificación.
 
 ## Créditos de recursos para la entrega
 
@@ -30,4 +46,4 @@ La música, los ambientes y los efectos finales están pendientes de producción
 - **RPG Character Pack — Wizard**, por **Quaternius** — [quaternius.com](https://quaternius.com/packs/rpgcharacters.html) — [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
 - **PSX Style Modular Low Poly Dungeon — Free Edition**, por **BlenderVoyage** — [Fuente original](https://blendervoyage.itch.io/psx-style-modular-low-poly-dungeon) — [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Integración en Unity con reorganización de carpetas y ajustes de materiales/importación.
 
-La atribución de BlenderVoyage debe figurar también en la pantalla de créditos del juego con referencia a su fuente y licencia. El registro se actualizará con los recursos de audio definitivos y cualquier modificación adicional de los recursos externos.
+La atribución de BlenderVoyage debe figurar también en la pantalla de créditos del juego con referencia a su fuente y licencia. El registro incluye la maqueta sonora actual y se actualizará con los recursos de los sistemas pendientes y cualquier modificación adicional de los recursos externos.

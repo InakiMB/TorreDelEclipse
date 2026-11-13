@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 992165770677249963}
   - component: {fileID: 5689232051097180070}
   - component: {fileID: 8108772466679688605}
+  - component: {fileID: 4973021899542742557}
   m_Layer: 0
   m_Name: MagicBolt
   m_TagString: Untagged
@@ -106,3 +107,22 @@ MonoBehaviour:
   speed: 14
   radius: 0.12
   lifeTime: 2
+--- !u!114 &4973021899542742557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7354595234146915620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7139b860c3c150746b2be92a7f491ffc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ProjectileImpactAudio
+  impactEvent:
+    Guid:
+      Data1: -131562981
+      Data2: 1210435687
+      Data3: 472060567
+      Data4: -1247429591
+    Path: event:/SFX/Imapcto

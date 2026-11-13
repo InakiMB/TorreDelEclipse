@@ -1,0 +1,4 @@
+# Archivos temporales de REAPER. Conservar proyectos .rpp y fuentes WAV.
+*.reapeaks
+*.rpp-bak
+*.rpp-undo

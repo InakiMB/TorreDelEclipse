@@ -2,7 +2,7 @@
 
 Responsable de todas las tareas: **Iñaki Bertran (InakiMB)**. Trabajo individual.
 
-Actualizado al **12/11/2026**: Hitos 0, 1 y 2 completos; Producción pendiente. Lista provisional hasta que la cátedra indique su sistema de producción. Mantener en cada tarea el estado y una evidencia: commit, captura o prueba reproducible. Estados: Pendiente / En curso / Preparado / Hecho. Preparado significa que existe el material, pero falta incorporarlo o verificarlo en el proyecto.
+Actualizado al **13/11/2026**: Hitos 0, 1 y 2 completos; Producción en curso con maqueta de audio integrada. Lista provisional hasta que la cátedra indique su sistema de producción. Mantener en cada tarea el estado y una evidencia: commit, captura o prueba reproducible. Estados: Pendiente / En curso / Preparado / Hecho. Preparado significa que existe el material, pero falta incorporarlo o verificarlo en el proyecto.
 
 ## Hito 0 - Preproducción
 
@@ -37,22 +37,24 @@ La versión corta del prototipo integra combate a distancia y cuerpo a cuerpo, l
 
 ## Hito 3 - Producción
 
-El audio se prepara en paralelo desde el comienzo para la muestra del viernes. Esto no cambia el orden de los hitos de jugabilidad.
+La maqueta de audio del Bloque 6 está integrada en el prototipo para la muestra del 13/11. El autor confirmó las pruebas del bloque. Se conservan fuentes, sesiones de Reaper, proyecto de FMOD y bancos; el detalle está en [Audio](Audio.md). Los sistemas restantes continúan en Producción.
 
 |ID|Tarea|Estado|Terminado cuando|
 |-|-|-|-|
 |H3-A0|Prueba de conexión FMOD-Unity|Hecho|Un evento de prueba se escucha al iniciar la escena en Unity; no quedan errores rojos.|
-|H3-A1|Preparar audios en Reaper|Pendiente|Se conservan sesiones y fuentes; se exportan clips editados y se registran sus créditos.|
-|H3-A2|Ambiente variable|Pendiente|El ambiente cambia perceptiblemente al recorrer dos zonas sin cargar otra escena.|
-|H3-A3|Música adaptativa|Pendiente|En combate cambia la música y al finalizar vuelve a exploración; la transición responde al estado del juego.|
-|H3-A4|Efectos, variación y procesamiento|Pendiente|Hay efectos del mundo y de interfaz; pasos/impactos usan variaciones; el procesamiento tiene una función demostrable.|
+|H3-A1|Preparar audios en Reaper|Hecho|Se conservan sesiones y fuentes; se exportan clips editados y se registran sus créditos.|
+|H3-A2|Ambiente variable|Hecho|El ambiente cambia perceptiblemente al recorrer dos zonas sin cargar otra escena.|
+|H3-A3|Música adaptativa|Hecho|En combate cambia la música y al finalizar vuelve a exploración; la transición responde al estado del juego.|
+|H3-A4|Efectos, variación y procesamiento|Hecho|Hay efectos del mundo y de interfaz; pasos/impactos usan variaciones; el procesamiento tiene una función demostrable.|
+|H3-A5|Volumen general y por categorías|Preparado|El componente está incorporado a AudioSystems y controla los buses general, música, ambiente, efectos e interfaz; falta confirmar en Play los cinco controles y la conservación de preferencias al volver a abrir. La pantalla de Opciones corresponde a H3-03.|
+|H3-A6|Revisar e importar pasos editados|Pendiente|Se revisa la exportación estéreo de Reaper para los efectos espaciales, se incorporan las versiones elegidas a FMOD, se reconstruye Master y se comprueba el resultado en Unity.|
 |H3-01|Planta baja y terraza|Pendiente|Ambas zonas forman un recorrido coherente, accesible y sin puntos que bloqueen al jugador.|
 |H3-E1|Guerrero enemigo|Pendiente|Persigue y ataca cuerpo a cuerpo; dispone de vida, daño, velocidad y cadencia configurables y se distingue visual y sonoramente.|
 |H3-E2|Mago enemigo|Pendiente|Se posiciona a distancia y lanza proyectiles evitables; sus valores de combate son configurables y su ataque tiene una señal audiovisual reconocible.|
 |H3-E3|Enemigo de apoyo|Pendiente|Se posiciona cerca de aliados y los cura o potencia con alcance y tiempo de espera definidos; vida y velocidad son configurables, el efecto es reconocible y termina o deja de renovarse al morir el apoyo.|
 |H3-J0|Definir el jefe con el autor|Pendiente|Antes de diseñarlo e implementarlo, consultar a Iñaki y acordar apariencia, identidad, arena, movimientos, ataques, fases, defensas, debilidades, vida, daño, dificultad, señales visuales, sonidos, música, recompensas y cierre del nivel.|
 |H3-02|Combinar variantes y desarrollar jefe|Pendiente|Guerrero, mago y apoyo cumplen roles diferentes en un encuentro; sus valores se ajustan tras probarlos y el jefe tiene ataques legibles y evitables.|
-|H3-03|Menús, HUD y volumen|Pendiente|Play, Créditos, Opciones y Exit funcionan; se muestran vida, pociones y objetivos; el volumen general controla todo el audio.|
+|H3-03|Menús, HUD y volumen|Pendiente|Play, Créditos, Opciones y Exit funcionan; se muestran vida, pociones y objetivos; el volumen general controla todo el audio y hay controles independientes de música, ambiente, efectos e interfaz, con preferencias guardadas entre sesiones.|
 |H3-04|Integrar modelos y efectos|Pendiente|Se distinguen ataques, enemigos y objetos desde la cámara superior; se registran las fuentes.|
 |H3-I1|Cajas o barriles destructibles con poción garantizada|Pendiente|Reciben daño de los proyectiles, se rompen una sola vez y dejan exactamente una poción con probabilidad 100%; tienen feedback de impacto y rotura, y se restauran al reiniciar el nivel.|
 
@@ -80,7 +82,7 @@ El audio se prepara en paralelo desde el comienzo para la muestra del viernes. E
 
 ## Muestra del viernes 13/11
 
-Objetivo propuesto: una escena simple con cambio de ambiente al desplazarse, una transición musical y efectos. Si la jugabilidad aún no está lista, identificar claramente los controles de demostración que cambian estados de prueba. La muestra intermedia no sustituye la integración final exigida.
+La escena `PrototipoTorre` incorpora cambio de ambiente por desplazamiento, transición musical por detección de enemigos y efectos de combate, recursos y resultado. Se utilizan los controles de juego, sin un selector manual de estados. La muestra está preparada; su presentación y devolución docente aún no están registradas. La muestra intermedia no sustituye la revisión final de los requisitos.
 
 ## Registro de evidencia
 
@@ -98,3 +100,6 @@ Objetivo propuesto: una escena simple con cambio de ambiente al desplazarse, una
 |12/11/2026|H2-03|Eliminar a los dos enemigos desactiva la barrera y habilita la interacción con la salida.|40a4b6b; prueba confirmada por el autor.|
 |12/11/2026|H2-04|Victoria del prototipo mediante la salida, derrota por falta de vida y reinicio completo con R o botón.|40a4b6b; prueba confirmada por el autor.|
 |12/11/2026|H2-05|Ciclo corto de combate, daño, recursos, progresión y resultado terminado y probado.|40a4b6b; prueba confirmada por el autor.|
+|13/11/2026|H3-A1|Tres sesiones de Reaper con sus siete medios vinculados, 25 fuentes originales y 25 exportaciones conservadas.|Archivos en Audio; referencias de medios y formatos revisados.|
+|13/11/2026|H3-A2 / H3-A3 / H3-A4|Ambiente por zona, música de combate y efectos integrados al prototipo; pruebas del bloque confirmadas por el autor.|PrototipoTorre, MagicBolt y proyecto FMOD; [registro de integración](Audio.md).|
+|13/11/2026|H3-A5|Cuatro grupos de mezcla y AudioVolumeSettings guardado en AudioSystems; comprobación de los volúmenes y su persistencia aún pendiente.|Escena guardada y componente revisados; no se registra esta prueba como completada.|

@@ -17,6 +17,10 @@ public sealed class EnemyChaser : MonoBehaviour
     private NavMeshAgent agent;
     private float nextAttackTime;
     private bool provoked;
+    public bool IsEngaged => isActiveAndEnabled && health != null && !health.IsDead
+        && agent != null && agent.enabled && agent.isOnNavMesh
+        && target != null && targetHealth != null && !targetHealth.IsDead
+        && (provoked || (target.position - transform.position).sqrMagnitude <= detectionRange * detectionRange);
 
     private void Awake()
     {

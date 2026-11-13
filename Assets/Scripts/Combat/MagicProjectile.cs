@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 [DisallowMultipleComponent]
@@ -12,6 +13,8 @@ public sealed class MagicProjectile : MonoBehaviour
     private int damage;
     private float age;
     private bool initialized;
+
+    public event Action<Vector3> Impacted;
 
     public void Initialize(Transform source, Vector3 travelDirection, int hitDamage)
     {
@@ -45,6 +48,7 @@ public sealed class MagicProjectile : MonoBehaviour
                 receiver.TakeDamage(damage);
             }
 
+            Impacted?.Invoke(hit.point);
             Destroy(gameObject);
             return;
         }

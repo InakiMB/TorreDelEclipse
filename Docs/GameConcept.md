@@ -1,6 +1,6 @@
 # Torre del Eclipse - Game Concept
 
-Borrador v0.5 | 12/11/2026 | Desarrollo individual
+Borrador v0.6 | 13/11/2026 | Desarrollo individual
 
 Autor: Iñaki Bertran. Desarrollo individual.
 
@@ -30,13 +30,13 @@ Fantasía medieval oscura con aspecto low poly y texturas retro PS1/PS2: piedra 
 
 ## 4. Audio
 
-Ambiente adaptativo. Dentro de una misma escena, pasar del salón a la escalera modifica progresivamente las capas de fuego, viento y murmullos. En la terraza predomina el viento exterior. El cambio debe percibirse durante el desplazamiento, sin depender de una carga de escena.
+Ambiente adaptativo. La maqueta mezcla progresivamente interior y exterior según la posición del jugador, mediante el parámetro local Zona de FMOD. El cambio ya se prueba en una misma escena. El nivel final llevará esta transición desde los salones cerrados hasta el viento de la terraza.
 
-Música adaptativa. La exploración utiliza una base contenida; al entrar en combate aumenta la intensidad y al finalizar vuelve a la exploración. El enfrentamiento con el jefe constituye el punto de mayor tensión musical.
+Música adaptativa. Dos capas sincronizadas de ocho compases, a 90 BPM y 4/4, cambian con el parámetro Combate al detectar enemigos y vuelven a exploración al terminar la amenaza. El jefe tendrá su tratamiento musical cuando se acuerde su diseño.
 
-Efectos y procesamiento. Pasos, bastón, hechizos, impactos y puertas representan sonidos del mundo (diegéticos). Botones y avisos de victoria o derrota aportan señales extradiegéticas. Se usarán multi-instrumentos para variar pasos o impactos y procesamiento de resonancia y filtrado con una función reconocible.
+Efectos y procesamiento. La maqueta incluye pasos, bastón, hechizos, impactos, daño, muerte y pociones como sonidos del mundo; acceso, victoria y derrota aportan avisos de estado. Los multi-instrumentos varían las repeticiones. ReaEQ en Reaper y reverberación en FMOD definen timbre y espacio; botones y sistemas futuros quedan pendientes.
 
-Flujo de producción. Preparación, edición y mezcla de sonidos en Reaper; configuración de eventos y parámetros en FMOD; creación de bancos de audio e integración en Unity. El volumen general será ajustable desde las opciones.
+Flujo de producción. Se conservan 25 fuentes de síntesis original, exportaciones y tres sesiones de Reaper, junto al proyecto FMOD y sus bancos. Hay trece eventos integrados y grupos de música, ambiente, efectos e interfaz. El componente de volumen general y por grupo está incorporado; falta comprobar su persistencia y conectarlo a la pantalla de Opciones.
 
 ## 5. Interfaz de usuario
 
