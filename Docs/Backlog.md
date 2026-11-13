@@ -37,7 +37,7 @@ La versión corta del prototipo integra combate a distancia y cuerpo a cuerpo, l
 
 ## Hito 3 - Producción
 
-La maqueta de audio del Bloque 6 está integrada en el prototipo para la muestra del 13/11. El autor confirmó las pruebas del bloque. Se conservan fuentes, sesiones de Reaper, proyecto de FMOD y bancos; el detalle está en [Audio](Audio.md). Los sistemas restantes continúan en Producción.
+La maqueta de audio del Bloque 6 está integrada en el prototipo para la muestra del 13/11. El autor confirmó las pruebas del bloque. Se conservan fuentes, sesiones de Reaper, proyecto de FMOD y bancos. Los sistemas restantes continúan en Producción.
 
 |ID|Tarea|Estado|Terminado cuando|
 |-|-|-|-|
@@ -99,7 +99,7 @@ La escena `PrototipoTorre` incorpora cambio de ambiente por desplazamiento, tran
 |12/11/2026|H2-04|Victoria del prototipo mediante la salida, derrota por falta de vida y reinicio completo con R o botón.|40a4b6b; prueba confirmada por el autor.|
 |12/11/2026|H2-05|Ciclo corto de combate, daño, recursos, progresión y resultado terminado y probado.|40a4b6b; prueba confirmada por el autor.|
 |13/11/2026|H3-A1|Tres sesiones de Reaper con sus siete medios vinculados, 25 fuentes originales y 25 exportaciones conservadas.|Archivos en Audio; referencias de medios y formatos revisados.|
-|13/11/2026|H3-A2 / H3-A3 / H3-A4|Ambiente por zona, música de combate y efectos integrados al prototipo; pruebas del bloque confirmadas por el autor.|PrototipoTorre, MagicBolt y proyecto FMOD; [registro de integración](Audio.md).|
+|13/11/2026|H3-A2 / H3-A3 / H3-A4|Ambiente por zona, música de combate y efectos integrados al prototipo; pruebas del bloque confirmadas por el autor.|dc1fedd; prueba confirmada por el autor.|
 |13/11/2026|H3-03, avance|Cuatro grupos de mezcla y AudioVolumeSettings guardado en AudioSystems; falta comprobar volúmenes y persistencia y completar la pantalla de Opciones.|Componente incorporado; la tarea de menús y volumen sigue pendiente.|
-|13/11/2026|H3-01 / H3-I1|TorreEclipse construida con dos zonas, diez perseguidores, seis suministros, ascenso y regreso; revisión de navegación sin observaciones.|[Diseño del nivel](LevelDesign.md); 24 comprobaciones automáticas en Play completadas sin fallos.|
-|13/11/2026|H3-04|Arquitectura de packs, materiales URP, iluminación, ocultación de paredes, HUD compacto y efecto de rotura incorporados; modelos de enemigos y efectos finales pendientes.|Escena TorreEclipse y vistas del nivel; revisión del autor pendiente.|
+|13/11/2026|H3-01 / H3-I1|TorreEclipse construida con dos zonas, diez perseguidores, seis suministros, ascenso y regreso; revisión de navegación sin observaciones.|b834733; escena TorreEclipse y comprobaciones de integración en Play.|
+|13/11/2026|H3-04|Arquitectura de packs, materiales URP, iluminación, ocultación de paredes, HUD compacto y efecto de rotura incorporados; modelos de enemigos y efectos finales pendientes.|b834733; escena TorreEclipse. Revisión del recorrido pendiente.|

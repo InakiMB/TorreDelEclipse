@@ -1,137 +1,55 @@
 # Torre del Eclipse
 
-Proyecto individual de **Iñaki Bertran** para Programación de Videojuegos II y Audio y Sonido para Videojuegos.
+Proyecto individual de **Iñaki Bertran** para **Programación de Videojuegos II** y **Audio y Sonido para Videojuegos**. Entrega final: **20/11/2026**.
 
-## Experiencia prevista
+Juego de acción 3D con cámara superior y estética de fantasía oscura low poly. Un mago debe despejar la planta baja de una torre y ascender a la terraza para enfrentar al jefe.
 
-Juego de acción 3D con cámara superior. Un mago despeja la planta baja de una torre, obtiene y utiliza recursos y asciende a la terraza para enfrentar a un jefe. La versión base incluye proyectiles mágicos y un ataque cuerpo a cuerpo con bastón.
+## Estado del proyecto
 
-## Estado actual
+Actualizado al **13/11/2026**. Hitos **0, 1 y 2 completos**; **Producción en curso**.
 
-**Hitos 0, 1 y 2 completos. Producción en curso, con maqueta de audio integrada.** Actualizado al **13/11/2026**.
+- Movimiento con WASD y apuntado independiente con mouse; ataques con magia y bastón.
+- Salud, daño, loot de enemigos con 25% de probabilidad, recogida y consumo de pociones.
+- Planta baja y terraza construidas, con diez perseguidores de prueba y seis cajas o barriles que dejan una poción garantizada al romperse.
+- Ascenso y regreso con E al despejar la planta baja, derrota y reinicio del nivel.
+- Ambiente variable, música de exploración/combate y efectos integrados mediante FMOD.
 
-Implementado y probado por el autor en `Assets/Scenes/PrototipoTorre.unity`:
+Siguen pendientes las variantes definitivas de enemigos, el jefe y la victoria final, los menús con Opciones y Créditos, el balance y la prueba del ejecutable. La terraza actual permite explorar y regresar; su llegada todavía no completa el juego.
 
-- Sala de prueba con piso, paredes y un obstáculo.
-- Mago de Quaternius con animaciones de reposo, desplazamiento y muerte.
-- Movimiento WASD en direcciones fijas respecto de la pantalla, independiente del apuntado con mouse. El mago puede desplazarse de costado o retroceder mientras apunta y dispara en otra dirección.
-- Cámara superior con seguimiento y colisiones del jugador mediante Character Controller.
-- Proyectiles mágicos: disparo con clic izquierdo, daño, colisión con el escenario y tiempo de vida limitado.
-- Golpe de bastón con clic derecho: animación, preparación, recuperación, alcance corto y arco frontal con comprobación de obstáculos.
-- Dos enemigos de prueba que detectan al jugador, navegan alrededor de obstáculos, atacan cuerpo a cuerpo, reciben daño y mueren.
-- Vida del jugador, derrota y reinicio de la escena.
-- Loot de pociones con 25% de probabilidad por enemigo, recogida mediante E, inventario y curación mediante Q sin superar la vida máxima.
-- Objetivo del prototipo: eliminar a los dos enemigos, habilitar el acceso y utilizar la salida con E para ganar.
-- Panel con vida, pociones, enemigos, objetivo, mensajes de interacción y resultado. Reiniciar restablece jugador, enemigos, loot y barrera.
-- Audio FMOD integrado al prototipo: ambiente variable por posición, música de exploración/combate y efectos de acciones, daño, recursos y resultados.
-- Trece eventos de la maqueta, con variantes para pasos, hechizos, bastón, impactos y heridas. Se conserva la prueba independiente `PruebaConexion` en `PruebaAudio`.
-- Cuatro grupos de mezcla (música, ambiente, efectos e interfaz) y componente de volumen general y por grupo incorporado a `AudioSystems`. La pantalla de Opciones sigue pendiente.
-- Packs retro importados y fuentes de recursos documentadas.
+## Abrir y probar
 
-La escena permite repetir un ciclo corto de combate, recursos, progresión y victoria o derrota. Los enemigos, proyectil, pociones y salida utilizan representaciones de prueba; sus modelos y efectos finales siguen pendientes. La victoria actual completa el recorrido del prototipo. El nivel definitivo continúa hacia la terraza y termina al derrotar al jefe.
+1. Añadir la carpeta del repositorio a Unity Hub y abrirla con **Unity 6000.3.10f1**.
+2. Abrir `Assets/Scenes/TorreEclipse.unity`, entrar en Play y hacer clic dentro de Game.
+3. Eliminar a los diez enemigos para habilitar el ascenso del santuario; acercarse a la escalera y pulsar E. En la terraza hay un acceso de regreso.
 
-La primera construcción del escenario y los suministros destructibles ya están disponibles en TorreEclipse. Siguen pendientes su ajuste tras jugar, las variantes de enemigos, el jefe y los menús finales. La maqueta sonora ya responde a la jugabilidad; el balance final, el audio de los sistemas futuros, la importación de los pasos editados y la comprobación del volumen persistente quedan para las siguientes pruebas.
+`PrototipoTorre.unity` conserva el encuentro corto anterior, con victoria mediante su salida. `PruebaAudio.unity` conserva la prueba de conexión de FMOD.
 
-## Nivel construido: TorreEclipse
+## Controles
 
-`Assets/Scenes/TorreEclipse.unity` contiene una primera versión jugable de la planta baja y la terraza, inspirada en la organización de Alzaluna y construida con los packs del proyecto:
-
-- Entrada, gran salón con columnas y alfombra, dos alas laterales conectadas por ambos extremos y santuario con acceso al ascenso.
-- Diez perseguidores de prueba distribuidos entre las salas; las variantes guerrero, mago y apoyo siguen pendientes.
-- Seis cajas o barriles destructibles: 25 de vida y exactamente una poción por objeto. Se restauran al reiniciar.
-- Al limpiar la planta baja se retira el sello del ascenso. E permite subir a la terraza y regresar; llegar a la cima conserva el control del jugador.
-- Terraza octogonal con pretiles, almenas, cuatro torreones, coberturas y centro libre para el futuro jefe.
-- Navegación horneada, cámara con ocultación de obstáculos que tapan al mago, interfaz compacta y cambio de ambiente interior/exterior.
-
-La escena está habilitada en la lista de escenas y R reinicia todo el nivel. La construcción y sus pruebas se describen en [Diseño del nivel](Docs/LevelDesign.md). El jefe y su arena definitiva se acordarán con el autor; la llegada a la terraza todavía no constituye el final del juego.
-
-## Controles actuales
-
-| Entrada | Acción implementada |
+| Entrada | Acción |
 |---|---|
-| W / S | Moverse hacia arriba / abajo de la pantalla. |
-| A / D | Moverse hacia la izquierda / derecha de la pantalla. |
-| Mouse | Apuntar, independientemente del movimiento. |
-| Clic izquierdo, mantenido o repetido | Lanzar proyectiles mágicos. |
-| Clic derecho, mantenido o repetido | Atacar con el bastón. |
-| E | Recoger una poción o utilizar la escalera habilitada en TorreEclipse; completar la salida en PrototipoTorre. |
+| WASD | Moverse respecto de la pantalla. |
+| Mouse | Apuntar. |
+| Clic izquierdo | Lanzar magia. |
+| Clic derecho | Golpear con el bastón. |
+| E | Recoger pociones o utilizar la escalera. |
 | Q | Consumir una poción si falta vida. |
-| R / botón Reiniciar | Reiniciar la escena de combate. |
+| R | Reiniciar el nivel. |
 
-El movimiento responde al teclado sin inercia horizontal añadida; las diagonales conservan la misma velocidad total. El bastón tiene preparación y recuperación propias; durante ese intervalo se detienen los disparos nuevos del mago.
+El inventario admite cinco pociones; cada una recupera hasta 35 de vida. Reiniciar restaura enemigos, suministros, inventario y progreso.
 
-## Abrir y probar el proyecto
+## Herramientas y audio
 
-1. En Unity Hub, añadir esta carpeta de repositorio como proyecto existente.
-2. Abrir con **Unity 6000.3.10f1** y esperar la importación de paquetes y recursos.
-3. Abrir `Assets/Scenes/TorreEclipse.unity` para probar el nivel construido. `PrototipoTorre.unity` conserva el encuentro corto anterior y `PruebaAudio.unity` la prueba de conexión.
-4. Entrar en Play y hacer clic dentro de Game para recibir los controles.
-5. Moverse mientras se apunta en otra dirección y probar proyectiles con clic izquierdo o bastón con clic derecho. Si un enemigo deja una poción, acercarse y pulsar E para recogerla; Q permite consumirla cuando falta vida.
-6. En TorreEclipse, eliminar a los diez enemigos para habilitar el ascenso del santuario y pulsar E cerca de la escalera. La terraza permite explorar y regresar. En PrototipoTorre, la salida sigue completando el recorrido corto. Quedarse sin vida produce la derrota.
-7. Pulsar R para restablecer el nivel; la pantalla de derrota también ofrece reinicio. TorreEclipse y PrototipoTorre están habilitadas en la lista de escenas.
+- **Unity 6000.3.10f1**, con URP, Input System y AI Navigation.
+- **FMOD Studio 2.04.00**, integrado en Unity.
+- **Reaper**, para edición y procesamiento de audio.
 
-Cada enemigo realiza una tirada independiente de loot: el 25% no garantiza una poción en cada partida. El inventario admite cinco pociones y comienza vacío; cada una recupera hasta 35 de vida. Si la vida está completa, Q no consume la poción.
+El proyecto completo de FMOD está en `Audio/FMOD/TorreDelEclipseAudio/`, con el archivo `.fspro`, los audios importados, eventos y bancos en `Build/Desktop/`. Las sesiones de Reaper y sus medios están en `Audio/ExportadosFMOD/Reaper/`; las fuentes y exportaciones se conservan en `Audio/Fuentes/` y `Audio/ExportadosFMOD/Bloque06/`.
 
-## Herramientas y configuración
-
-- Unity **6000.3.10f1**, Universal Render Pipeline **17.3.0**.
-- Input System **1.18.0** y AI Navigation **2.0.10**.
-- FMOD Studio **2.04.00**; integración de Unity `com.fmod.fmod-for-unity.v204`, versión **2.4.0**.
-- Proyecto de audio: `Audio/FMOD/TorreDelEclipseAudio/TorreDelEclipseAudio.fspro`.
-- Reaper para la edición y procesamiento: sesiones `Ambientes.rpp`, `Musica.rpp` y `Pasos.rpp`, con sus medios vinculados, en `Audio/ExportadosFMOD/Reaper/`.
-- Git y GitHub para el historial de desarrollo.
-
-## Audio del prototipo
-
-El ambiente mezcla interior y exterior según la posición del jugador mediante el parámetro local `Zona`. La música utiliza dos capas sincronizadas de ocho compases, a 90 BPM y 4/4; `Combate` aumenta cuando un enemigo detecta al mago y vuelve a exploración cuando deja de haber enemigos activos en combate. Al reiniciar se liberan las instancias anteriores.
-
-Los eventos están incluidos en `Master.bank`; los grupos `Musica`, `Ambiente`, `Efectos` e `Interfaz` permiten controlar sus volúmenes por separado. `AudioVolumeSettings` guarda las preferencias; su comprobación entre sesiones y la interfaz de Opciones quedan pendientes. Los efectos del mundo se reproducen en su posición y los avisos de acceso, victoria y derrota indican el progreso.
-
-Se conservan 25 fuentes originales de síntesis, las 25 exportaciones de trabajo, tres sesiones de Reaper y el proyecto editable de FMOD. El [registro de audio](Docs/Audio.md) detalla eventos, parámetros, mezcla, archivos y estado de verificación.
-
-## Arte y recursos
-
-Fantasía oscura con estética low poly y texturas retro inspiradas en PS1/PS2. Alzaluna, de Baldur's Gate 3, orienta la arquitectura y la ambientación; Diablo II, la perspectiva y el ciclo de acción y recursos; Enter the Gungeon, la separación entre movimiento y apuntado.
-
-- **Kenney - Retro Fantasy Kit:** exterior y terraza.
-- **BlenderVoyage - PSX Style Modular Low Poly Dungeon, Free Edition:** interiores.
-- **Quaternius - RPG Character Pack, Wizard:** mago, bastón, texturas y animaciones.
-
-Las licencias, enlaces, usos y atribuciones figuran en [Fuentes y créditos](Docs/Fuentes.md).
+El ambiente cambia entre interior y exterior; la música responde al combate. Los efectos acompañan acciones, daño, recursos y resultados. El mezclador separa música, ambiente, efectos e interfaz; la pantalla de Opciones está pendiente.
 
 ## Documentación
 
 - [Game Concept, dos carillas](Docs/GameConcept.pdf).
-- [Concepto editable](Docs/GameConcept.md).
 - [Tareas, hitos y criterios de finalización](Docs/Backlog.md).
 - [Fuentes y créditos de recursos](Docs/Fuentes.md).
-- [Diseño e integración de la maqueta de audio](Docs/Audio.md).
-- [Distribución, conexión y pruebas del nivel](Docs/LevelDesign.md).
-
-## Organización
-
-- `Assets/Scripts`: componentes de movimiento, apuntado, cámara, animación, combate, salud, enemigos, inventario, interacción, objetivos, panel de prototipo y audio.
-- `Assets/Art`: modelos, texturas, materiales y controladores de animación.
-- `Assets/Prefabs`: objetos reutilizables, incluidos el proyectil mágico y la poción.
-- `Assets/LevelDesign/TorreEclipse`: materiales, geometría de terraza, efecto de rotura y navegación del nivel.
-- `Assets/Editor/LevelDesign`: herramientas de construcción, inspección y verificación del nivel.
-- `Assets/Scenes`: escenas de prueba y desarrollo, y datos de navegación del escenario.
-- `Audio/Fuentes`: fuentes sonoras originales, inventario y registro de procedencia.
-- `Audio/ExportadosFMOD/Bloque06`: los 25 WAV destinados a FMOD.
-- `Audio/ExportadosFMOD/Reaper`: sesiones editables y carpeta `Media` con sus audios vinculados.
-- `Audio/FMOD`: proyecto completo de FMOD, fuentes y bancos exportados.
-- `Docs`: concepto, planificación, fuentes y registro de audio.
-
-Las carpetas temporales de Unity y FMOD se excluyen del historial; se conservan los proyectos editables y los bancos necesarios para reproducir el audio del prototipo.
-
-## Hitos y entregas
-
-El desarrollo sigue preproducción, core gameplay, vertical slice, producción, feature complete y release. La maqueta de audio integrada está preparada para la muestra del **13/11/2026**. Entrega final de ambas materias: **20/11/2026**.
-
-## Alcance de la versión base
-
-Un mago jugable, un nivel con planta baja y terraza, ambos tipos de combate, pociones, tres tipos de enemigos comunes (guerrero cuerpo a cuerpo, mago a distancia y apoyo que cura o potencia aliados), jefe, menús, audio adaptativo y flujo completo de victoria/derrota con reinicio. Cada tipo de enemigo tendrá valores propios de vida, daño, velocidad y tiempo entre acciones; las variantes finales siguen pendientes.
-
-Los enemigos ya pueden dejar pociones con una probabilidad del 25%, configurable. TorreEclipse incorpora cajas y barriles que, al romperse con disparos o bastón, dejan exactamente una poción garantizada.
-
-El diseño del jefe se definirá con el autor antes de implementarlo. La vara secreta y su acertijo son ampliaciones; guerrero y arquero jugables quedan para después de completar y probar la base.
