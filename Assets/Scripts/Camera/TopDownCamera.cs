@@ -25,6 +25,13 @@ public sealed class TopDownCamera : MonoBehaviour
             Quaternion.Euler(60f, 0f, 0f));
     }
 
+    public void SnapToTarget()
+    {
+        if (target == null) return;
+        followVelocity = Vector3.zero;
+        transform.SetPositionAndRotation(target.position + offset, Quaternion.Euler(60f, 0f, 0f));
+    }
+
     private void LateUpdate()
     {
         if (target == null || Time.deltaTime <= 0f)

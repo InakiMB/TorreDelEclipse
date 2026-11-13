@@ -38,6 +38,12 @@ Reaper conserva ReaEQ en las pistas de ambientes, música y pasos. Las copias de
 
 `AudioVolumeSettings` está incorporado a `AudioSystems`, con controles general, música, ambiente, efectos e interfaz y almacenamiento mediante PlayerPrefs. Todavía falta confirmar los cinco controles y la persistencia al reabrir; la pantalla de Opciones se implementará en H3-03. El código preparado no equivale a una interfaz de opciones terminada.
 
+## Integración en el nivel construido
+
+`Assets/Scenes/TorreEclipse.unity` reutiliza la maqueta. Un volumen espacial identifica la terraza para llevar `Zona` de interior a exterior; el prototipo conserva su interpolación entre puntos. Los diez perseguidores de la planta baja alimentan el estado musical de combate. El desbloqueo de la escalera reproduce el aviso de acceso; la llegada a la terraza no dispara victoria porque el jefe sigue pendiente.
+
+Los suministros utilizan provisionalmente el evento de impacto existente para su feedback de rotura, además de partículas. Su timbre final podrá ajustarse durante la producción sonora. La prueba en Play comprobó que, después de ascender y reiniciar, queda una sola instancia de ambiente y una de música y se recupera la zona interior.
+
 ## Archivos conservados
 
 | Ubicación | Contenido |

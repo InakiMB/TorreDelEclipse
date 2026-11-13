@@ -48,15 +48,16 @@ La maqueta de audio del Bloque 6 está integrada en el prototipo para la muestra
 |H3-A4|Efectos, variación y procesamiento|Hecho|Hay efectos del mundo y de interfaz; pasos/impactos usan variaciones; el procesamiento tiene una función demostrable.|
 |H3-A5|Volumen general y por categorías|Preparado|El componente está incorporado a AudioSystems y controla los buses general, música, ambiente, efectos e interfaz; falta confirmar en Play los cinco controles y la conservación de preferencias al volver a abrir. La pantalla de Opciones corresponde a H3-03.|
 |H3-A6|Revisar e importar pasos editados|Pendiente|Se revisa la exportación estéreo de Reaper para los efectos espaciales, se incorporan las versiones elegidas a FMOD, se reconstruye Master y se comprueba el resultado en Unity.|
-|H3-01|Planta baja y terraza|Pendiente|Ambas zonas forman un recorrido coherente, accesible y sin puntos que bloqueen al jugador.|
+|H3-01|Planta baja y terraza, primera construcción|Hecho|Ambas zonas forman un recorrido coherente, accesible y sin puntos que bloqueen al jugador.|
+|H3-L2|Revisar distribución y ritmo con el autor|Pendiente|Iñaki recorre TorreEclipse y se ajustan escala, visibilidad, ubicaciones de enemigos y suministros; la arena final se revisa al definir el jefe.|
 |H3-E1|Guerrero enemigo|Pendiente|Persigue y ataca cuerpo a cuerpo; dispone de vida, daño, velocidad y cadencia configurables y se distingue visual y sonoramente.|
 |H3-E2|Mago enemigo|Pendiente|Se posiciona a distancia y lanza proyectiles evitables; sus valores de combate son configurables y su ataque tiene una señal audiovisual reconocible.|
 |H3-E3|Enemigo de apoyo|Pendiente|Se posiciona cerca de aliados y los cura o potencia con alcance y tiempo de espera definidos; vida y velocidad son configurables, el efecto es reconocible y termina o deja de renovarse al morir el apoyo.|
 |H3-J0|Definir el jefe con el autor|Pendiente|Antes de diseñarlo e implementarlo, consultar a Iñaki y acordar apariencia, identidad, arena, movimientos, ataques, fases, defensas, debilidades, vida, daño, dificultad, señales visuales, sonidos, música, recompensas y cierre del nivel.|
 |H3-02|Combinar variantes y desarrollar jefe|Pendiente|Guerrero, mago y apoyo cumplen roles diferentes en un encuentro; sus valores se ajustan tras probarlos y el jefe tiene ataques legibles y evitables.|
 |H3-03|Menús, HUD y volumen|Pendiente|Play, Créditos, Opciones y Exit funcionan; se muestran vida, pociones y objetivos; el volumen general controla todo el audio y hay controles independientes de música, ambiente, efectos e interfaz, con preferencias guardadas entre sesiones.|
-|H3-04|Integrar modelos y efectos|Pendiente|Se distinguen ataques, enemigos y objetos desde la cámara superior; se registran las fuentes.|
-|H3-I1|Cajas o barriles destructibles con poción garantizada|Pendiente|Reciben daño de los proyectiles, se rompen una sola vez y dejan exactamente una poción con probabilidad 100%; tienen feedback de impacto y rotura, y se restauran al reiniciar el nivel.|
+|H3-04|Integrar modelos y efectos|En curso|Se distinguen ataques, enemigos y objetos desde la cámara superior; se registran las fuentes.|
+|H3-I1|Cajas o barriles destructibles con poción garantizada|Hecho|Reciben daño de los proyectiles, se rompen una sola vez y dejan exactamente una poción con probabilidad 100%; tienen feedback de impacto y rotura, y se restauran al reiniciar el nivel.|
 
 ## Hito 4 - Feature complete
 
@@ -103,3 +104,5 @@ La escena `PrototipoTorre` incorpora cambio de ambiente por desplazamiento, tran
 |13/11/2026|H3-A1|Tres sesiones de Reaper con sus siete medios vinculados, 25 fuentes originales y 25 exportaciones conservadas.|Archivos en Audio; referencias de medios y formatos revisados.|
 |13/11/2026|H3-A2 / H3-A3 / H3-A4|Ambiente por zona, música de combate y efectos integrados al prototipo; pruebas del bloque confirmadas por el autor.|PrototipoTorre, MagicBolt y proyecto FMOD; [registro de integración](Audio.md).|
 |13/11/2026|H3-A5|Cuatro grupos de mezcla y AudioVolumeSettings guardado en AudioSystems; comprobación de los volúmenes y su persistencia aún pendiente.|Escena guardada y componente revisados; no se registra esta prueba como completada.|
+|13/11/2026|H3-01 / H3-I1|TorreEclipse construida con dos zonas, diez perseguidores, seis suministros, ascenso y regreso; revisión de navegación sin observaciones.|[Diseño del nivel](LevelDesign.md); 24 comprobaciones automáticas en Play completadas sin fallos.|
+|13/11/2026|H3-04|Arquitectura de packs, materiales URP, iluminación, ocultación de paredes, HUD compacto y efecto de rotura incorporados; modelos de enemigos y efectos finales pendientes.|Escena TorreEclipse y vistas del nivel; revisión del autor pendiente.|

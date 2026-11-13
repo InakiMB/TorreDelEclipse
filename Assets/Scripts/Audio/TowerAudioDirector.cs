@@ -12,6 +12,7 @@ public sealed class TowerAudioDirector : MonoBehaviour
     [SerializeField] private EncounterObjective objective = null;
     [SerializeField] private Transform interiorPoint = null;
     [SerializeField] private Transform exteriorPoint = null;
+    [SerializeField] private Collider exteriorArea = null;
     [SerializeField] private EventReference ambienceEvent = default;
     [SerializeField] private EventReference musicEvent = default;
     [SerializeField] private EventReference accessEvent = default;
@@ -123,6 +124,7 @@ public sealed class TowerAudioDirector : MonoBehaviour
 
     private float CalculateZone()
     {
+        if (exteriorArea != null) return (exteriorArea.ClosestPoint(playerHealth.transform.position) - playerHealth.transform.position).sqrMagnitude < 0.001f ? 1f : 0f;
         Vector3 span = Vector3.ProjectOnPlane(exteriorPoint.position - interiorPoint.position, Vector3.up);
         Vector3 position = Vector3.ProjectOnPlane(playerHealth.transform.position - interiorPoint.position, Vector3.up);
         return Mathf.Clamp01(Vector3.Dot(position, span) / span.sqrMagnitude);

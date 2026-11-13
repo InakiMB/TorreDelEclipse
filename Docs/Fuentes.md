@@ -16,6 +16,14 @@ Se seleccionaron los modelos FBX y texturas de los paquetes originales, se reorg
 
 Las cápsulas de los enemigos, las esferas del proyectil, poción y marcador de salida, y el cubo de la barrera son primitivas de Unity con materiales configurados en el proyecto. Representan objetos de prueba y se reemplazarán durante la producción visual.
 
+## Construcción de TorreEclipse
+
+La escena `Assets/Scenes/TorreEclipse.unity` utiliza pisos, paredes, columnas, arcos, escaleras y altares del dungeon de BlenderVoyage; la terraza y los elementos de exterior utilizan modelos de Kenney, incluidos el cuerpo de torre, torreones, almenas, cajas y barriles. Se crearon materiales URP que reutilizan las texturas de estos packs y conservan sus atribuciones originales.
+
+El suelo octogonal de la terraza, pretiles simples, alfombra, estandartes con motivo de eclipse y partes de los braseros se construyeron con geometría básica del proyecto. La rotura utiliza partículas simples. Los enemigos y las pociones mantienen sus representaciones de prueba.
+
+Alzaluna se utilizó como referencia de organización espacial y ambientación mediante las páginas de [Moonrise Towers](https://bg3.wiki/wiki/Moonrise_Towers) y [Moonrise Towers Rooftop](https://bg3.wiki/wiki/Moonrise_Towers_Rooftop). Sus imágenes y mapas se consultaron como referencia; no se incorporaron como texturas ni modelos de esta escena.
+
 ## Audio
 
 | Archivo o recurso | Autor/origen | Condiciones registradas | Uso y estado |

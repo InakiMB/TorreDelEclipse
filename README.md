@@ -30,7 +30,20 @@ Implementado y probado por el autor en `Assets/Scenes/PrototipoTorre.unity`:
 
 La escena permite repetir un ciclo corto de combate, recursos, progresión y victoria o derrota. Los enemigos, proyectil, pociones y salida utilizan representaciones de prueba; sus modelos y efectos finales siguen pendientes. La victoria actual completa el recorrido del prototipo. El nivel definitivo continúa hacia la terraza y termina al derrotar al jefe.
 
-Siguen pendientes el escenario definitivo, las variantes de enemigos, el jefe, las cajas o barriles destructibles y los menús finales. La maqueta sonora ya responde a la jugabilidad; el balance final, el audio de los sistemas futuros, la importación de los pasos editados y la comprobación del volumen persistente quedan para las siguientes pruebas.
+La primera construcción del escenario y los suministros destructibles ya están disponibles en TorreEclipse. Siguen pendientes su ajuste tras jugar, las variantes de enemigos, el jefe y los menús finales. La maqueta sonora ya responde a la jugabilidad; el balance final, el audio de los sistemas futuros, la importación de los pasos editados y la comprobación del volumen persistente quedan para las siguientes pruebas.
+
+## Nivel construido: TorreEclipse
+
+`Assets/Scenes/TorreEclipse.unity` contiene una primera versión jugable de la planta baja y la terraza, inspirada en la organización de Alzaluna y construida con los packs del proyecto:
+
+- Entrada, gran salón con columnas y alfombra, dos alas laterales conectadas por ambos extremos y santuario con acceso al ascenso.
+- Diez perseguidores de prueba distribuidos entre las salas; las variantes guerrero, mago y apoyo siguen pendientes.
+- Seis cajas o barriles destructibles: 25 de vida y exactamente una poción por objeto. Se restauran al reiniciar.
+- Al limpiar la planta baja se retira el sello del ascenso. E permite subir a la terraza y regresar; llegar a la cima conserva el control del jugador.
+- Terraza octogonal con pretiles, almenas, cuatro torreones, coberturas y centro libre para el futuro jefe.
+- Navegación horneada, cámara con ocultación de obstáculos que tapan al mago, interfaz compacta y cambio de ambiente interior/exterior.
+
+La escena está habilitada en la lista de escenas y R reinicia todo el nivel. La construcción y sus pruebas se describen en [Diseño del nivel](Docs/LevelDesign.md). El jefe y su arena definitiva se acordarán con el autor; la llegada a la terraza todavía no constituye el final del juego.
 
 ## Controles actuales
 
@@ -41,7 +54,7 @@ Siguen pendientes el escenario definitivo, las variantes de enemigos, el jefe, l
 | Mouse | Apuntar, independientemente del movimiento. |
 | Clic izquierdo, mantenido o repetido | Lanzar proyectiles mágicos. |
 | Clic derecho, mantenido o repetido | Atacar con el bastón. |
-| E | Recoger una poción cercana o utilizar la salida habilitada. |
+| E | Recoger una poción o utilizar la escalera habilitada en TorreEclipse; completar la salida en PrototipoTorre. |
 | Q | Consumir una poción si falta vida. |
 | R / botón Reiniciar | Reiniciar la escena de combate. |
 
@@ -51,11 +64,11 @@ El movimiento responde al teclado sin inercia horizontal añadida; las diagonale
 
 1. En Unity Hub, añadir esta carpeta de repositorio como proyecto existente.
 2. Abrir con **Unity 6000.3.10f1** y esperar la importación de paquetes y recursos.
-3. Abrir `Assets/Scenes/PrototipoTorre.unity` para probar movimiento y combate, o `Assets/Scenes/PruebaAudio.unity` para revisar la prueba de sonido.
+3. Abrir `Assets/Scenes/TorreEclipse.unity` para probar el nivel construido. `PrototipoTorre.unity` conserva el encuentro corto anterior y `PruebaAudio.unity` la prueba de conexión.
 4. Entrar en Play y hacer clic dentro de Game para recibir los controles.
 5. Moverse mientras se apunta en otra dirección y probar proyectiles con clic izquierdo o bastón con clic derecho. Si un enemigo deja una poción, acercarse y pulsar E para recogerla; Q permite consumirla cuando falta vida.
-6. Eliminar a ambos enemigos para abrir la barrera. Acercarse al marcador de salida y pulsar E para completar el prototipo. Quedarse sin vida produce la derrota. Tras cualquiera de los dos resultados se detienen las acciones del mago.
-7. Pulsar R o el botón Reiniciar para restablecer el encuentro. `PrototipoTorre` debe permanecer habilitada en la Scene List del Build Profile.
+6. En TorreEclipse, eliminar a los diez enemigos para habilitar el ascenso del santuario y pulsar E cerca de la escalera. La terraza permite explorar y regresar. En PrototipoTorre, la salida sigue completando el recorrido corto. Quedarse sin vida produce la derrota.
+7. Pulsar R para restablecer el nivel; la pantalla de derrota también ofrece reinicio. TorreEclipse y PrototipoTorre están habilitadas en la lista de escenas.
 
 Cada enemigo realiza una tirada independiente de loot: el 25% no garantiza una poción en cada partida. El inventario admite cinco pociones y comienza vacío; cada una recupera hasta 35 de vida. Si la vida está completa, Q no consume la poción.
 
@@ -93,12 +106,15 @@ Las licencias, enlaces, usos y atribuciones figuran en [Fuentes y créditos](Doc
 - [Tareas, hitos y criterios de finalización](Docs/Backlog.md).
 - [Fuentes y créditos de recursos](Docs/Fuentes.md).
 - [Diseño e integración de la maqueta de audio](Docs/Audio.md).
+- [Distribución, conexión y pruebas del nivel](Docs/LevelDesign.md).
 
 ## Organización
 
 - `Assets/Scripts`: componentes de movimiento, apuntado, cámara, animación, combate, salud, enemigos, inventario, interacción, objetivos, panel de prototipo y audio.
 - `Assets/Art`: modelos, texturas, materiales y controladores de animación.
 - `Assets/Prefabs`: objetos reutilizables, incluidos el proyectil mágico y la poción.
+- `Assets/LevelDesign/TorreEclipse`: materiales, geometría de terraza, efecto de rotura y navegación del nivel.
+- `Assets/Editor/LevelDesign`: herramientas de construcción, inspección y verificación del nivel.
 - `Assets/Scenes`: escenas de prueba y desarrollo, y datos de navegación del escenario.
 - `Audio/Fuentes`: fuentes sonoras originales, inventario y registro de procedencia.
 - `Audio/ExportadosFMOD/Bloque06`: los 25 WAV destinados a FMOD.
@@ -116,6 +132,6 @@ El desarrollo sigue preproducción, core gameplay, vertical slice, producción, 
 
 Un mago jugable, un nivel con planta baja y terraza, ambos tipos de combate, pociones, tres tipos de enemigos comunes (guerrero cuerpo a cuerpo, mago a distancia y apoyo que cura o potencia aliados), jefe, menús, audio adaptativo y flujo completo de victoria/derrota con reinicio. Cada tipo de enemigo tendrá valores propios de vida, daño, velocidad y tiempo entre acciones; las variantes finales siguen pendientes.
 
-Los enemigos ya pueden dejar pociones con una probabilidad del 25%, configurable. Durante Producción se incorporarán cajas o barriles que, al romperse con disparos, dejan exactamente una poción garantizada.
+Los enemigos ya pueden dejar pociones con una probabilidad del 25%, configurable. TorreEclipse incorpora cajas y barriles que, al romperse con disparos o bastón, dejan exactamente una poción garantizada.
 
 El diseño del jefe se definirá con el autor antes de implementarlo. La vara secreta y su acertijo son ampliaciones; guerrero y arquero jugables quedan para después de completar y probar la base.
