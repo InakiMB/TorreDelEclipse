@@ -71,7 +71,7 @@ public static class TowerLevelSmokeCheck
                 Check(objective.Stage==EncounterStage.Fighting && objective.RemainingEnemies==10,"Inicio con ascenso bloqueado");
                 foreach(EnemyChaser enemy in All<EnemyChaser>())enemy.enabled=false;
                 Vector3 before=player.transform.position;
-                GameObject.Find("SubirTerraza").GetComponent<TowerStairway>().Interact(player);
+                GameObject.Find("ExitMarker").GetComponent<TowerStairway>().Interact(player);
                 Check(Vector3.Distance(player.transform.position,before)<.1f,"No se puede ascender antes de limpiar");
                 potionsBefore=All<PotionPickup>().Length;
                 GameObject projectile=AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Combat/MagicBolt.prefab");
@@ -101,11 +101,11 @@ public static class TowerLevelSmokeCheck
             else if(phase==2 && elapsed>.5)
             {
                 Check(objective.Stage==EncounterStage.ExitUnlocked && objective.RemainingEnemies==0,"Limpiar la planta baja desbloquea ascenso");
-                Check(!GameObject.FindObjectsByType<Transform>(FindObjectsSortMode.None).Any(t=>t.name=="SelloDelAscenso"&&t.gameObject.activeInHierarchy),"El sello deja de bloquear la escalera");
+                Check(!GameObject.FindObjectsByType<Transform>(FindObjectsSortMode.None).Any(t=>t.name=="GateBlocker"&&t.gameObject.activeInHierarchy),"El sello deja de bloquear la escalera");
                 CharacterController controller=player.GetComponent<CharacterController>();controller.enabled=false;
                 player.transform.position=new Vector3(0,1.1f,25.5f);controller.enabled=true;Physics.SyncTransforms();
-                Check(CanReach(player,GameObject.Find("SubirTerraza")),"La interaccion de ascenso tiene alcance y linea de vision");
-                GameObject.Find("SubirTerraza").GetComponent<TowerStairway>().Interact(player);
+                Check(CanReach(player,GameObject.Find("ExitMarker")),"La interaccion de ascenso tiene alcance y linea de vision");
+                GameObject.Find("ExitMarker").GetComponent<TowerStairway>().Interact(player);
                 Check(Vector3.Distance(player.transform.position,new Vector3(100,13.1f,-10.5f))<.2f,"Ascenso transporta al punto seguro de terraza");
                 Check(Vector3.Distance(Camera.main.transform.position,player.transform.position+new Vector3(0,17,-9.8f))<.2f,"La camara acompana el ascenso sin barrer el vacio");
                 Next(3);
@@ -116,8 +116,8 @@ public static class TowerLevelSmokeCheck
                 Check(flow.IsOnTerrace&&flow.ReachedTerrace,"La terraza se reconoce como segunda zona");
                 Check(objective.Stage==EncounterStage.ExitUnlocked&&player.GetComponent<PlayerMovement>().enabled,"Llegar a terraza mantiene el control y no declara victoria");
                 Check(UnityEngine.Object.FindFirstObjectByType<TowerAudioDirector>().Zone>.95f,"El ambiente pasa al exterior");
-                Check(CanReach(player,GameObject.Find("BajarPlantaBaja")),"La interaccion de regreso tiene alcance y linea de vision");
-                GameObject.Find("BajarPlantaBaja").GetComponent<TowerStairway>().Interact(player);
+                Check(CanReach(player,GameObject.Find("ReturnMarker")),"La interaccion de regreso tiene alcance y linea de vision");
+                GameObject.Find("ReturnMarker").GetComponent<TowerStairway>().Interact(player);
                 Check(Vector3.Distance(player.transform.position,new Vector3(0,1.1f,26))<.2f,"Se puede regresar a planta baja");
                 player.GetComponent<Health>().TakeDamage(999);Next(4);
             }

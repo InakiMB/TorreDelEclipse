@@ -104,6 +104,7 @@ public static partial class TowerLevelBuilder
             Physics.SyncTransforms();surface.BuildNavMesh();
             string navPath=AssetDatabase.GenerateUniqueAssetPath(Output+"/Rutas.asset");AssetDatabase.CreateAsset(surface.navMeshData,navPath);
             var buildScenes=EditorBuildSettings.scenes.Where(s=>s.path!=ScenePath).ToList();buildScenes.Insert(0,new EditorBuildSettingsScene(ScenePath,true));EditorBuildSettings.scenes=buildScenes.ToArray();
+            OrganizeHierarchy(scene);
             AssetDatabase.SaveAssets();EditorSceneManager.SaveScene(scene);
             SceneView.lastActiveSceneView?.LookAt(new Vector3(0,0,3),Quaternion.Euler(60,0,0),40);
             Selection.activeGameObject=player;
