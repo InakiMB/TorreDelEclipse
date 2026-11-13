@@ -46,10 +46,7 @@ La maqueta de audio del Bloque 6 está integrada en el prototipo para la muestra
 |H3-A2|Ambiente variable|Hecho|El ambiente cambia perceptiblemente al recorrer dos zonas sin cargar otra escena.|
 |H3-A3|Música adaptativa|Hecho|En combate cambia la música y al finalizar vuelve a exploración; la transición responde al estado del juego.|
 |H3-A4|Efectos, variación y procesamiento|Hecho|Hay efectos del mundo y de interfaz; pasos/impactos usan variaciones; el procesamiento tiene una función demostrable.|
-|H3-A5|Volumen general y por categorías|Preparado|El componente está incorporado a AudioSystems y controla los buses general, música, ambiente, efectos e interfaz; falta confirmar en Play los cinco controles y la conservación de preferencias al volver a abrir. La pantalla de Opciones corresponde a H3-03.|
-|H3-A6|Revisar e importar pasos editados|Pendiente|Se revisa la exportación estéreo de Reaper para los efectos espaciales, se incorporan las versiones elegidas a FMOD, se reconstruye Master y se comprueba el resultado en Unity.|
-|H3-01|Planta baja y terraza, primera construcción|Hecho|Ambas zonas forman un recorrido coherente, accesible y sin puntos que bloqueen al jugador.|
-|H3-L2|Revisar distribución y ritmo con el autor|Pendiente|Iñaki recorre TorreEclipse y se ajustan escala, visibilidad, ubicaciones de enemigos y suministros; la arena final se revisa al definir el jefe.|
+|H3-01|Planta baja y terraza|Hecho|Ambas zonas forman un recorrido coherente, accesible y sin puntos que bloqueen al jugador.|
 |H3-E1|Guerrero enemigo|Pendiente|Persigue y ataca cuerpo a cuerpo; dispone de vida, daño, velocidad y cadencia configurables y se distingue visual y sonoramente.|
 |H3-E2|Mago enemigo|Pendiente|Se posiciona a distancia y lanza proyectiles evitables; sus valores de combate son configurables y su ataque tiene una señal audiovisual reconocible.|
 |H3-E3|Enemigo de apoyo|Pendiente|Se posiciona cerca de aliados y los cura o potencia con alcance y tiempo de espera definidos; vida y velocidad son configurables, el efecto es reconocible y termina o deja de renovarse al morir el apoyo.|
@@ -103,6 +100,6 @@ La escena `PrototipoTorre` incorpora cambio de ambiente por desplazamiento, tran
 |12/11/2026|H2-05|Ciclo corto de combate, daño, recursos, progresión y resultado terminado y probado.|40a4b6b; prueba confirmada por el autor.|
 |13/11/2026|H3-A1|Tres sesiones de Reaper con sus siete medios vinculados, 25 fuentes originales y 25 exportaciones conservadas.|Archivos en Audio; referencias de medios y formatos revisados.|
 |13/11/2026|H3-A2 / H3-A3 / H3-A4|Ambiente por zona, música de combate y efectos integrados al prototipo; pruebas del bloque confirmadas por el autor.|PrototipoTorre, MagicBolt y proyecto FMOD; [registro de integración](Audio.md).|
-|13/11/2026|H3-A5|Cuatro grupos de mezcla y AudioVolumeSettings guardado en AudioSystems; comprobación de los volúmenes y su persistencia aún pendiente.|Escena guardada y componente revisados; no se registra esta prueba como completada.|
+|13/11/2026|H3-03, avance|Cuatro grupos de mezcla y AudioVolumeSettings guardado en AudioSystems; falta comprobar volúmenes y persistencia y completar la pantalla de Opciones.|Componente incorporado; la tarea de menús y volumen sigue pendiente.|
 |13/11/2026|H3-01 / H3-I1|TorreEclipse construida con dos zonas, diez perseguidores, seis suministros, ascenso y regreso; revisión de navegación sin observaciones.|[Diseño del nivel](LevelDesign.md); 24 comprobaciones automáticas en Play completadas sin fallos.|
 |13/11/2026|H3-04|Arquitectura de packs, materiales URP, iluminación, ocultación de paredes, HUD compacto y efecto de rotura incorporados; modelos de enemigos y efectos finales pendientes.|Escena TorreEclipse y vistas del nivel; revisión del autor pendiente.|
