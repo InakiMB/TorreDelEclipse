@@ -26,7 +26,8 @@ public static partial class TowerLevelBuilder
     {
         var report=new ValidationReport {scene=SceneManager.GetActiveScene().path};
         GameObject player=GameObject.FindGameObjectWithTag("Player");
-        EnemyChaser[] enemies=UnityEngine.Object.FindObjectsByType<EnemyChaser>(FindObjectsSortMode.None);
+        MonoBehaviour[] enemies=UnityEngine.Object.FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None)
+            .Where(item=>item is IEnemyCombatant).ToArray();
         report.enemies=enemies.Length;report.supplies=UnityEngine.Object.FindObjectsByType<DestructibleSupply>(FindObjectsSortMode.None).Length;
         Renderer[] renderers=UnityEngine.Object.FindObjectsByType<Renderer>(FindObjectsSortMode.None);report.renderers=renderers.Length;
         foreach(Renderer renderer in renderers)
@@ -34,7 +35,7 @@ public static partial class TowerLevelBuilder
             if(material==null || material.shader==null || material.shader.name=="Hidden/InternalErrorShader") report.issues.Add("Material: "+renderer.name);
         if(player!=null)
         {
-            foreach(EnemyChaser enemy in enemies)
+            foreach(MonoBehaviour enemy in enemies)
             {
                 if(Path(player.transform.position,enemy.transform.position)) report.reachableEnemies++;
                 else report.issues.Add("Sin ruta al enemigo: "+enemy.name);
@@ -47,7 +48,7 @@ public static partial class TowerLevelBuilder
                 report.issues.Add("El punto de inicio se solapa con arquitectura.");
         }
         else report.issues.Add("Falta jugador.");
-        if(report.enemies!=10)report.issues.Add("Se esperaban diez perseguidores de prueba.");
+        if(report.enemies!=10)report.issues.Add("Se esperaban diez enemigos en total.");
         if(report.supplies!=6)report.issues.Add("Se esperaban seis suministros.");
         foreach(MonoBehaviour component in UnityEngine.Object.FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None))
             if(component==null)report.issues.Add("Componente ausente.");

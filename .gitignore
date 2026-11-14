@@ -81,3 +81,6 @@ crashlytics-build.properties
 
 # Soluciones generadas por Unity para el editor de codigo
 *.slnx
+
+# Notas de trabajo personales, fuera de la entrega
+/Docs/Guias/

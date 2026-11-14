@@ -9,6 +9,7 @@ public sealed class TowerAudioDirector : MonoBehaviour
 {
     [SerializeField] private Health playerHealth = null;
     [SerializeField] private EnemyChaser[] enemies = new EnemyChaser[0];
+    [SerializeField] private EnemyMage[] mages = new EnemyMage[0];
     [SerializeField] private EncounterObjective objective = null;
     [SerializeField] private Transform interiorPoint = null;
     [SerializeField] private Transform exteriorPoint = null;
@@ -119,6 +120,8 @@ public sealed class TowerAudioDirector : MonoBehaviour
     {
         foreach (EnemyChaser enemy in enemies)
             if (enemy != null && enemy.IsEngaged) return true;
+        foreach (EnemyMage mage in mages)
+            if (mage != null && mage.IsEngaged) return true;
         return false;
     }
 

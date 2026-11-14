@@ -25,7 +25,7 @@ Actualizado al **13/11/2026**: Hitos 0, 1 y 2 completos; Producción en curso co
 
 ## Hito 2 - Vertical slice
 
-La versión corta del prototipo integra combate a distancia y cuerpo a cuerpo, loot, consumo de pociones, apertura de un acceso y victoria o derrota con reinicio. El escenario final, la terraza y el jefe siguen pendientes en Producción.
+La versión corta del prototipo integra combate a distancia y cuerpo a cuerpo, loot, consumo de pociones, apertura de un acceso y victoria o derrota con reinicio. La planta baja y la terraza se incorporaron durante Producción; el jefe y la victoria final siguen pendientes.
 
 |ID|Tarea|Estado|Terminado cuando|
 |-|-|-|-|
@@ -48,7 +48,7 @@ La maqueta de audio del Bloque 6 está integrada en el prototipo para la muestra
 |H3-A4|Efectos, variación y procesamiento|Hecho|Hay efectos del mundo y de interfaz; pasos/impactos usan variaciones; el procesamiento tiene una función demostrable.|
 |H3-01|Planta baja y terraza|Hecho|Ambas zonas forman un recorrido coherente, accesible y sin puntos que bloqueen al jugador.|
 |H3-E1|Guerrero enemigo|Hecho|Persigue y ataca cuerpo a cuerpo; dispone de vida, daño, velocidad y cadencia configurables y se distingue visual y sonoramente.|
-|H3-E2|Mago enemigo|Pendiente|Se posiciona a distancia y lanza proyectiles evitables; sus valores de combate son configurables y su ataque tiene una señal audiovisual reconocible.|
+|H3-E2|Mago enemigo|Hecho|Se posiciona a distancia y lanza proyectiles evitables; sus valores de combate son configurables y su ataque tiene una señal audiovisual reconocible.|
 |H3-E3|Enemigo de apoyo|Pendiente|Se posiciona cerca de aliados y los cura o potencia con alcance y tiempo de espera definidos; vida y velocidad son configurables, el efecto es reconocible y termina o deja de renovarse al morir el apoyo.|
 |H3-J0|Definir el jefe con el autor|Pendiente|Antes de diseñarlo e implementarlo, consultar a Iñaki y acordar apariencia, identidad, arena, movimientos, ataques, fases, defensas, debilidades, vida, daño, dificultad, señales visuales, sonidos, música, recompensas y cierre del nivel.|
 |H3-02|Combinar variantes y desarrollar jefe|Pendiente|Guerrero, mago y apoyo cumplen roles diferentes en un encuentro; sus valores se ajustan tras probarlos y el jefe tiene ataques legibles y evitables.|
@@ -104,3 +104,4 @@ La escena `PrototipoTorre` incorpora cambio de ambiente por desplazamiento, tran
 |13/11/2026|H3-01 / H3-I1|TorreEclipse construida con dos zonas, diez perseguidores, seis suministros, ascenso y regreso; revisión de navegación sin observaciones.|b834733; escena TorreEclipse y comprobaciones de integración en Play.|
 |13/11/2026|H3-04|Arquitectura de packs, materiales URP, iluminación, ocultación de paredes, HUD compacto y efecto de rotura incorporados; modelos de enemigos y efectos finales pendientes.|b834733; escena TorreEclipse. Revisión del recorrido pendiente.|
 |13/11/2026|H3-E1|Guerrero con modelo, espada, escudo y audio; animaciones originales de reposo, carrera, ataque y muerte conectadas. El tajo aplica un único impacto tras la preparación y permite esquivarlo; la muerte desactiva colisiones y termina antes de retirar el cuerpo.|12 comprobaciones del guerrero y 24 del nivel correctas en Play; prefab EnemyWarrior y escena TorreEclipse guardados.|
+|13/11/2026|H3-E2|Dos magos de túnica rojo oscuro integrados. Se aproximan y retroceden por NavMesh, cargan hechizos animados, disparan en una dirección fija y pueden morir durante la carga. Los proyectiles respetan coberturas y no dañan aliados; la música reconoce su estado de combate.|Prefab EnemyMage, EnemyMagicBolt y escena TorreEclipse; comprobaciones de combate, presentación y ciclo del nivel en copia de validación.|

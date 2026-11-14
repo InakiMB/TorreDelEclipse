@@ -13,6 +13,7 @@ public sealed class MagicProjectile : MonoBehaviour
     private int damage;
     private float age;
     private bool initialized;
+    private Health exclusiveTarget;
 
     public event Action<Vector3> Impacted;
 
@@ -22,6 +23,13 @@ public sealed class MagicProjectile : MonoBehaviour
         direction = travelDirection.normalized;
         damage = hitDamage;
         initialized = true;
+    }
+
+    // Los disparos enemigos solo danan al jugador y omiten a sus aliados.
+    public void Initialize(Transform source, Vector3 travelDirection, int hitDamage, Health target)
+    {
+        Initialize(source, travelDirection, hitDamage);
+        exclusiveTarget = target;
     }
 
     private void Update()
@@ -43,7 +51,7 @@ public sealed class MagicProjectile : MonoBehaviour
         {
             transform.position = hit.point;
             IDamageable receiver = hit.collider.GetComponentInParent<IDamageable>();
-            if (receiver != null)
+            if (receiver != null && (exclusiveTarget == null || ReferenceEquals(receiver, exclusiveTarget)))
             {
                 receiver.TakeDamage(damage);
             }
@@ -70,6 +78,7 @@ public sealed class MagicProjectile : MonoBehaviour
             {
                 continue;
             }
+            if (exclusiveTarget != null && hit.collider.GetComponentInParent<IEnemyCombatant>() != null) continue;
 
             if (hit.distance < closestDistance)
             {

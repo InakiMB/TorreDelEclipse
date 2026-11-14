@@ -67,9 +67,10 @@ public static class TowerLevelSmokeCheck
             EncounterObjective objective=UnityEngine.Object.FindFirstObjectByType<EncounterObjective>();
             if(phase==0 && elapsed>1.5)
             {
-                Check(All<EnemyChaser>().Length==10 && All<NavMeshAgent>().All(a=>a.isOnNavMesh),"Diez enemigos sobre NavMesh");
+                Check(All<EnemyChaser>().Length+All<EnemyMage>().Length==10 && All<NavMeshAgent>().All(a=>a.isOnNavMesh),"Diez enemigos sobre NavMesh");
                 Check(objective.Stage==EncounterStage.Fighting && objective.RemainingEnemies==10,"Inicio con ascenso bloqueado");
                 foreach(EnemyChaser enemy in All<EnemyChaser>())enemy.enabled=false;
+                foreach(EnemyMage enemy in All<EnemyMage>())enemy.enabled=false;
                 Vector3 before=player.transform.position;
                 GameObject.Find("ExitMarker").GetComponent<TowerStairway>().Interact(player);
                 Check(Vector3.Distance(player.transform.position,before)<.1f,"No se puede ascender antes de limpiar");
@@ -96,6 +97,7 @@ public static class TowerLevelSmokeCheck
                     Check(inventory.TryUsePotion()&&inventory.PotionCount==0&&player.GetComponent<Health>().CurrentHealth==100,"La pocion recupera vida sin superar el maximo");
                 }
                 foreach(EnemyChaser enemy in All<EnemyChaser>())enemy.GetComponent<Health>().TakeDamage(999);
+                foreach(EnemyMage enemy in All<EnemyMage>())enemy.GetComponent<Health>().TakeDamage(999);
                 Next(2);
             }
             else if(phase==2 && elapsed>.5)
@@ -129,7 +131,7 @@ public static class TowerLevelSmokeCheck
             }
             else if(phase==5 && elapsed>1.5)
             {
-                Check(All<EnemyChaser>().Length==10&&All<DestructibleSupply>().Length==6,"Reiniciar restaura enemigos y suministros");
+                Check(All<EnemyChaser>().Length+All<EnemyMage>().Length==10&&All<DestructibleSupply>().Length==6,"Reiniciar restaura enemigos y suministros");
                 Check(All<PotionPickup>().Length==0&&player.GetComponent<PlayerInventory>().PotionCount==0,"Reiniciar limpia el loot y el inventario");
                 Check(player.GetComponent<Health>().CurrentHealth==100&&objective.Stage==EncounterStage.Fighting,"Reiniciar restaura salud y objetivo");
                 Check(!UnityEngine.Object.FindFirstObjectByType<TowerLevelFlow>().ReachedTerrace,"Reiniciar restablece la progresion");

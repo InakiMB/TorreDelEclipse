@@ -9,19 +9,19 @@ Este registro identifica los autores, fuentes y licencias de los recursos incorp
 | Recurso | Autor y fuente | Licencia | Ubicación | Uso y estado |
 |---|---|---|---|---|
 | Retro Fantasy Kit, versión 2.0 | **Kenney** — [Página del pack](https://kenney.nl/assets/retro-fantasy-kit) | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) | `Assets/Art/External/KenneyRetroFantasy/` | Modelos y texturas retro importados para exterior y terraza de la torre; textura de piedra para el prototipo. |
-| RPG Character Pack — Wizard | **Quaternius** — [Página del pack](https://quaternius.com/packs/rpgcharacters.html) | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) | `Assets/Art/External/QuaterniusWizard/` | Modelo del mago, bastón, texturas y animaciones incluidas en `Wizard.fbx`. Se utiliza en el personaje jugable para reposo, desplazamiento, ataque con bastón y muerte. |
+| RPG Character Pack — Wizard | **Quaternius** — [Página del pack](https://quaternius.com/packs/rpgcharacters.html) | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) | `Assets/Art/External/QuaterniusWizard/` | Modelo del mago, bastón, texturas y animaciones de `Wizard.fbx`, utilizados por jugador y mago enemigo. El enemigo utiliza `Idle_Weapon`, `Run_Weapon`, `Spell1` y `Death`; un material propio recolorea la túnica a rojo oscuro y conserva la textura original. |
 | LowPoly Animated Knight | **Quaternius** — [Página del pack](https://quaternius.itch.io/lowpoly-animated-knight) | [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) | `Assets/Art/External/QuaterniusKnight/` | Modelo y espada del guerrero. Se utilizan las animaciones originales `Idle_swordRight`, `Run_swordRight`, `Run_swordAttack` y `Death`, con rig Generic y `WarriorLocomotion.controller`. El escudo es una primitiva de Unity. |
 | PSX Style Modular Low Poly Dungeon — Free Edition | **BlenderVoyage** — [Página del pack](https://blendervoyage.itch.io/psx-style-modular-low-poly-dungeon) | [Creative Commons Attribution 4.0 International — CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) | `Assets/Art/External/BlenderVoyageDungeon/` | Piezas y texturas importadas para construir la planta baja: paredes, pisos, columnas, escaleras, puertas y otros elementos del pack gratuito. |
 
 Se seleccionaron los modelos FBX y texturas de los paquetes originales, se reorganizaron sus carpetas y se configuraron materiales e importación para Unity URP y el aspecto retro del proyecto. Las licencias originales de Kenney y Quaternius se conservan como `License.txt` junto a sus recursos. Cada carpeta incluye un `Source.txt` con el origen del pack; el de BlenderVoyage contiene también el enlace a CC BY 4.0 y su atribución.
 
-Las cápsulas de los enemigos, las esferas del proyectil, poción y marcador de salida, y el cubo de la barrera son primitivas de Unity con materiales configurados en el proyecto. Representan objetos de prueba y se reemplazarán durante la producción visual.
+Las cápsulas de los perseguidores comunes, las esferas del proyectil, poción y marcador de salida, y el cubo de la barrera son primitivas de Unity con materiales configurados en el proyecto. Representan objetos de prueba y se reemplazarán durante la producción visual.
 
 ## Construcción de TorreEclipse
 
 La escena `Assets/Scenes/TorreEclipse.unity` utiliza pisos, paredes, columnas, arcos, escaleras y altares del dungeon de BlenderVoyage; la terraza y los elementos de exterior utilizan modelos de Kenney, incluidos el cuerpo de torre, torreones, almenas, cajas y barriles. Se crearon materiales URP que reutilizan las texturas de estos packs y conservan sus atribuciones originales.
 
-El suelo octogonal de la terraza, pretiles simples, alfombra, estandartes con motivo de eclipse y partes de los braseros se construyeron con geometría básica del proyecto. La rotura utiliza partículas simples. El guerrero utiliza el modelo animado de Quaternius; los demás perseguidores y las pociones mantienen sus representaciones de prueba.
+El suelo octogonal de la terraza, pretiles simples, alfombra, estandartes con motivo de eclipse y partes de los braseros se construyeron con geometría básica del proyecto. La rotura utiliza partículas simples. El guerrero y los magos utilizan modelos animados de Quaternius; los perseguidores comunes y las pociones mantienen sus representaciones de prueba. La esfera de carga y los proyectiles rojos del mago enemigo son primitivas de Unity con materiales propios.
 
 Alzaluna se utilizó como referencia de organización espacial y ambientación mediante las páginas de [Moonrise Towers](https://bg3.wiki/wiki/Moonrise_Towers) y [Moonrise Towers Rooftop](https://bg3.wiki/wiki/Moonrise_Towers_Rooftop). Sus imágenes y mapas se consultaron como referencia; no se incorporaron como texturas ni modelos de esta escena.
 
@@ -49,11 +49,24 @@ Iñaki realizó la edición y el procesamiento en Reaper de ambientes, música y
 
 La maqueta ya está integrada en el prototipo y puede ajustarse durante la producción final. Los enlaces de música de Baldur's Gate 3 y Diablo compartidos como referencias no corresponden a archivos incorporados al juego.
 
+### Audio del guerrero
+
+|Recurso|Autor y fuente|Licencia|Uso|
+|---|---|---|---|
+|Impact Sounds|**Kenney** — [Fuente original](https://kenney.nl/assets/impact-sounds)|[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)|`footstep_concrete_000..002`, `impactMetal_medium_000..002` e `impactBell_heavy_000..002`: pasos, herida de armadura y muerte.|
+|20 Sword Sound Effects (Attacks and Clashes)|**StarNinjas** — [Fuente original](https://opengameart.org/content/20-sword-sound-effects-attacks-and-clashes)|[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/)|`sword.1`, `sword.4` y `sword.7`: ataques de espada. Tres `sword_clash` se conservan como reserva; el bloqueo con escudo todavía no está implementado.|
+
+Los OGG seleccionados están en `Audio/Fuentes/Bloque08/Originales/`. La sesión `Audio/ExportadosFMOD/Reaper/Guerrero.rpp` conserva sus medios vinculados; las doce exportaciones WAV están en `Audio/ExportadosFMOD/Bloque08/`. En FMOD se utilizan los eventos `SFX/Guerrero/Pasos`, `Ataque`, `Herida` y `Muerte`.
+
+El mago enemigo reutiliza los eventos y fuentes de la maqueta general para pasos, heridas, muerte, hechizo e impacto. Su lanzamiento se reproduce con tono más grave mediante FMOD (`pitch` 0.75); no se incorporaron nuevas grabaciones ni paquetes de audio para esta variante.
+
 ## Créditos de recursos para la entrega
 
 - **Retro Fantasy Kit**, por **Kenney** — [kenney.nl](https://kenney.nl/assets/retro-fantasy-kit) — [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
 - **RPG Character Pack — Wizard**, por **Quaternius** — [quaternius.com](https://quaternius.com/packs/rpgcharacters.html) — [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
 - **LowPoly Animated Knight**, por **Quaternius** — [Fuente original](https://quaternius.itch.io/lowpoly-animated-knight) — [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). Modelo, espada y animaciones originales del guerrero.
+- **Impact Sounds**, por **Kenney** — [Fuente original](https://kenney.nl/assets/impact-sounds) — [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
+- **20 Sword Sound Effects (Attacks and Clashes)**, por **StarNinjas** — [Fuente original](https://opengameart.org/content/20-sword-sound-effects-attacks-and-clashes) — [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
 - **PSX Style Modular Low Poly Dungeon — Free Edition**, por **BlenderVoyage** — [Fuente original](https://blendervoyage.itch.io/psx-style-modular-low-poly-dungeon) — [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Integración en Unity con reorganización de carpetas y ajustes de materiales/importación.
 
 La atribución de BlenderVoyage debe figurar también en la pantalla de créditos del juego con referencia a su fuente y licencia. El registro incluye la maqueta sonora actual y se actualizará con los recursos de los sistemas pendientes y cualquier modificación adicional de los recursos externos.

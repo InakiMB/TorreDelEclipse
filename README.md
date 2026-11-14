@@ -10,17 +10,19 @@ Actualizado al **13/11/2026**. Hitos **0, 1 y 2 completos**; **Producción en cu
 
 - Movimiento con WASD y apuntado independiente con mouse; ataques con magia y bastón.
 - Salud, daño, loot de enemigos con 25% de probabilidad, recogida y consumo de pociones.
-- Planta baja y terraza construidas, con diez perseguidores de prueba y seis cajas o barriles que dejan una poción garantizada al romperse.
+- Planta baja y terraza construidas, con diez enemigos y seis cajas o barriles que dejan una poción garantizada al romperse.
+- Guerrero enemigo con espada, escudo y animaciones de reposo, carrera, ataque y muerte; el tajo sincroniza daño y sonido y permite esquivarlo durante la preparación.
+- Mago enemigo de túnica rojo oscuro: combate a distancia, retrocede al acercarse el jugador y anuncia sus proyectiles con carga y animación. Sus disparos pueden esquivarse o detenerse con coberturas.
 - Ascenso y regreso con E al despejar la planta baja, derrota y reinicio del nivel.
 - Ambiente variable, música de exploración/combate y efectos integrados mediante FMOD.
 
-Siguen pendientes las variantes definitivas de enemigos, el jefe y la victoria final, los menús con Opciones y Créditos, el balance y la prueba del ejecutable. La terraza actual permite explorar y regresar; su llegada todavía no completa el juego.
+Siguen pendientes el enemigo de apoyo, el jefe y la victoria final, los menús con Opciones y Créditos, el balance y la prueba del ejecutable. La terraza actual permite explorar y regresar; su llegada todavía no completa el juego.
 
 ## Abrir y probar
 
 1. Añadir la carpeta del repositorio a Unity Hub y abrirla con **Unity 6000.3.10f1**.
 2. Abrir `Assets/Scenes/TorreEclipse.unity`, entrar en Play y hacer clic dentro de Game.
-3. Eliminar a los diez enemigos para habilitar el ascenso del santuario; acercarse a la escalera y pulsar E. En la terraza hay un acceso de regreso.
+3. Eliminar a los diez enemigos —incluidos un guerrero y dos magos— para habilitar el ascenso del santuario; acercarse a la escalera y pulsar E. En la terraza hay un acceso de regreso.
 
 `PrototipoTorre.unity` conserva el encuentro corto anterior, con victoria mediante su salida. `PruebaAudio.unity` conserva la prueba de conexión de FMOD.
 
@@ -44,7 +46,7 @@ El inventario admite cinco pociones; cada una recupera hasta 35 de vida. Reinici
 - **FMOD Studio 2.04.00**, integrado en Unity.
 - **Reaper**, para edición y procesamiento de audio.
 
-El proyecto completo de FMOD está en `Audio/FMOD/TorreDelEclipseAudio/`, con el archivo `.fspro`, los audios importados, eventos y bancos en `Build/Desktop/`. Las sesiones de Reaper y sus medios están en `Audio/ExportadosFMOD/Reaper/`; las fuentes y exportaciones se conservan en `Audio/Fuentes/` y `Audio/ExportadosFMOD/Bloque06/`.
+El proyecto de FMOD está en `Audio/FMOD/TorreDelEclipseAudio/`, con el archivo `.fspro`, los audios importados, eventos y bancos en `Build/Desktop/`. Las sesiones de Reaper y sus medios están en `Audio/ExportadosFMOD/Reaper/`; las fuentes y exportaciones se conservan en `Audio/Fuentes/` y `Audio/ExportadosFMOD/`. `Bloque06` corresponde a la maqueta general y `Bloque08` al audio del guerrero.
 
 El ambiente cambia entre interior y exterior; la música responde al combate. Los efectos acompañan acciones, daño, recursos y resultados. El mezclador separa música, ambiente, efectos e interfaz; la pantalla de Opciones está pendiente.
 

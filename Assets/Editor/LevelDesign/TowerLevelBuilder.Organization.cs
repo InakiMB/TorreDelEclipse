@@ -111,7 +111,7 @@ public static partial class TowerLevelBuilder
                 foreach (Transform category in groundGroups.Values.Concat(terraceGroups.Values)) RenameCategoryItems(category);
             }
 
-            EnemyChaser[] enemies = before.Select(item => item.GetComponent<EnemyChaser>()).Where(item => item != null)
+            Transform[] enemies = before.Where(item => item.GetComponent<IEnemyCombatant>() != null)
                 .OrderBy(item => EnemyNumber(item.name)).ToArray();
             Transform enemyGroup = enemies.Length > 0 ? enemies[0].transform.parent : null;
             if (enemyGroup == null) enemyGroup = EnsureGroup(null, "Enemies");
@@ -119,7 +119,8 @@ public static partial class TowerLevelBuilder
             for (int i = 0; i < enemies.Length; i++)
             {
                 Move(enemies[i].transform, enemyGroup);
-                Rename(enemies[i].transform, "Enemy" + (i + 1).ToString("00"));
+                if (enemies[i].GetComponent<EnemyMage>() == null && enemies[i].GetComponent<WarriorAnimatorDriver>() == null)
+                    Rename(enemies[i].transform, "Enemy" + (i + 1).ToString("00"));
                 Undo.RecordObject(enemies[i].transform, "Ordenar enemigos");
                 enemies[i].transform.SetSiblingIndex(i);
             }

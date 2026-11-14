@@ -5,7 +5,7 @@ using FMODUnity;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(Health), typeof(NavMeshAgent))]
-public sealed class EnemyChaser : MonoBehaviour
+public sealed class EnemyChaser : MonoBehaviour, IEnemyCombatant
 {
     [SerializeField] private Transform target;
     [SerializeField, Min(0.1f)] private float detectionRange = 10f;
