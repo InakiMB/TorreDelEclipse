@@ -2,7 +2,7 @@
 
 Responsable de todas las tareas: **Iñaki Bertran (InakiMB)**. Trabajo individual.
 
-Actualizado al **13/11/2026**: Hitos 0, 1 y 2 completos; Producción en curso con maqueta de audio integrada. Lista provisional hasta que la cátedra indique su sistema de producción. Mantener en cada tarea el estado y una evidencia: commit, captura o prueba reproducible. Estados: Pendiente / En curso / Preparado / Hecho. Preparado significa que existe el material, pero falta incorporarlo o verificarlo en el proyecto.
+Actualizado al **14/11/2026**: Hitos 0, 1 y 2 completos; Producción en curso con maqueta de audio, planta baja, terraza, guerrero y mago enemigos integrados. Lista provisional hasta que la cátedra indique su sistema de producción. Mantener en cada tarea el estado y una evidencia: commit, captura o prueba reproducible. Estados: Pendiente / En curso / Preparado / Hecho. Preparado significa que existe el material, pero falta incorporarlo o verificarlo en el proyecto.
 
 ## Hito 0 - Preproducción
 
@@ -37,7 +37,7 @@ La versión corta del prototipo integra combate a distancia y cuerpo a cuerpo, l
 
 ## Hito 3 - Producción
 
-La maqueta de audio del Bloque 6 está integrada en el prototipo para la muestra del 13/11. El autor confirmó las pruebas del bloque. Se conservan fuentes, sesiones de Reaper, proyecto de FMOD y bancos. Los sistemas restantes continúan en Producción.
+La maqueta de audio está integrada en el prototipo y en TorreEclipse. Se conservan fuentes, sesiones de Reaper, proyecto de FMOD y bancos. La planta baja y la terraza incorporan un guerrero y dos magos; el enemigo de apoyo, el jefe y los menús continúan pendientes, junto con el balance final.
 
 |ID|Tarea|Estado|Terminado cuando|
 |-|-|-|-|
@@ -104,4 +104,4 @@ La escena `PrototipoTorre` incorpora cambio de ambiente por desplazamiento, tran
 |13/11/2026|H3-01 / H3-I1|TorreEclipse construida con dos zonas, diez perseguidores, seis suministros, ascenso y regreso; revisión de navegación sin observaciones.|b834733; escena TorreEclipse y comprobaciones de integración en Play.|
 |13/11/2026|H3-04|Arquitectura de packs, materiales URP, iluminación, ocultación de paredes, HUD compacto y efecto de rotura incorporados; modelos de enemigos y efectos finales pendientes.|b834733; escena TorreEclipse. Revisión del recorrido pendiente.|
 |13/11/2026|H3-E1|Guerrero con modelo, espada, escudo y audio; animaciones originales de reposo, carrera, ataque y muerte conectadas. El tajo aplica un único impacto tras la preparación y permite esquivarlo; la muerte desactiva colisiones y termina antes de retirar el cuerpo.|12 comprobaciones del guerrero y 24 del nivel correctas en Play; prefab EnemyWarrior y escena TorreEclipse guardados.|
-|13/11/2026|H3-E2|Dos magos de túnica rojo oscuro integrados. Se aproximan y retroceden por NavMesh, cargan hechizos animados, disparan en una dirección fija y pueden morir durante la carga. Los proyectiles respetan coberturas y no dañan aliados; la música reconoce su estado de combate.|Prefab EnemyMage, EnemyMagicBolt y escena TorreEclipse; comprobaciones de combate, presentación y ciclo del nivel en copia de validación.|
+|13/11/2026|H3-E2|Dos magos de túnica rojo oscuro integrados. Se aproximan y retroceden por NavMesh, cargan hechizos animados, disparan en una dirección fija y pueden morir durante la carga. Los proyectiles respetan coberturas y no dañan aliados; la música reconoce su estado de combate.|15 comprobaciones del mago y 24 del ciclo del nivel correctas en Play, en copia de validación; 10/10 enemigos accesibles y cero observaciones de navegación. Prefabs EnemyMage y EnemyMagicBolt, y escena TorreEclipse integrados.|

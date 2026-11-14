@@ -58,7 +58,9 @@ La maqueta ya está integrada en el prototipo y puede ajustarse durante la produ
 
 Los OGG seleccionados están en `Audio/Fuentes/Bloque08/Originales/`. La sesión `Audio/ExportadosFMOD/Reaper/Guerrero.rpp` conserva sus medios vinculados; las doce exportaciones WAV están en `Audio/ExportadosFMOD/Bloque08/`. En FMOD se utilizan los eventos `SFX/Guerrero/Pasos`, `Ataque`, `Herida` y `Muerte`.
 
-El mago enemigo reutiliza los eventos y fuentes de la maqueta general para pasos, heridas, muerte, hechizo e impacto. Su lanzamiento se reproduce con tono más grave mediante FMOD (`pitch` 0.75); no se incorporaron nuevas grabaciones ni paquetes de audio para esta variante.
+### Audio del mago enemigo
+
+El mago enemigo reutiliza los eventos y fuentes de la maqueta general para pasos, heridas, muerte, hechizo e impacto. Su lanzamiento se reproduce con tono más grave mediante FMOD (`pitch` 0.75); no se incorporaron nuevas grabaciones ni paquetes de audio para esta variante. La música adaptativa contempla su estado de combate junto al de los perseguidores y el guerrero.
 
 ## Créditos de recursos para la entrega
 

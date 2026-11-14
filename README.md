@@ -6,13 +6,13 @@ Juego de acción 3D con cámara superior y estética de fantasía oscura low pol
 
 ## Estado del proyecto
 
-Actualizado al **13/11/2026**. Hitos **0, 1 y 2 completos**; **Producción en curso**.
+Actualizado al **14/11/2026**. Hitos **0, 1 y 2 completos**; **Producción en curso**, con guerrero y mago enemigos implementados.
 
 - Movimiento con WASD y apuntado independiente con mouse; ataques con magia y bastón.
 - Salud, daño, loot de enemigos con 25% de probabilidad, recogida y consumo de pociones.
 - Planta baja y terraza construidas, con diez enemigos y seis cajas o barriles que dejan una poción garantizada al romperse.
 - Guerrero enemigo con espada, escudo y animaciones de reposo, carrera, ataque y muerte; el tajo sincroniza daño y sonido y permite esquivarlo durante la preparación.
-- Mago enemigo de túnica rojo oscuro: combate a distancia, retrocede al acercarse el jugador y anuncia sus proyectiles con carga y animación. Sus disparos pueden esquivarse o detenerse con coberturas.
+- Mago enemigo de túnica rojo oscuro: combate a distancia, retrocede al acercarse el jugador y anuncia sus proyectiles con carga y animación. Sus disparos pueden esquivarse o detenerse con coberturas y no dañan a sus aliados; morir cancela la carga pendiente.
 - Ascenso y regreso con E al despejar la planta baja, derrota y reinicio del nivel.
 - Ambiente variable, música de exploración/combate y efectos integrados mediante FMOD.
 
@@ -48,7 +48,7 @@ El inventario admite cinco pociones; cada una recupera hasta 35 de vida. Reinici
 
 El proyecto de FMOD está en `Audio/FMOD/TorreDelEclipseAudio/`, con el archivo `.fspro`, los audios importados, eventos y bancos en `Build/Desktop/`. Las sesiones de Reaper y sus medios están en `Audio/ExportadosFMOD/Reaper/`; las fuentes y exportaciones se conservan en `Audio/Fuentes/` y `Audio/ExportadosFMOD/`. `Bloque06` corresponde a la maqueta general y `Bloque08` al audio del guerrero.
 
-El ambiente cambia entre interior y exterior; la música responde al combate. Los efectos acompañan acciones, daño, recursos y resultados. El mezclador separa música, ambiente, efectos e interfaz; la pantalla de Opciones está pendiente.
+El ambiente cambia entre interior y exterior; la música responde al combate de guerreros, perseguidores y magos. Los efectos acompañan acciones, daño, recursos y resultados. El mago enemigo reutiliza los eventos existentes, con un tono más grave para el lanzamiento. El mezclador separa música, ambiente, efectos e interfaz; la pantalla de Opciones está pendiente.
 
 ## Documentación
 
