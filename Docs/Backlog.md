@@ -2,7 +2,7 @@
 
 Responsable de todas las tareas: **Iñaki Bertran (InakiMB)**. Trabajo individual.
 
-Actualizado al **14/11/2026**: Hitos 0, 1 y 2 completos; Producción en curso con maqueta de audio, planta baja, terraza, guerrero, mago y apoyo enemigos integrados. Lista provisional hasta que la cátedra indique su sistema de producción. Mantener en cada tarea el estado y una evidencia: commit, captura o prueba reproducible. Estados: Pendiente / En curso / Preparado / Hecho. Preparado significa que existe el material, pero falta incorporarlo o verificarlo en el proyecto.
+Actualizado al **14/11/2026**: Hitos 0, 1 y 2 completos; Producción en curso con maqueta de audio, planta baja, terraza, guerrero, mago y apoyo enemigos integrados. Cada tarea registra su estado y una evidencia: commit, captura o prueba reproducible. Estados: Pendiente / En curso / Preparado / Hecho. Preparado significa que existe el material, pero falta incorporarlo o verificarlo en el proyecto.
 
 ## Hito 0 - Preproducción
 
@@ -50,7 +50,7 @@ La maqueta de audio está integrada en el prototipo y en TorreEclipse. Se conser
 |H3-E1|Guerrero enemigo|Hecho|Persigue y ataca cuerpo a cuerpo; dispone de vida, daño, velocidad y cadencia configurables y se distingue visual y sonoramente.|
 |H3-E2|Mago enemigo|Hecho|Se posiciona a distancia y lanza proyectiles evitables; sus valores de combate son configurables y su ataque tiene una señal audiovisual reconocible.|
 |H3-E3|Enemigo de apoyo|Hecho|Se posiciona cerca de aliados y cura un 15% de la vida máxima de uno cada 6 segundos. Dentro de 8 metros y sin paredes intermedias otorga +20% de movimiento y +25% de velocidad de ataque, sin aumentar daño ni acumular apoyos. Vida, velocidades y tiempos son configurables; presenta señales audiovisuales y morir cancela la cura y retira el aura.|
-|H3-J0|Definir el jefe con el autor|Pendiente|Antes de diseñarlo e implementarlo, consultar a Iñaki y acordar apariencia, identidad, arena, movimientos, ataques, fases, defensas, debilidades, vida, daño, dificultad, señales visuales, sonidos, música, recompensas y cierre del nivel.|
+|H3-J0|Definir el diseño del jefe|Pendiente|Diseño definido antes de la implementación: apariencia, identidad, arena, movimientos, ataques, fases, defensas, debilidades, vida, daño, dificultad, señales visuales, sonidos, música, recompensas y cierre del nivel.|
 |H3-02|Combinar variantes y desarrollar jefe|Pendiente|Guerrero, mago y apoyo cumplen roles diferentes en un encuentro; sus valores se ajustan tras probarlos y el jefe tiene ataques legibles y evitables.|
 |H3-03|Menús, HUD y volumen|Pendiente|Play, Créditos, Opciones y Exit funcionan; se muestran vida, pociones y objetivos; el volumen general controla todo el audio y hay controles independientes de música, ambiente, efectos e interfaz, con preferencias guardadas entre sesiones.|
 |H3-04|Integrar modelos y efectos|En curso|Se distinguen ataques, enemigos y objetos desde la cámara superior; se registran las fuentes.|
@@ -62,7 +62,7 @@ La maqueta de audio está integrada en el prototipo y en TorreEclipse. Se conser
 |-|-|-|-|
 |H4-01|Revisar requisitos|Pendiente|Todos los sistemas obligatorios están implementados y hay al menos tres minutos de juego efectivo.|
 |H4-02|Corregir y balancear|Pendiente|Se prueban victoria, derrota, reinicio y audio; no hay errores bloqueantes; el jefe se puede vencer sin la vara.|
-|H4-03|Revisar arquitectura y explicación|Pendiente|El autor puede explicar responsabilidades, comunicación entre sistemas y decisiones de código.|
+|H4-03|Revisar arquitectura y explicación|Pendiente|Las responsabilidades de las clases, la comunicación entre sistemas y las decisiones de código están revisadas y pueden explicarse con ejemplos del proyecto.|
 
 ## Hito 5 - Release
 
@@ -80,7 +80,7 @@ La maqueta de audio está integrada en el prototipo y en TorreEclipse. Se conser
 
 ## Muestra del viernes 13/11
 
-La escena `PrototipoTorre` incorpora cambio de ambiente por desplazamiento, transición musical por detección de enemigos y efectos de combate, recursos y resultado. Se utilizan los controles de juego, sin un selector manual de estados. La muestra está preparada; su presentación y devolución docente aún no están registradas. La muestra intermedia no sustituye la revisión final de los requisitos.
+La escena `PrototipoTorre` incorpora cambio de ambiente por desplazamiento, transición musical por detección de enemigos y efectos de combate, recursos y resultado. Se utilizan los controles de juego, sin un selector manual de estados. La muestra intermedia permite revisar estos sistemas; la validación final de los requisitos corresponde a H4-01.
 
 ## Registro de evidencia
 
@@ -89,17 +89,17 @@ La escena `PrototipoTorre` incorpora cambio de ambiente por desplazamiento, tran
 |11/11/2026|H0-01 / H0-02|Proyecto local revisado: Unity 6000.3.10f1, URP 17.3.0, sin cambios pendientes ni cachés versionadas.|23196e4|
 |12/11/2026|H3-A0|Evento de prueba reproducido desde Unity; proyecto FMOD y bancos guardados.|cfa7c26|
 |12/11/2026|H1-01|Mago animado, movimiento relativo a su orientación, colisiones y cámara superior probados.|bfce002|
-|12/11/2026|H1-02|Proyectiles mágicos probados: lanzamiento, daño, colisión con el escenario y desaparición.|b582c7a; prueba confirmada por el autor.|
-|12/11/2026|H1-03|Dos enemigos persiguen mediante NavMesh, atacan y reciben daño; jugador y enemigos pueden morir.|b582c7a; prueba confirmada por el autor.|
-|12/11/2026|H1-04|Encuentro repetible con panel de vida, zona despejada, derrota y reinicio mediante R o botón.|b582c7a; prueba confirmada por el autor.|
-|12/11/2026|H1-01, ajuste de control|WASD independiente del apuntado con mouse, respuesta inmediata y diagonales con velocidad normalizada.|b582c7a; prueba confirmada por el autor.|
-|12/11/2026|H2-01|Bastón probado con animación, preparación, recuperación, arco frontal y bloqueo por obstáculos; convive con los proyectiles.|40a4b6b; prueba confirmada por el autor.|
-|12/11/2026|H2-02|Loot con probabilidad 25%, recogida con E, inventario y curación con Q sin superar el máximo.|40a4b6b; prueba confirmada por el autor.|
-|12/11/2026|H2-03|Eliminar a los dos enemigos desactiva la barrera y habilita la interacción con la salida.|40a4b6b; prueba confirmada por el autor.|
-|12/11/2026|H2-04|Victoria del prototipo mediante la salida, derrota por falta de vida y reinicio completo con R o botón.|40a4b6b; prueba confirmada por el autor.|
-|12/11/2026|H2-05|Ciclo corto de combate, daño, recursos, progresión y resultado terminado y probado.|40a4b6b; prueba confirmada por el autor.|
+|12/11/2026|H1-02|Proyectiles mágicos probados: lanzamiento, daño, colisión con el escenario y desaparición.|b582c7a; prueba de jugabilidad en Unity.|
+|12/11/2026|H1-03|Dos enemigos persiguen mediante NavMesh, atacan y reciben daño; jugador y enemigos pueden morir.|b582c7a; prueba de jugabilidad en Unity.|
+|12/11/2026|H1-04|Encuentro repetible con panel de vida, zona despejada, derrota y reinicio mediante R o botón.|b582c7a; prueba de jugabilidad en Unity.|
+|12/11/2026|H1-01, ajuste de control|WASD independiente del apuntado con mouse, respuesta inmediata y diagonales con velocidad normalizada.|b582c7a; prueba de jugabilidad en Unity.|
+|12/11/2026|H2-01|Bastón probado con animación, preparación, recuperación, arco frontal y bloqueo por obstáculos; convive con los proyectiles.|40a4b6b; prueba de jugabilidad en Unity.|
+|12/11/2026|H2-02|Loot con probabilidad 25%, recogida con E, inventario y curación con Q sin superar el máximo.|40a4b6b; prueba de jugabilidad en Unity.|
+|12/11/2026|H2-03|Eliminar a los dos enemigos desactiva la barrera y habilita la interacción con la salida.|40a4b6b; prueba de jugabilidad en Unity.|
+|12/11/2026|H2-04|Victoria del prototipo mediante la salida, derrota por falta de vida y reinicio completo con R o botón.|40a4b6b; prueba de jugabilidad en Unity.|
+|12/11/2026|H2-05|Ciclo corto de combate, daño, recursos, progresión y resultado terminado y probado.|40a4b6b; prueba de jugabilidad en Unity.|
 |13/11/2026|H3-A1|Tres sesiones de Reaper con sus siete medios vinculados, 25 fuentes originales y 25 exportaciones conservadas.|Archivos en Audio; referencias de medios y formatos revisados.|
-|13/11/2026|H3-A2 / H3-A3 / H3-A4|Ambiente por zona, música de combate y efectos integrados al prototipo; pruebas del bloque confirmadas por el autor.|dc1fedd; prueba confirmada por el autor.|
+|13/11/2026|H3-A2 / H3-A3 / H3-A4|Ambiente por zona, música de combate y efectos integrados al prototipo y probados en Unity.|dc1fedd; prueba de jugabilidad en Unity.|
 |13/11/2026|H3-03, avance|Cuatro grupos de mezcla y AudioVolumeSettings guardado en AudioSystems; falta comprobar volúmenes y persistencia y completar la pantalla de Opciones.|Componente incorporado; la tarea de menús y volumen sigue pendiente.|
 |13/11/2026|H3-01 / H3-I1|TorreEclipse construida con dos zonas, diez perseguidores, seis suministros, ascenso y regreso; revisión de navegación sin observaciones.|b834733; escena TorreEclipse y comprobaciones de integración en Play.|
 |13/11/2026|H3-04|Arquitectura de packs, materiales URP, iluminación, ocultación de paredes, HUD compacto y efecto de rotura incorporados; modelos de enemigos y efectos finales pendientes.|b834733; escena TorreEclipse. Revisión del recorrido pendiente.|
