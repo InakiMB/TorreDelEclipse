@@ -1,0 +1,719 @@
+<REAPER_PROJECT 0.1 "7.80/win64" 1794613620 0
+  <NOTES 0 2
+  >
+  RIPPLE 0 0
+  GROUPOVERRIDE 0 0 0 0
+  AUTOXFADE 129
+  ENVATTACH 3
+  POOLEDENVATTACH 0
+  TCPUIFLAGS 0
+  MIXERUIFLAGS 11 48 0
+  ENVFADESZ10 40
+  PEAKGAIN 1
+  FEEDBACK 0
+  PANLAW 1
+  PROJOFFS 0 0 0
+  MAXPROJLEN 0 0
+  GRID 3199 8 1 8 1 0 0 0
+  TIMEMODE 1 5 -1 30 0 0 -1 0
+  VIDEO_CONFIG 0 0 65792
+  PANMODE 3
+  PANLAWFLAGS 3
+  CURSOR 0.5
+  ZOOM 552.48969461168906 0 0
+  VZOOMEX 6 438
+  USE_REC_CFG 0
+  RECMODE 1
+  SMPTESYNC 0 30 100 40 1000 300 0 0 1 0 0
+  LOOP 0
+  LOOPGRAN 0 4
+  RECORD_PATH "Media" ""
+  <RECORD_CFG
+    ZXZhdxgAAQ==
+  >
+  <APPLYFX_CFG
+  >
+  RENDER_FILE C:\Users\Usuario\Documents\GitHub\TorreDelEclipse\Audio\ExportadosFMOD\Bloque08
+  RENDER_PATTERN $track
+  RENDER_FMT 0 2 48000
+  RENDER_1X 0
+  RENDER_RANGE 2 0 0 0 1000
+  RENDER_RESAMPLE 3 0 1
+  RENDER_ADDTOPROJ 0
+  RENDER_STEMS 2051
+  RENDER_DITHER 0
+  RENDER_TRIM 0.000001 0.000001 0 0
+  TIMELOCKMODE 1
+  TEMPOENVLOCKMODE 1
+  ITEMMIX 1
+  DEFPITCHMODE 589824 0
+  TAKELANE 1
+  SAMPLERATE 44100 0 0
+  <RENDER_CFG
+    ZXZhdxAAAQ==
+  >
+  LOCK 1
+  <METRONOME 6 2
+    VOL 0.25 0.125
+    BEATLEN 4
+    FREQ 1760 880 1
+    SAMPLES "" "" "" ""
+    SPLIGNORE 0 0
+    SPLDEF 2 660 "" 0 ""
+    SPLDEF 3 440 "" 0 ""
+    PATTERN 0 169
+    PATTERNSTR ABBB
+    MULT 1
+  >
+  GLOBAL_AUTO -1
+  TEMPO 120 4 4 0
+  PLAYRATE 1 0 0.25 4
+  SELECTION 0 0.96691609977324
+  SELECTION2 0 0.96691609977324
+  MASTERAUTOMODE 0
+  MASTERTRACKHEIGHT 0 0
+  MASTERPEAKCOL 16576
+  MASTERMUTESOLO 0
+  MASTERTRACKVIEW 0 0.6667 0.5 0.5 0 0 0 0 0 0 0 0 0 0 1
+  MASTERHWOUT 0 0 1 0 0 0 0 -1
+  MASTER_NCH 2 2
+  MASTER_VOLUME 1 0 -1 -1 1
+  MASTER_PANMODE 3
+  MASTER_PANLAWFLAGS 3
+  MASTER_FX 1
+  MASTER_TRACKID {1BA0AC74-5B87-43B0-BF1E-C99729BF6267}
+  MASTER_SEL 0
+  <MASTERPLAYSPEEDENV
+    EGUID {FE34F7B4-5F15-4578-8C22-15A035D9DD0F}
+    ACT 0 -1
+    VIS 0 1 1
+    LANEHEIGHT 0 0
+    ARM 0
+    DEFSHAPE 0 -1 -1
+  >
+  <TEMPOENVEX
+    EGUID {7AF45C7A-A4A2-460C-AE0A-512C7FBFFC81}
+    ACT 0 -1
+    VIS 1 0 1
+    LANEHEIGHT 0 0
+    ARM 0
+    DEFSHAPE 1 -1 -1
+  >
+  RULERHEIGHT 86 86
+  RULERLANE 1 4 "" 0 -1 0
+  RULERLANE 2 8 "" 0 -1 0
+  <PROJBAY
+  >
+  <TRACK {A2A93E9A-71D2-4A71-860F-25E782FEC288}
+    NAME WarriorStep01
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 0 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    SEL 0
+    REC 0 0 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {A2A93E9A-71D2-4A71-860F-25E782FEC288}
+    PERF 0
+    MIDIOUT -1 -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 0
+      SNAPOFFS 0
+      LENGTH 0.10591836734694
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {F6765DA2-A3C8-44D7-A5BF-EEB3083CA7F3}
+      IID 1
+      NAME footstep_concrete_000.ogg
+      VOLPAN 1 0 1 -1
+      SOFFS 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {91CC609A-D803-44A9-9199-57EB843869E8}
+      <SOURCE VORBIS
+        FILE "Media\footstep_concrete_000.ogg"
+      >
+      <EXT
+        ORIGINAL_FILENAME C:\Users\Usuario\Documents\GitHub\TorreDelEclipse\Audio\Fuentes\Bloque08\Originales\Pasos\footstep_concrete_000.ogg
+      >
+    >
+  >
+  <TRACK {8B9BEC95-F98B-47EC-B1D6-B31E783442B7}
+    NAME WarriorStep02
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 0 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    SEL 0
+    REC 0 0 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {8B9BEC95-F98B-47EC-B1D6-B31E783442B7}
+    PERF 0
+    MIDIOUT -1 -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 0
+      SNAPOFFS 0
+      LENGTH 0.10764172335601
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {73E2F6FD-39FF-430F-8A23-40681E38F916}
+      IID 2
+      NAME footstep_concrete_001.ogg
+      VOLPAN 1 0 1 -1
+      SOFFS 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {460BB39A-BEEB-4830-BC63-2E845DAF7127}
+      <SOURCE VORBIS
+        FILE "Media\footstep_concrete_001.ogg"
+      >
+      <EXT
+        ORIGINAL_FILENAME C:\Users\Usuario\Documents\GitHub\TorreDelEclipse\Audio\Fuentes\Bloque08\Originales\Pasos\footstep_concrete_001.ogg
+      >
+    >
+  >
+  <TRACK {E331DBA0-4E61-41CF-BDD3-7221A60FCB90}
+    NAME WarriorStep03
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 0 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    SEL 0
+    REC 0 0 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {E331DBA0-4E61-41CF-BDD3-7221A60FCB90}
+    PERF 0
+    MIDIOUT -1 -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 0
+      SNAPOFFS 0
+      LENGTH 0.11278911564626
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {0987974A-E99B-40C6-973E-2BCB76280AB9}
+      IID 3
+      NAME footstep_concrete_002.ogg
+      VOLPAN 1 0 1 -1
+      SOFFS 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {1F196833-616D-4741-9C7F-255911B58B98}
+      <SOURCE VORBIS
+        FILE "Media\footstep_concrete_002.ogg"
+      >
+      <EXT
+        ORIGINAL_FILENAME C:\Users\Usuario\Documents\GitHub\TorreDelEclipse\Audio\Fuentes\Bloque08\Originales\Pasos\footstep_concrete_002.ogg
+      >
+    >
+  >
+  <TRACK {882BECE8-7EB6-488B-895B-1ABF3118C8A8}
+    NAME impactMetal_medium_000
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 0 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    SEL 0
+    REC 0 0 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {882BECE8-7EB6-488B-895B-1ABF3118C8A8}
+    PERF 0
+    MIDIOUT -1 -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 0
+      SNAPOFFS 0
+      LENGTH 0.10591836734694
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {07C627ED-7324-4575-8E90-7DFF44B2EA0A}
+      IID 4
+      NAME impactMetal_medium_000.ogg
+      VOLPAN 1 0 1 -1
+      SOFFS 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {07B31AA4-7742-4FC6-9E12-A4CB8435E572}
+      <SOURCE VORBIS
+        FILE "Media\impactMetal_medium_000.ogg"
+      >
+      <EXT
+        ORIGINAL_FILENAME C:\Users\Usuario\Documents\GitHub\TorreDelEclipse\Audio\Fuentes\Bloque08\Originales\Herida\impactMetal_medium_000.ogg
+      >
+    >
+  >
+  <TRACK {1655F180-A64B-464D-93C3-5C07D5B579DA}
+    NAME impactMetal_medium_001
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 0 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    SEL 0
+    REC 0 0 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {1655F180-A64B-464D-93C3-5C07D5B579DA}
+    PERF 0
+    MIDIOUT -1 -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 0
+      SNAPOFFS 0
+      LENGTH 0.10591836734694
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {4FDF429C-BD85-48BA-8D26-62E5C124959C}
+      IID 5
+      NAME impactMetal_medium_001.ogg
+      VOLPAN 1 0 1 -1
+      SOFFS 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {B496618D-FD8E-4675-A1AD-03E6E2ECE4B6}
+      <SOURCE VORBIS
+        FILE "Media\impactMetal_medium_001.ogg"
+      >
+      <EXT
+        ORIGINAL_FILENAME C:\Users\Usuario\Documents\GitHub\TorreDelEclipse\Audio\Fuentes\Bloque08\Originales\Herida\impactMetal_medium_001.ogg
+      >
+    >
+  >
+  <TRACK {05432233-4488-4507-A2A9-E42B77E4FA4E}
+    NAME impactMetal_medium_002
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 0 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    SEL 0
+    REC 0 0 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 0
+    TRACKID {05432233-4488-4507-A2A9-E42B77E4FA4E}
+    PERF 0
+    MIDIOUT -1 -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 0
+      SNAPOFFS 0
+      LENGTH 0.10591836734694
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {F3703A93-2FD8-471E-A115-7E8A9595F232}
+      IID 6
+      NAME impactMetal_medium_002.ogg
+      VOLPAN 1 0 1 -1
+      SOFFS 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {212D4CAD-C14A-4367-81B3-8108CFC57199}
+      <SOURCE VORBIS
+        FILE "Media\impactMetal_medium_002.ogg"
+      >
+      <EXT
+        ORIGINAL_FILENAME C:\Users\Usuario\Documents\GitHub\TorreDelEclipse\Audio\Fuentes\Bloque08\Originales\Herida\impactMetal_medium_002.ogg
+      >
+    >
+  >
+  <TRACK {30F031EF-3B0A-4B6A-8E76-E3938A566E4F}
+    NAME WarriorDeath_01
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 0 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    SEL 0
+    REC 0 0 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {30F031EF-3B0A-4B6A-8E76-E3938A566E4F}
+    PERF 0
+    MIDIOUT -1 -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 0
+      SNAPOFFS 0
+      LENGTH 1.48018140589569
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {4004F5DF-85BB-4F13-98A7-69C19F088A55}
+      IID 7
+      NAME impactBell_heavy_000.ogg
+      VOLPAN 1 0 1 -1
+      SOFFS 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {EE82511C-19FC-46B2-9978-6BD3117534EE}
+      <SOURCE VORBIS
+        FILE "Media\impactBell_heavy_000.ogg"
+      >
+      <EXT
+        ORIGINAL_FILENAME C:\Users\Usuario\Documents\GitHub\TorreDelEclipse\Audio\Fuentes\Bloque08\Originales\Muerte\impactBell_heavy_000.ogg
+      >
+    >
+  >
+  <TRACK {D26B4CC4-DB5B-4706-9C7F-950C22C61ABE}
+    NAME WarriorDeath_02
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 0 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    SEL 0
+    REC 0 0 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {D26B4CC4-DB5B-4706-9C7F-950C22C61ABE}
+    PERF 0
+    MIDIOUT -1 -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 0
+      SNAPOFFS 0
+      LENGTH 1.74086167800454
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {7B079E72-0525-44E3-8B9B-8CD7D6FB9B62}
+      IID 8
+      NAME impactBell_heavy_001.ogg
+      VOLPAN 1 0 1 -1
+      SOFFS 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {E8EBEF6C-7958-4EF1-8F7B-CC8F37D82798}
+      <SOURCE VORBIS
+        FILE "Media\impactBell_heavy_001.ogg"
+      >
+      <EXT
+        ORIGINAL_FILENAME C:\Users\Usuario\Documents\GitHub\TorreDelEclipse\Audio\Fuentes\Bloque08\Originales\Muerte\impactBell_heavy_001.ogg
+      >
+    >
+  >
+  <TRACK {6C743489-1FFC-4CFA-BEB5-F0936ADC543A}
+    NAME WarriorDeath_03
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 0 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    SEL 0
+    REC 0 0 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {6C743489-1FFC-4CFA-BEB5-F0936ADC543A}
+    PERF 0
+    MIDIOUT -1 -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 0
+      SNAPOFFS 0
+      LENGTH 0.69727891156463
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {08121FF4-DB00-4CB8-88D1-E5C899AC32DC}
+      IID 9
+      NAME impactBell_heavy_002.ogg
+      VOLPAN 1 0 1 -1
+      SOFFS 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {675CE84A-0185-495D-82D5-5425BD4C413C}
+      <SOURCE VORBIS
+        FILE "Media\impactBell_heavy_002.ogg"
+      >
+      <EXT
+        ORIGINAL_FILENAME C:\Users\Usuario\Documents\GitHub\TorreDelEclipse\Audio\Fuentes\Bloque08\Originales\Muerte\impactBell_heavy_002.ogg
+      >
+    >
+  >
+  <TRACK {956022D0-CF7E-4BD9-8033-38002EA89EAF}
+    NAME WarriorAtack_01
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 0 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    SEL 1
+    REC 0 0 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {956022D0-CF7E-4BD9-8033-38002EA89EAF}
+    PERF 0
+    MIDIOUT -1 -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 0
+      SNAPOFFS 0
+      LENGTH 0.96691609977324
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {B4BD328F-1F6D-4560-9BA1-5900BAB61079}
+      IID 10
+      NAME sword.1.ogg
+      VOLPAN 1 0 1 -1
+      SOFFS 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {EB921759-CF83-4AD7-9370-BD13881113DE}
+      <SOURCE VORBIS
+        FILE "Media\sword.1.ogg"
+      >
+      <EXT
+        ORIGINAL_FILENAME C:\Users\Usuario\Documents\GitHub\TorreDelEclipse\Audio\Fuentes\Bloque08\Originales\Ataque\sword.1.ogg
+      >
+    >
+  >
+  <TRACK {67DD4614-CB58-4EED-BDB4-1547866B6972}
+    NAME WarriorAtack_02
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 0 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    SEL 1
+    REC 0 0 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {67DD4614-CB58-4EED-BDB4-1547866B6972}
+    PERF 0
+    MIDIOUT -1 -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 0
+      SNAPOFFS 0
+      LENGTH 0.58108843537415
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {31ADC5C0-C5DE-4B70-9D3A-2C3C7E4D67E5}
+      IID 11
+      NAME sword.4.ogg
+      VOLPAN 1 0 1 -1
+      SOFFS 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {B7033C30-80D9-45FB-A6DE-8B8D70BD8F8E}
+      <SOURCE VORBIS
+        FILE "Media\sword.4.ogg"
+      >
+      <EXT
+        ORIGINAL_FILENAME C:\Users\Usuario\Documents\GitHub\TorreDelEclipse\Audio\Fuentes\Bloque08\Originales\Ataque\sword.4.ogg
+      >
+    >
+  >
+  <TRACK {91C5581D-8214-4B82-9ED2-C2A6A1295F47}
+    NAME WarriorAtack_03
+    PEAKCOL 16576
+    BEAT -1
+    AUTOMODE 0
+    PANLAWFLAGS 3
+    VOLPAN 1 0 -1 -1 1
+    MUTESOLO 0 0 0
+    IPHASE 0
+    PLAYOFFS 0 1
+    ISBUS 0 0
+    BUSCOMP 0 0 0 0 0
+    SHOWINMIX 1 0.6667 0.5 1 0.5 0 0 0 0
+    FIXEDLANES 9 0 0 0 0
+    SEL 1
+    REC 0 0 1 0 0 0 0 0
+    VU 64
+    TRACKHEIGHT 0 0 0 0 0 0 0
+    INQ 0 0 0 0.5 100 0 0 100
+    NCHAN 2
+    FX 1
+    TRACKID {91C5581D-8214-4B82-9ED2-C2A6A1295F47}
+    PERF 0
+    MIDIOUT -1 -1
+    MAINSEND 1 0
+    <ITEM
+      POSITION 0
+      SNAPOFFS 0
+      LENGTH 0.76521541950113
+      LOOP 1
+      ALLTAKES 0
+      FADEIN 1 0 0 1 0 0 0
+      FADEOUT 1 0 0 1 0 0 0
+      MUTE 0 0
+      SEL 0
+      IGUID {4ECD3071-8807-4963-83FC-0BCE362F0229}
+      IID 12
+      NAME sword.7.ogg
+      VOLPAN 1 0 1 -1
+      SOFFS 0
+      PLAYRATE 1 1 0 -1 0 0.0025
+      CHANMODE 0
+      GUID {52F612C0-0339-4CE1-B23A-262D2F1861A9}
+      <SOURCE VORBIS
+        FILE "Media\sword.7.ogg"
+      >
+      <EXT
+        ORIGINAL_FILENAME C:\Users\Usuario\Documents\GitHub\TorreDelEclipse\Audio\Fuentes\Bloque08\Originales\Ataque\sword.7.ogg
+      >
+    >
+  >
+>

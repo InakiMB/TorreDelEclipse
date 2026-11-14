@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.04.00">
+	<object class="AudioFile" id="{6a14038f-2ce8-47e3-9f95-f77c2d84a5f5}">
+		<property name="assetPath">
+			<value>WarriorHit_01.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.10591666666666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c09831a2-9380-44e7-8124-d295badcc8cf}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
+using FMODUnity;
 
 [DisallowMultipleComponent]
 [RequireComponent(typeof(Health), typeof(NavMeshAgent))]
@@ -10,6 +12,13 @@ public sealed class EnemyChaser : MonoBehaviour
     [SerializeField, Min(0.1f)] private float attackRange = 1.4f;
     [SerializeField, Min(1)] private int attackDamage = 10;
     [SerializeField, Min(0.1f)] private float attackInterval = 1f;
+    [SerializeField] private EventReference attackEvent = default;
+    [SerializeField, Min(0f)] private float attackWindup = 0f;
+    [SerializeField, Min(0f)] private float attackRecovery = 0f;
+    [SerializeField, Min(0f)] private float destroyDelay = 0f;
+
+    public event Action AttackStarted;
+    public bool IsAttacking { get; private set; }
 
     private Health health;
     private Health targetHealth;
@@ -17,6 +26,9 @@ public sealed class EnemyChaser : MonoBehaviour
     private NavMeshAgent agent;
     private float nextAttackTime;
     private bool provoked;
+    private float strikeTime;
+    private float recoveryEnd;
+    private bool strikePending;
     public bool IsEngaged => isActiveAndEnabled && health != null && !health.IsDead
         && agent != null && agent.enabled && agent.isOnNavMesh
         && target != null && targetHealth != null && !targetHealth.IsDead
@@ -39,6 +51,8 @@ public sealed class EnemyChaser : MonoBehaviour
     {
         health.Damaged -= OnDamaged;
         health.Died -= OnDied;
+        IsAttacking = false;
+        strikePending = false;
     }
 
     private void Start()
@@ -72,6 +86,18 @@ public sealed class EnemyChaser : MonoBehaviour
             return;
         }
 
+        if (IsAttacking)
+        {
+            StopAgent();
+            if (strikePending && Time.time >= strikeTime)
+            {
+                strikePending = false;
+                Strike();
+            }
+            if (Time.time >= recoveryEnd) IsAttacking = false;
+            return;
+        }
+
         if (target == null || targetHealth == null || targetHealth.IsDead)
         {
             StopAgent();
@@ -98,8 +124,13 @@ public sealed class EnemyChaser : MonoBehaviour
 
             if (Time.time >= nextAttackTime)
             {
-                targetHealth.TakeDamage(attackDamage);
-                nextAttackTime = Time.time + attackInterval;
+                IsAttacking = attackWindup + attackRecovery > 0f;
+                strikePending = attackWindup > 0f;
+                strikeTime = Time.time + attackWindup;
+                recoveryEnd = strikeTime + attackRecovery;
+                nextAttackTime = Time.time + Mathf.Max(attackInterval, attackWindup + attackRecovery);
+                AttackStarted?.Invoke();
+                if (!strikePending) Strike();
             }
         }
         else
@@ -113,6 +144,19 @@ public sealed class EnemyChaser : MonoBehaviour
             }
             agent.SetDestination(destination);
         }
+    }
+
+    private void Strike()
+    {
+        // El tajo suena incluso si el jugador esquiva durante la preparacion.
+        FmodOneShot.Play(attackEvent, transform.position);
+        if (target == null || targetHealth == null || targetHealth.IsDead) return;
+        Vector3 delta = target.position - transform.position;
+        if (delta.sqrMagnitude > attackRange * attackRange) return;
+        delta.y = 0f;
+        if (attackWindup > 0f && delta.sqrMagnitude > 0.01f
+            && Vector3.Angle(transform.forward, delta) > 75f) return;
+        if (CanStrikeTarget()) targetHealth.TakeDamage(attackDamage);
     }
 
     private bool CanStrikeTarget()
@@ -151,8 +195,12 @@ public sealed class EnemyChaser : MonoBehaviour
 
     private void OnDied()
     {
+        IsAttacking = false;
+        strikePending = false;
         if (agent.enabled && agent.isOnNavMesh) StopAgent();
         agent.enabled = false;
-        Destroy(gameObject);
+        if (destroyDelay > 0f)
+            foreach (Collider collider in GetComponentsInChildren<Collider>()) collider.enabled = false;
+        Destroy(gameObject, destroyDelay);
     }
 }
