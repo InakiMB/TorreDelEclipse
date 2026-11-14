@@ -2,7 +2,7 @@
 
 Responsable de todas las tareas: **Iñaki Bertran (InakiMB)**. Trabajo individual.
 
-Actualizado al **14/11/2026**: Hitos 0, 1 y 2 completos; Producción en curso con maqueta de audio, planta baja, terraza, guerrero y mago enemigos integrados. Lista provisional hasta que la cátedra indique su sistema de producción. Mantener en cada tarea el estado y una evidencia: commit, captura o prueba reproducible. Estados: Pendiente / En curso / Preparado / Hecho. Preparado significa que existe el material, pero falta incorporarlo o verificarlo en el proyecto.
+Actualizado al **14/11/2026**: Hitos 0, 1 y 2 completos; Producción en curso con maqueta de audio, planta baja, terraza, guerrero, mago y apoyo enemigos integrados. Lista provisional hasta que la cátedra indique su sistema de producción. Mantener en cada tarea el estado y una evidencia: commit, captura o prueba reproducible. Estados: Pendiente / En curso / Preparado / Hecho. Preparado significa que existe el material, pero falta incorporarlo o verificarlo en el proyecto.
 
 ## Hito 0 - Preproducción
 
@@ -37,7 +37,7 @@ La versión corta del prototipo integra combate a distancia y cuerpo a cuerpo, l
 
 ## Hito 3 - Producción
 
-La maqueta de audio está integrada en el prototipo y en TorreEclipse. Se conservan fuentes, sesiones de Reaper, proyecto de FMOD y bancos. La planta baja y la terraza incorporan un guerrero y dos magos; el enemigo de apoyo, el jefe y los menús continúan pendientes, junto con el balance final.
+La maqueta de audio está integrada en el prototipo y en TorreEclipse. Se conservan fuentes, sesiones de Reaper, proyecto de FMOD y bancos. El encuentro actual de planta baja combina tres guerreros, tres magos y dos clérigos de apoyo; permite ascender a la terraza. El jefe y los menús continúan pendientes, junto con el balance final.
 
 |ID|Tarea|Estado|Terminado cuando|
 |-|-|-|-|
@@ -49,7 +49,7 @@ La maqueta de audio está integrada en el prototipo y en TorreEclipse. Se conser
 |H3-01|Planta baja y terraza|Hecho|Ambas zonas forman un recorrido coherente, accesible y sin puntos que bloqueen al jugador.|
 |H3-E1|Guerrero enemigo|Hecho|Persigue y ataca cuerpo a cuerpo; dispone de vida, daño, velocidad y cadencia configurables y se distingue visual y sonoramente.|
 |H3-E2|Mago enemigo|Hecho|Se posiciona a distancia y lanza proyectiles evitables; sus valores de combate son configurables y su ataque tiene una señal audiovisual reconocible.|
-|H3-E3|Enemigo de apoyo|Pendiente|Se posiciona cerca de aliados y los cura o potencia con alcance y tiempo de espera definidos; vida y velocidad son configurables, el efecto es reconocible y termina o deja de renovarse al morir el apoyo.|
+|H3-E3|Enemigo de apoyo|Hecho|Se posiciona cerca de aliados y cura un 15% de la vida máxima de uno cada 6 segundos. Dentro de 8 metros y sin paredes intermedias otorga +20% de movimiento y +25% de velocidad de ataque, sin aumentar daño ni acumular apoyos. Vida, velocidades y tiempos son configurables; presenta señales audiovisuales y morir cancela la cura y retira el aura.|
 |H3-J0|Definir el jefe con el autor|Pendiente|Antes de diseñarlo e implementarlo, consultar a Iñaki y acordar apariencia, identidad, arena, movimientos, ataques, fases, defensas, debilidades, vida, daño, dificultad, señales visuales, sonidos, música, recompensas y cierre del nivel.|
 |H3-02|Combinar variantes y desarrollar jefe|Pendiente|Guerrero, mago y apoyo cumplen roles diferentes en un encuentro; sus valores se ajustan tras probarlos y el jefe tiene ataques legibles y evitables.|
 |H3-03|Menús, HUD y volumen|Pendiente|Play, Créditos, Opciones y Exit funcionan; se muestran vida, pociones y objetivos; el volumen general controla todo el audio y hay controles independientes de música, ambiente, efectos e interfaz, con preferencias guardadas entre sesiones.|
@@ -105,3 +105,4 @@ La escena `PrototipoTorre` incorpora cambio de ambiente por desplazamiento, tran
 |13/11/2026|H3-04|Arquitectura de packs, materiales URP, iluminación, ocultación de paredes, HUD compacto y efecto de rotura incorporados; modelos de enemigos y efectos finales pendientes.|b834733; escena TorreEclipse. Revisión del recorrido pendiente.|
 |13/11/2026|H3-E1|Guerrero con modelo, espada, escudo y audio; animaciones originales de reposo, carrera, ataque y muerte conectadas. El tajo aplica un único impacto tras la preparación y permite esquivarlo; la muerte desactiva colisiones y termina antes de retirar el cuerpo.|12 comprobaciones del guerrero y 24 del nivel correctas en Play; prefab EnemyWarrior y escena TorreEclipse guardados.|
 |13/11/2026|H3-E2|Dos magos de túnica rojo oscuro integrados. Se aproximan y retroceden por NavMesh, cargan hechizos animados, disparan en una dirección fija y pueden morir durante la carga. Los proyectiles respetan coberturas y no dañan aliados; la música reconoce su estado de combate.|15 comprobaciones del mago y 24 del ciclo del nivel correctas en Play, en copia de validación; 10/10 enemigos accesibles y cero observaciones de navegación. Prefabs EnemyMage y EnemyMagicBolt, y escena TorreEclipse integrados.|
+|14/11/2026|H3-E3 / H3-A3|Dos clérigos de Quaternius sustituyen a los magos de las alas laterales, conservando el encuentro actual de ocho enemigos. Curación individual, aura de aceleración, animaciones y señales audiovisuales integradas; guerreros y magos aceleran sus acciones sin aumentar el daño. El apoyo también mantiene la música de combate.|31 comprobaciones del apoyo, 2 de música y 24 del ciclo del nivel correctas en Play, en copia de validación; 8/8 enemigos accesibles y cero observaciones de navegación. Prefab EnemySupport y escena TorreEclipse integrados.|

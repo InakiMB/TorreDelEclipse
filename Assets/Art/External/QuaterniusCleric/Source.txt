@@ -1,0 +1,15 @@
+RPG Character Pack — Cleric
+Autor: Quaternius (Tomas Laulhe)
+Fuente del autor: https://quaternius.com/packs/rpgcharacters.html
+Descarga publicada por el autor: https://opengameart.org/content/lowpoly-rpg-characters
+Archivo original: https://opengameart.org/sites/default/files/rpg_characters_-_nov_2020.zip
+Licencia: CC0 1.0 Universal; consultar License.txt.
+
+Recurso utilizado por el enemigo de apoyo de Torre del Eclipse.
+Se incluyen modelo con animaciones originales, baston separado y sus texturas.
+FBX y texturas originales sin modificaciones. Los materiales del proyecto
+recolorean la ropa a verde oscuro y la armadura a color hueso.
+
+Revision del FBX realizada el 14/11/2026: 15 AnimationStack incluidos.
+Clips candidatos: Idle_Weapon, Run_Weapon, Walk, Spell1, Spell2 y Death.
+Spell1 y Spell2 se utilizan para curacion y aceleracion, respectivamente.

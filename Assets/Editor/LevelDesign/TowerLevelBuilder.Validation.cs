@@ -48,7 +48,16 @@ public static partial class TowerLevelBuilder
                 report.issues.Add("El punto de inicio se solapa con arquitectura.");
         }
         else report.issues.Add("Falta jugador.");
-        if(report.enemies!=10)report.issues.Add("Se esperaban diez enemigos en total.");
+        var objective=UnityEngine.Object.FindFirstObjectByType<EncounterObjective>();
+        if(objective==null)report.issues.Add("Falta objetivo del encuentro.");
+        else
+        {
+            var required=new SerializedObject(objective).FindProperty("requiredEnemies");
+            var healths=enemies.Select(e=>e.GetComponent<Health>()).ToArray();
+            var assigned=Enumerable.Range(0,required.arraySize).Select(i=>required.GetArrayElementAtIndex(i).objectReferenceValue).ToArray();
+            if(required.arraySize!=report.enemies || assigned.Any(e=>e==null) || healths.Any(h=>!assigned.Contains(h)))
+                report.issues.Add("El objetivo no coincide con los enemigos actuales.");
+        }
         if(report.supplies!=6)report.issues.Add("Se esperaban seis suministros.");
         foreach(MonoBehaviour component in UnityEngine.Object.FindObjectsByType<MonoBehaviour>(FindObjectsSortMode.None))
             if(component==null)report.issues.Add("Componente ausente.");

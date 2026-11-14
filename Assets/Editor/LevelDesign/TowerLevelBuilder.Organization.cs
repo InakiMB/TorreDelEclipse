@@ -119,7 +119,8 @@ public static partial class TowerLevelBuilder
             for (int i = 0; i < enemies.Length; i++)
             {
                 Move(enemies[i].transform, enemyGroup);
-                if (enemies[i].GetComponent<EnemyMage>() == null && enemies[i].GetComponent<WarriorAnimatorDriver>() == null)
+                if (enemies[i].GetComponent<EnemyMage>() == null && enemies[i].GetComponent<EnemySupport>() == null
+                    && enemies[i].GetComponent<WarriorAnimatorDriver>() == null)
                     Rename(enemies[i].transform, "Enemy" + (i + 1).ToString("00"));
                 Undo.RecordObject(enemies[i].transform, "Ordenar enemigos");
                 enemies[i].transform.SetSiblingIndex(i);

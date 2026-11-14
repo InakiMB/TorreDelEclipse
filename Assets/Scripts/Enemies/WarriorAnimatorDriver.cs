@@ -14,6 +14,7 @@ public sealed class WarriorAnimatorDriver : MonoBehaviour
     private static readonly int Speed = Animator.StringToHash("Speed");
     private static readonly int RunSpeed = Animator.StringToHash("RunSpeed");
     private static readonly int Attack = Animator.StringToHash("Attack");
+    private static readonly int AttackSpeed = Animator.StringToHash("AttackSpeed");
     private static readonly int Dead = Animator.StringToHash("Dead");
 
     private void Awake()
@@ -50,11 +51,16 @@ public sealed class WarriorAnimatorDriver : MonoBehaviour
             && !agent.isStopped ? Vector3.ProjectOnPlane(agent.velocity, Vector3.up).magnitude : 0f;
         visualAnimator.SetFloat(Speed, speed);
         visualAnimator.SetFloat(RunSpeed, Mathf.Clamp(speed / referenceRunSpeed, 0.6f, 1.4f));
+        visualAnimator.SetFloat(AttackSpeed, chaser.AttackPlaybackSpeed);
     }
 
     private void OnAttack()
     {
-        if (visualAnimator != null && !health.IsDead) visualAnimator.SetTrigger(Attack);
+        if (visualAnimator != null && !health.IsDead)
+        {
+            visualAnimator.SetFloat(AttackSpeed, chaser.AttackPlaybackSpeed);
+            visualAnimator.SetTrigger(Attack);
+        }
     }
 
     private void OnDeath()

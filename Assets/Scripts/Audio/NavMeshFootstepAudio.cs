@@ -12,8 +12,13 @@ using FMODUnity;
 
        private NavMeshAgent agent;
        private float nextStepTime;
+       private EnemyBuffReceiver buffs;
 
-       private void Awake() => agent = GetComponent<NavMeshAgent>();
+       private void Awake()
+       {
+           agent = GetComponent<NavMeshAgent>();
+           buffs = GetComponent<EnemyBuffReceiver>();
+       }
 
        private void Update()
        {
@@ -26,6 +31,6 @@ using FMODUnity;
            if (Time.time < nextStepTime) return;
 
            FmodOneShot.Play(footstepEvent, transform.position);
-           nextStepTime = Time.time + stepInterval;
+           nextStepTime = Time.time + stepInterval / (buffs != null ? buffs.MovementMultiplier : 1f);
        }
    }

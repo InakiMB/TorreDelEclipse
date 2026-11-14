@@ -25,6 +25,8 @@ public sealed class EnemyMage : MonoBehaviour, IEnemyCombatant
     private Health health;
     private Health targetHealth;
     private NavMeshAgent agent;
+    private EnemyBuffReceiver buffs;
+    private float activeCastWindup;
     private bool provoked;
     private bool pendingShot;
     private Vector3 lockedDirection;
@@ -32,7 +34,8 @@ public sealed class EnemyMage : MonoBehaviour, IEnemyCombatant
     private float recoverAt;
     private float nextCastAt;
     public bool IsCasting { get; private set; }
-    public float ChargeProgress => IsCasting && pendingShot ? Mathf.Clamp01(1f - (shotAt - Time.time) / castWindup) : 0f;
+    public float CastPlaybackSpeed { get; private set; } = 1f;
+    public float ChargeProgress => IsCasting && pendingShot ? Mathf.Clamp01(1f - (shotAt - Time.time) / activeCastWindup) : 0f;
     public bool IsEngaged => isActiveAndEnabled && health != null && !health.IsDead
         && agent != null && agent.enabled && agent.isOnNavMesh && targetHealth != null && !targetHealth.IsDead
         && (provoked || (target.position - transform.position).sqrMagnitude <= detectionRange * detectionRange);
@@ -42,6 +45,8 @@ public sealed class EnemyMage : MonoBehaviour, IEnemyCombatant
     private void Awake()
     {
         health = GetComponent<Health>(); agent = GetComponent<NavMeshAgent>();
+        buffs = GetComponent<EnemyBuffReceiver>();
+        if (buffs == null) buffs = gameObject.AddComponent<EnemyBuffReceiver>();
         agent.stoppingDistance = 0.3f;
     }
     private void OnEnable() { health.Damaged += OnDamaged; health.Died += OnDied; }
@@ -90,9 +95,11 @@ public sealed class EnemyMage : MonoBehaviour, IEnemyCombatant
         if (lockedDirection.sqrMagnitude < 0.001f) lockedDirection = transform.forward;
         lockedDirection.Normalize();
         transform.rotation = Quaternion.LookRotation(lockedDirection);
+        CastPlaybackSpeed = buffs.AttackSpeedMultiplier;
+        activeCastWindup = castWindup / CastPlaybackSpeed;
         IsCasting = true; pendingShot = true;
-        shotAt = Time.time + castWindup; recoverAt = shotAt + castRecovery;
-        nextCastAt = Time.time + Mathf.Max(castInterval, castWindup + castRecovery);
+        shotAt = Time.time + activeCastWindup; recoverAt = shotAt + castRecovery / CastPlaybackSpeed;
+        nextCastAt = Time.time + Mathf.Max(castInterval, castWindup + castRecovery) / CastPlaybackSpeed;
         CastStarted?.Invoke();
     }
     private void Fire()

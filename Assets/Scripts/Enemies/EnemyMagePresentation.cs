@@ -13,6 +13,8 @@ public sealed class EnemyMagePresentation : MonoBehaviour
     private NavMeshAgent agent;
     private static readonly int Speed = Animator.StringToHash("Speed");
     private static readonly int Cast = Animator.StringToHash("Cast");
+    private static readonly int CastSpeed = Animator.StringToHash("CastSpeed");
+    private static readonly int RunSpeed = Animator.StringToHash("RunSpeed");
     private static readonly int Dead = Animator.StringToHash("Dead");
     private void Awake()
     {
@@ -26,8 +28,12 @@ public sealed class EnemyMagePresentation : MonoBehaviour
     private void LateUpdate()
     {
         if (visualAnimator != null)
+        {
             visualAnimator.SetFloat(Speed, !health.IsDead && !mage.IsCasting && agent.enabled && agent.isOnNavMesh && !agent.isStopped
                 ? agent.velocity.magnitude : 0f);
+            visualAnimator.SetFloat(CastSpeed, mage.CastPlaybackSpeed);
+            visualAnimator.SetFloat(RunSpeed, Mathf.Clamp(agent.velocity.magnitude / 2.5f, 0.6f, 1.5f));
+        }
         float charge = mage.ChargeProgress;
         if (chargeOrb != null)
         {
@@ -36,7 +42,12 @@ public sealed class EnemyMagePresentation : MonoBehaviour
         }
         if (chargeLight != null) chargeLight.intensity = !health.IsDead ? charge * 2.5f : 0f;
     }
-    private void OnCast() { if (visualAnimator != null) visualAnimator.SetTrigger(Cast); }
+    private void OnCast()
+    {
+        if (visualAnimator == null) return;
+        visualAnimator.SetFloat(CastSpeed, mage.CastPlaybackSpeed);
+        visualAnimator.SetTrigger(Cast);
+    }
     private void OnDeath()
     {
         if (visualAnimator != null) { visualAnimator.ResetTrigger(Cast); visualAnimator.SetBool(Dead, true); }

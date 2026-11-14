@@ -19,11 +19,13 @@ public sealed class EnemyChaser : MonoBehaviour, IEnemyCombatant
 
     public event Action AttackStarted;
     public bool IsAttacking { get; private set; }
+    public float AttackPlaybackSpeed { get; private set; } = 1f;
 
     private Health health;
     private Health targetHealth;
     private CharacterController targetController;
     private NavMeshAgent agent;
+    private EnemyBuffReceiver buffs;
     private float nextAttackTime;
     private bool provoked;
     private float strikeTime;
@@ -38,6 +40,8 @@ public sealed class EnemyChaser : MonoBehaviour, IEnemyCombatant
     {
         health = GetComponent<Health>();
         agent = GetComponent<NavMeshAgent>();
+        buffs = GetComponent<EnemyBuffReceiver>();
+        if (buffs == null) buffs = gameObject.AddComponent<EnemyBuffReceiver>();
         agent.stoppingDistance = Mathf.Max(0.1f, attackRange - 0.15f);
     }
 
@@ -124,11 +128,13 @@ public sealed class EnemyChaser : MonoBehaviour, IEnemyCombatant
 
             if (Time.time >= nextAttackTime)
             {
+                // Fijar el ritmo de este golpe mantiene sincronizados impacto y animacion.
+                AttackPlaybackSpeed = buffs.AttackSpeedMultiplier;
                 IsAttacking = attackWindup + attackRecovery > 0f;
                 strikePending = attackWindup > 0f;
-                strikeTime = Time.time + attackWindup;
-                recoveryEnd = strikeTime + attackRecovery;
-                nextAttackTime = Time.time + Mathf.Max(attackInterval, attackWindup + attackRecovery);
+                strikeTime = Time.time + attackWindup / AttackPlaybackSpeed;
+                recoveryEnd = strikeTime + attackRecovery / AttackPlaybackSpeed;
+                nextAttackTime = Time.time + Mathf.Max(attackInterval, attackWindup + attackRecovery) / AttackPlaybackSpeed;
                 AttackStarted?.Invoke();
                 if (!strikePending) Strike();
             }

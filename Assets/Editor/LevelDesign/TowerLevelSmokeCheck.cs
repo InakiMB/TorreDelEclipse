@@ -32,6 +32,7 @@ public static class TowerLevelSmokeCheck
         if(EditorApplication.isPlayingOrWillChangePlaymode || SceneManager.GetActiveScene().path!=TowerLevelBuilder.ScenePath)
             throw new InvalidOperationException("Abrir TorreEclipse fuera de Play.");
         Directory.CreateDirectory("Library/LevelDesign");report=new Report();phase=0;since=EditorApplication.timeSinceStartup;
+        SessionState.SetInt("TowerSmoke.EnemyCount",All<MonoBehaviour>().Count(item=>item is IEnemyCombatant));
         SessionState.SetBool("TowerSmoke.Active",true);EditorApplication.isPlaying=true;
     }
     [MenuItem("Tools/Torre del Eclipse/Reconstruir y verificar")]
@@ -67,10 +68,11 @@ public static class TowerLevelSmokeCheck
             EncounterObjective objective=UnityEngine.Object.FindFirstObjectByType<EncounterObjective>();
             if(phase==0 && elapsed>1.5)
             {
-                Check(All<EnemyChaser>().Length+All<EnemyMage>().Length==10 && All<NavMeshAgent>().All(a=>a.isOnNavMesh),"Diez enemigos sobre NavMesh");
-                Check(objective.Stage==EncounterStage.Fighting && objective.RemainingEnemies==10,"Inicio con ascenso bloqueado");
+                Check(All<MonoBehaviour>().Count(item=>item is IEnemyCombatant)==SessionState.GetInt("TowerSmoke.EnemyCount",0) && All<NavMeshAgent>().All(a=>a.isOnNavMesh),"Enemigos actuales sobre NavMesh");
+                Check(objective.Stage==EncounterStage.Fighting && objective.RemainingEnemies==SessionState.GetInt("TowerSmoke.EnemyCount",0),"Inicio con ascenso bloqueado");
                 foreach(EnemyChaser enemy in All<EnemyChaser>())enemy.enabled=false;
                 foreach(EnemyMage enemy in All<EnemyMage>())enemy.enabled=false;
+                foreach(EnemySupport enemy in All<EnemySupport>())enemy.enabled=false;
                 Vector3 before=player.transform.position;
                 GameObject.Find("ExitMarker").GetComponent<TowerStairway>().Interact(player);
                 Check(Vector3.Distance(player.transform.position,before)<.1f,"No se puede ascender antes de limpiar");
@@ -98,6 +100,7 @@ public static class TowerLevelSmokeCheck
                 }
                 foreach(EnemyChaser enemy in All<EnemyChaser>())enemy.GetComponent<Health>().TakeDamage(999);
                 foreach(EnemyMage enemy in All<EnemyMage>())enemy.GetComponent<Health>().TakeDamage(999);
+                foreach(EnemySupport enemy in All<EnemySupport>())enemy.GetComponent<Health>().TakeDamage(999);
                 Next(2);
             }
             else if(phase==2 && elapsed>.5)
@@ -131,7 +134,7 @@ public static class TowerLevelSmokeCheck
             }
             else if(phase==5 && elapsed>1.5)
             {
-                Check(All<EnemyChaser>().Length+All<EnemyMage>().Length==10&&All<DestructibleSupply>().Length==6,"Reiniciar restaura enemigos y suministros");
+                Check(All<MonoBehaviour>().Count(item=>item is IEnemyCombatant)==SessionState.GetInt("TowerSmoke.EnemyCount",0)&&All<DestructibleSupply>().Length==6,"Reiniciar restaura enemigos y suministros");
                 Check(All<PotionPickup>().Length==0&&player.GetComponent<PlayerInventory>().PotionCount==0,"Reiniciar limpia el loot y el inventario");
                 Check(player.GetComponent<Health>().CurrentHealth==100&&objective.Stage==EncounterStage.Fighting,"Reiniciar restaura salud y objetivo");
                 Check(!UnityEngine.Object.FindFirstObjectByType<TowerLevelFlow>().ReachedTerrace,"Reiniciar restablece la progresion");

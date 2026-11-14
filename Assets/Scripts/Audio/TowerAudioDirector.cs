@@ -10,6 +10,7 @@ public sealed class TowerAudioDirector : MonoBehaviour
     [SerializeField] private Health playerHealth = null;
     [SerializeField] private EnemyChaser[] enemies = new EnemyChaser[0];
     [SerializeField] private EnemyMage[] mages = new EnemyMage[0];
+    [SerializeField] private EnemySupport[] supports = new EnemySupport[0];
     [SerializeField] private EncounterObjective objective = null;
     [SerializeField] private Transform interiorPoint = null;
     [SerializeField] private Transform exteriorPoint = null;
@@ -66,7 +67,7 @@ public sealed class TowerAudioDirector : MonoBehaviour
             Debug.LogError("Los puntos Interior y Exterior deben estar separados sobre el piso.", this);
             return;
         }
-        if (enemies.Length == 0) Debug.LogWarning("Asigna los enemigos para controlar la música de combate.", this);
+        if (enemies.Length + mages.Length + supports.Length == 0) Debug.LogWarning("Asigna los enemigos para controlar la música de combate.", this);
         try
         {
             ambience = RuntimeManager.CreateInstance(ambienceEvent);
@@ -122,6 +123,8 @@ public sealed class TowerAudioDirector : MonoBehaviour
             if (enemy != null && enemy.IsEngaged) return true;
         foreach (EnemyMage mage in mages)
             if (mage != null && mage.IsEngaged) return true;
+        foreach (EnemySupport support in supports)
+            if (support != null && support.IsEngaged) return true;
         return false;
     }
 
