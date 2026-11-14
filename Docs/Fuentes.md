@@ -48,7 +48,7 @@ Las fuentes PCM de 16 bits y 48 kHz están en `Audio/Fuentes/Bloque06/Originales
 
 Iñaki realizó la edición y el procesamiento en Reaper de ambientes, música y pasos. Se conservan las tres sesiones `.rpp` y sus siete medios vinculados en `Audio/ExportadosFMOD/Reaper/`; incluyen ReaEQ. Las 25 exportaciones de trabajo destinadas a FMOD están en `Audio/ExportadosFMOD/Bloque06/`: siete exportaciones PCM de 24 bits y el resto PCM de 16 bits, todas a 48 kHz. FMOD conserva los tres pasos originales mono; las versiones editadas de pasos quedan pendientes de revisión de formato e importación. Las copias importadas y los eventos, parámetros y mezcla están en `Audio/FMOD/TorreDelEclipseAudio/`.
 
-La maqueta ya está integrada en el prototipo y puede ajustarse durante la producción final. Los enlaces de música de Baldur's Gate 3 y Diablo compartidos como referencias no corresponden a archivos incorporados al juego.
+La maqueta ya está integrada en el prototipo y puede ajustarse durante la producción final. La música de Baldur's Gate 3 y Diablo se utiliza como referencia sonora; sus grabaciones no se incorporaron al juego.
 
 ### Audio del guerrero
 

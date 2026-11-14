@@ -4,4 +4,4 @@ Fuente: https://blendervoyage.itch.io/psx-style-modular-low-poly-dungeon
 Licencia declarada por el autor: Creative Commons Attribution 4.0 International (CC BY 4.0).
 Texto de la licencia: https://creativecommons.org/licenses/by/4.0/
 Atribución para los créditos: PSX Style Modular Low Poly Dungeon, por BlenderVoyage, licencia CC BY 4.0.
-Se seleccionaron el FBX gratuito y las texturas del ZIP descargado por el usuario. Modelos y texturas sin modificar; carpetas reorganizadas.
+Se seleccionaron el FBX gratuito y las texturas del paquete original. Modelos y texturas sin modificar; carpetas reorganizadas.

@@ -2,4 +2,4 @@ RPG Character Pack - personaje Wizard
 Autor: Quaternius
 Fuente: https://quaternius.com/packs/rpgcharacters.html
 Licencia: CC0 1.0. Ver License.txt.
-Se seleccionaron el Wizard.fbx animado y sus dos texturas del ZIP descargado por el usuario. Modelos y texturas sin modificar; carpetas reorganizadas.
+Se seleccionaron el Wizard.fbx animado y sus dos texturas del paquete original. Modelos y texturas sin modificar; carpetas reorganizadas.
