@@ -2,7 +2,7 @@
 
 Responsable de todas las tareas: **Iñaki Bertran (InakiMB)**. Trabajo individual.
 
-Actualizado al **16/11/2026**: Hitos 0, 1 y 2 completos; Producción en curso con maqueta de audio, planta baja, terraza, tres variantes enemigas, rodada, jefe de dos fases e interfaces integrados. Cada tarea registra su estado y una evidencia: commit, captura o prueba reproducible. Estados: Pendiente / En curso / Preparado / Hecho. Preparado significa que existe el material, pero falta incorporarlo o verificarlo en el proyecto.
+Actualizado al **16/11/2026**: Hitos 0, 1 y 2 completos; Producción en curso con maqueta de audio, planta baja, terraza, tres variantes enemigas, rodada, jefe de dos fases e interfaces integrados. La revisión de requisitos está completada. Cada tarea registra su estado y una evidencia: commit, captura o prueba reproducible. Estados: Pendiente / En curso / Preparado / Hecho. Preparado significa que existe el material, pero falta incorporarlo o verificarlo en el proyecto.
 
 ## Hito 0 - Preproducción
 
@@ -10,8 +10,8 @@ Actualizado al **16/11/2026**: Hitos 0, 1 y 2 completos; Producción en curso co
 |-|-|-|-|
 |H0-01|Crear proyecto Unity|Hecho|Abre con 6000.3.10f1 y plantilla Universal 3D.|
 |H0-02|Iniciar historial Git|Hecho|Existe el commit 23196e4; Assets, Packages y ProjectSettings están versionados; las cachés quedan excluidas.|
-|H0-03|Identificar autor y alcance|Hecho|Iñaki Bertran figura como único responsable; el concepto distingue base y ampliaciones.|
-|H0-04|Preparar Game Concept|Hecho|El PDF de dos carillas y su versión editable están revisados e incorporados al repositorio.|
+|H0-03|Identificar autor y alcance|Hecho|Iñaki Bertran figura como único responsable; el concepto delimita el alcance de la entrega.|
+|H0-04|Preparar Game Concept|Hecho|El PDF de dos carillas refleja el concepto vigente y está incorporado al repositorio.|
 |H0-05|Incorporar documentación y backlog|Hecho|README y Docs están confirmados en un commit y visibles en GitHub; todos los trabajos tienen responsable, hito y criterio.|
 
 ## Hito 1 - Core gameplay
@@ -37,7 +37,7 @@ La versión corta del prototipo integra combate a distancia y cuerpo a cuerpo, l
 
 ## Hito 3 - Producción
 
-La maqueta de audio está integrada en el prototipo y en TorreEclipse. Se conservan fuentes, sesiones de Reaper, proyecto de FMOD y bancos. La planta baja combina veinte enemigos entre guerreros, magos y clérigos de apoyo. Tras despejarla se puede ascender e invocar al Custodio del Eclipse, con dos fases, música propia y reintento desde la terraza. El jugador dispone de una rodada defensiva. Continúan pendientes los menús y el balance final.
+La maqueta de audio está integrada en el prototipo y en TorreEclipse. Se conservan fuentes, sesiones de Reaper, proyecto de FMOD y bancos. La planta baja combina veinte enemigos entre guerreros, magos y clérigos de apoyo. Tras despejarla se puede ascender e invocar al Custodio del Eclipse, con dos fases, música propia y reintento desde la terraza. El jugador dispone de una rodada defensiva. Los menús están integrados; continúan pendientes la revisión visual final y el balance con jugadores.
 
 |ID|Tarea|Estado|Terminado cuando|
 |-|-|-|-|
@@ -61,7 +61,7 @@ La maqueta de audio está integrada en el prototipo y en TorreEclipse. Se conser
 
 |ID|Tarea|Estado|Terminado cuando|
 |-|-|-|-|
-|H4-01|Revisar requisitos|Pendiente|Todos los sistemas obligatorios están implementados y hay al menos tres minutos de juego efectivo.|
+|H4-01|Revisar requisitos|Hecho|Todos los sistemas obligatorios están implementados y hay al menos tres minutos de juego efectivo.|
 |H4-02|Corregir y balancear|En curso|Se prueban victoria, derrota, reinicio y audio; no hay errores bloqueantes; el jefe se puede vencer con magia, bastón, esquive y las pociones disponibles.|
 |H4-03|Revisar arquitectura y explicación|Pendiente|Las responsabilidades de las clases, la comunicación entre sistemas y las decisiones de código están revisadas y pueden explicarse con ejemplos del proyecto.|
 
@@ -109,3 +109,5 @@ La escena `PrototipoTorre` incorpora cambio de ambiente por desplazamiento, tran
 |16/11/2026|H4-02, avance|Dificultad del jefe ajustada: persecución más rápida, preparaciones y pausas más cortas, combo con avance y reorientación, embestida de mayor alcance y patrones más densos. La segunda fase combina golpes y orbes. Se conservan 1800 de vida y el daño por impacto.|32 comprobaciones correctas en Play, en copia de validación: presión del combo, esquive, señales, coberturas, persecución, emisión y límite de orbes, derrota, reintento y victoria. Pendiente nueva prueba de balance con jugadores.|
 |16/11/2026|H3-01 / H3-04 / H4-02, avance|Torreones con transición a 30% de opacidad al tapar al jugador o al jefe; bases de piedra cierran los rincones y las rutas reservan espacio para el cuerpo del jefe. Se refuerzan únicamente tres guerreros, dos magos y dos apoyos del santuario, con alerta coordinada y ajustes propios de cadencia y velocidad. Barras de enemigos pendientes en H3-03.|34 comprobaciones correctas en Play: transparencia y restauración de materiales, colisiones, rodada, exclusión de rincones, alerta del grupo, aislamiento de los otros trece enemigos, salto del jefe y victoria. Veinte enemigos, ascenso y terraza accesibles; revisión de navegación sin observaciones.|
 |16/11/2026|H3-03|Menú principal, HUD con esfera de vida, barras de enemigos, pausa, cinco sliders de volumen, derrota, victoria y créditos integrados. Los textos usan una fuente distribuible y las pantallas conservan sus botones funcionales. Dos sonidos 2D de interfaz incorporados a FMOD.|Navegación, pausa y restricciones de acciones, buses de audio, registro de fuentes, daño y curación en barras, reintento del jefe con recursos guardados, victoria y regreso al menú comprobados en Play. Escenas MenuPrincipal y TorreEclipse guardadas.|
+|16/11/2026|H0-04, actualización|Game Concept v1.0 actualizado al juego implementado: rodada, tres variantes enemigas, Custodio de dos fases, reintento, interfaces y audio adaptativo. Se retiran las ampliaciones del documento.|Docs/GameConcept.pdf revisado en dos carillas.|
+|16/11/2026|H4-01|Requisitos de Programación y Audio revisados contra código, escenas y recursos. La partida supera tres minutos de juego efectivo, excluidos menús y esperas.|Revisión de sistemas y referencias; FMOD y seis sesiones de Reaper sin medios faltantes. Pruebas de jugabilidad previas y duración confirmada en partida. Balance, arquitectura y ejecutable definitivo continúan pendientes.|

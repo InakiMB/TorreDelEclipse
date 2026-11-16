@@ -24,7 +24,7 @@ Actualizado al **16/11/2026**. Hitos **0, 1 y 2 completos**; **Producción en cu
 - Menú principal, pausa, opciones de audio, derrota, victoria con la torre purificada y créditos. Las cinco categorías de volumen guardan sus preferencias.
 - HUD con esfera de vida, magia, bastón, recarga de esquive y pociones; barras discretas sobre enemigos durante el combate, incluidas las curaciones. La cámara de combate reserva espacio para la interfaz y la hotbar se atenúa si un personaje pasa por detrás.
 
-Siguen pendientes el balance final con jugadores y la revisión final de requisitos y ejecutable. Llegar a la terraza permite prepararse; la victoria requiere derrotar al jefe.
+La revisión de requisitos está completada y la duración supera los tres minutos de juego efectivo. Quedan la revisión visual final, el balance con jugadores, la revisión de arquitectura y la prueba del ejecutable definitivo. Llegar a la terraza permite prepararse; la victoria requiere derrotar al jefe.
 
 ## Abrir y probar
 
@@ -68,7 +68,7 @@ Las pantallas y sus controles están en el objeto `UI` de cada escena. Las opcio
 
 El proyecto de FMOD está en `Audio/FMOD/TorreDelEclipseAudio/`, con el archivo `.fspro`, los audios importados, eventos y bancos en `Build/Desktop/`. Las sesiones de Reaper y sus medios están en `Audio/ExportadosFMOD/Reaper/`; las fuentes y exportaciones se conservan en `Audio/Fuentes/` y `Audio/ExportadosFMOD/`. `Bloque06` corresponde a la maqueta general, `Bloque08` al guerrero y `Bloque12` al jefe.
 
-El ambiente cambia entre interior y exterior; la música responde al combate de guerreros, perseguidores, magos y apoyos. Los efectos acompañan acciones, daño, recursos y resultados. El mago enemigo utiliza un tono más grave para el lanzamiento. El apoyo reutiliza los eventos de hechizo y curación, con tonos y niveles diferentes para la carga, la cura y la aceleración; no requiere eventos ni bancos nuevos. El mezclador separa música, ambiente, efectos e interfaz; la pantalla de Opciones está pendiente.
+El ambiente cambia entre interior y exterior; la música responde al combate de guerreros, perseguidores, magos y apoyos. Los efectos acompañan acciones, daño, recursos y resultados. El mago enemigo utiliza un tono más grave para el lanzamiento. El apoyo reutiliza los eventos de hechizo y curación, con tonos y niveles diferentes para la carga, la cura y la aceleración; no requiere eventos ni bancos nuevos. El mezclador separa música, ambiente, efectos e interfaz; la pantalla de Opciones permite ajustar cada categoría y el volumen general.
 
 El esquive reutiliza el evento de barrido de bastón con tono y nivel reducidos, y un paso al aterrizar. Los pasos de caminata se suspenden durante la rodada; no se requieren nuevos eventos ni bancos de FMOD.
 
