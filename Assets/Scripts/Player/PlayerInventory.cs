@@ -11,6 +11,7 @@ public sealed class PlayerInventory : MonoBehaviour
     [SerializeField, Min(1)] private int healingPerPotion = 35;
 
     private Health health;
+    private PlayerDodge dodge;
     public int PotionCount { get; private set; }
     public int MaxPotions => maxPotions;
     public string Message { get; private set; } = string.Empty;
@@ -22,6 +23,7 @@ public sealed class PlayerInventory : MonoBehaviour
     private void Awake()
     {
         health = GetComponent<Health>();
+        dodge = GetComponent<PlayerDodge>();
         PotionCount = Mathf.Clamp(startingPotions, 0, maxPotions);
     }
 
@@ -49,7 +51,7 @@ public sealed class PlayerInventory : MonoBehaviour
 
     public bool TryUsePotion()
     {
-        if (health.IsDead) return false;
+        if (health.IsDead || (dodge != null && dodge.IsBusy)) return false;
         if (PotionCount <= 0)
         {
             Notify("No tenés pociones.");
@@ -73,5 +75,13 @@ public sealed class PlayerInventory : MonoBehaviour
     {
         Message = message;
         MessageUntil = Time.time + 2.5f;
+    }
+
+    public void RestoreCheckpoint(int potions)
+    {
+        PotionCount = Mathf.Clamp(potions, 0, maxPotions);
+        Message = string.Empty;
+        MessageUntil = 0f;
+        Changed?.Invoke(PotionCount, maxPotions);
     }
 }

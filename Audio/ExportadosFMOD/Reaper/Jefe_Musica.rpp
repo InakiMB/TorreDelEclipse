@@ -1,0 +1,29 @@
+<REAPER_PROJECT 0.1 "7.80/win64" 0
+  SAMPLERATE 48000 1 0
+  <TRACK
+    NAME "Fase 1 - sin coros"
+    MUTESOLO 0 0 0
+    VOLPAN 0.65 0 1 -1
+    <ITEM
+      POSITION 0
+      LENGTH 117.64704167
+      VOLPAN 1 0 1 -1
+      <SOURCE WAVE
+        FILE "../Bloque12/Jefe_Musica_Fase1.wav"
+      >
+    >
+  >
+  <TRACK
+    NAME "Fase 2 - con coros"
+    MUTESOLO 1 0 0
+    VOLPAN 0.65 0 1 -1
+    <ITEM
+      POSITION 0
+      LENGTH 117.64704167
+      VOLPAN 1 0 1 -1
+      <SOURCE WAVE
+        FILE "../Bloque12/Jefe_Musica_Fase2.wav"
+      >
+    >
+  >
+>

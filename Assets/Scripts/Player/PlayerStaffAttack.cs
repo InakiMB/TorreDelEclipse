@@ -24,6 +24,7 @@ public sealed class PlayerStaffAttack : MonoBehaviour
     private float readyAt;
     private bool pendingImpact;
     private bool hasAttackTrigger;
+    private PlayerDodge dodge;
 
     public bool IsAttacking => isActiveAndEnabled && Time.time < readyAt;
     public event Action Swung;
@@ -32,6 +33,7 @@ public sealed class PlayerStaffAttack : MonoBehaviour
     private void Awake()
     {
         health = GetComponent<Health>();
+        dodge = GetComponent<PlayerDodge>();
         viewCamera = Camera.main;
         if (visualAnimator == null) visualAnimator = GetComponentInChildren<Animator>();
         if (visualAnimator != null && visualAnimator.runtimeAnimatorController != null)
@@ -54,13 +56,18 @@ public sealed class PlayerStaffAttack : MonoBehaviour
 
     private void OnDisable()
     {
+        CancelAttack();
+    }
+
+    public void CancelAttack()
+    {
         pendingImpact = false;
         if (hasAttackTrigger && visualAnimator != null) visualAnimator.ResetTrigger(AttackParameter);
     }
 
     private void LateUpdate()
     {
-        if (health.IsDead || Time.deltaTime <= 0f) return;
+        if (health.IsDead || Time.deltaTime <= 0f || (dodge != null && dodge.IsBusy)) return;
         if (pendingImpact && Time.time >= impactAt)
         {
             pendingImpact = false;

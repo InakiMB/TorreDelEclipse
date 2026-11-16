@@ -8,11 +8,13 @@ public sealed class PlayerInteractor : MonoBehaviour
 {
     [SerializeField, Min(0.1f)] private float interactionRange = 1.8f;
     private Health health;
+    private PlayerDodge dodge;
     public string CurrentPrompt { get; private set; } = string.Empty;
 
     private void Awake()
     {
         health = GetComponent<Health>();
+        dodge = GetComponent<PlayerDodge>();
     }
 
     private void OnDisable()
@@ -23,7 +25,7 @@ public sealed class PlayerInteractor : MonoBehaviour
     private void LateUpdate()
     {
         CurrentPrompt = string.Empty;
-        if (health.IsDead || Time.deltaTime <= 0f) return;
+        if (health.IsDead || Time.deltaTime <= 0f || (dodge != null && dodge.IsBusy)) return;
 
         IInteractable closest = null;
         float closestDistance = float.PositiveInfinity;

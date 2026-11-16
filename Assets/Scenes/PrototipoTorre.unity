@@ -500,6 +500,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98cec4a5d87133143b45c2ab60aafedf, type: 3}
+--- !u!4 &349261098 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -6632547305067513996, guid: 98cec4a5d87133143b45c2ab60aafedf, type: 3}
+  m_PrefabInstance: {fileID: 349261097}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &349261099 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -2283560945726771945, guid: 98cec4a5d87133143b45c2ab60aafedf, type: 3}
+  m_PrefabInstance: {fileID: 349261097}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,6 +782,9 @@ GameObject:
   - component: {fileID: 687046388}
   - component: {fileID: 687046391}
   - component: {fileID: 687046390}
+  - component: {fileID: 687046394}
+  - component: {fileID: 687046393}
+  - component: {fileID: 687046392}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1091,6 +1104,67 @@ MonoBehaviour:
       Data4: -1729296315
     Path: event:/SFX/Curar
   stepInterval: 0.38
+--- !u!114 &687046392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687046376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37101574bde29e94aaa4da3782a28b3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDodgeAudio
+  rollEvent:
+    Guid:
+      Data1: -667737521
+      Data2: 1248406256
+      Data3: -1245637985
+      Data4: 304291975
+    Path: event:/SFX/Baston
+  landingEvent:
+    Guid:
+      Data1: 1232345027
+      Data2: 1253996077
+      Data3: 929878974
+      Data4: 371420108
+    Path: event:/SFX/Pasos
+  rollPitch: 0.8
+--- !u!114 &687046393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687046376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f71afa8f89276fc4cb94f8febe2d3669, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDodgePresentation
+  visualAnimator: {fileID: 483959765}
+  rollClip: {fileID: -7580519143377161132, guid: 98cec4a5d87133143b45c2ab60aafedf, type: 3}
+  rigidHead: {fileID: 349261099}
+  headBone: {fileID: 349261098}
+--- !u!114 &687046394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 687046376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 944a7c79a62a4b147aef834f81643b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDodge
+  rollDistance: 3.2
+  rollDuration: 0.5
+  recoveryTime: 0.15
+  cooldown: 0.95
+  invulnerabilityStart: 0.04
+  invulnerabilityEnd: 0.3
 --- !u!1 &741512352
 GameObject:
   m_ObjectHideFlags: 0
@@ -1348,9 +1422,12 @@ MonoBehaviour:
   enemies:
   - {fileID: 1475764422}
   - {fileID: 1479953260}
+  mages: []
+  supports: []
   objective: {fileID: 14192140}
   interiorPoint: {fileID: 879142404}
   exteriorPoint: {fileID: 2045124236}
+  exteriorArea: {fileID: 0}
   ambienceEvent:
     Guid:
       Data1: 1555984440
@@ -1863,6 +1940,16 @@ MonoBehaviour:
   attackRange: 1.4
   attackDamage: 10
   attackInterval: 1
+  attackEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  attackWindup: 0
+  attackRecovery: 0
+  destroyDelay: 0
 --- !u!195 &1475764423
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -2078,6 +2165,16 @@ MonoBehaviour:
   attackRange: 1.4
   attackDamage: 10
   attackInterval: 1
+  attackEvent:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  attackWindup: 0
+  attackRecovery: 0
+  destroyDelay: 0
 --- !u!195 &1479953261
 NavMeshAgent:
   m_ObjectHideFlags: 0

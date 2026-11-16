@@ -21,10 +21,12 @@ public sealed class PlayerActionAudio : MonoBehaviour
     private PlayerStaffAttack staff;
     private PlayerInventory inventory;
     private float nextStepAt;
+    private PlayerDodge dodge;
 
     private void Awake()
     {
         health = GetComponent<Health>();
+        dodge = GetComponent<PlayerDodge>();
         controller = GetComponent<CharacterController>();
         movement = GetComponent<PlayerMovement>();
         caster = GetComponent<PlayerSpellCaster>();
@@ -68,6 +70,7 @@ public sealed class PlayerActionAudio : MonoBehaviour
         Vector3 velocity = controller.velocity;
         velocity.y = 0f;
         bool walking = !health.IsDead && controller.enabled && controller.isGrounded
+            && (dodge == null || !dodge.IsBusy)
             && movement != null && movement.isActiveAndEnabled && velocity.sqrMagnitude > 0.04f;
         if (!walking)
         {

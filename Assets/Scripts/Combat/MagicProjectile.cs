@@ -79,6 +79,8 @@ public sealed class MagicProjectile : MonoBehaviour
                 continue;
             }
             if (exclusiveTarget != null && hit.collider.GetComponentInParent<IEnemyCombatant>() != null) continue;
+            if (exclusiveTarget != null && hit.collider.GetComponentInParent<Health>() == exclusiveTarget
+                && exclusiveTarget.IsDamageBlocked) continue;
 
             if (hit.distance < closestDistance)
             {

@@ -15,11 +15,119 @@ MonoBehaviour:
   Path: Audio/FMOD/TorreDelEclipseAudio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639302004433499010
+  lastModified: 639303865775412350
   FileSizes:
   - Name: Desktop
-    Value: 835168
+    Value: 4197920
   Exists: 1
+--- !u!114 &-8872414543627273128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Jefe/Invocacion
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/Jefe/Invocacion
+  Guid:
+    Data1: -985632728
+    Data2: 1596390346
+    Data3: 227190697
+    Data4: -1303511612
+  Banks:
+  - {fileID: -9194930288831458847}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1783
+--- !u!114 &-8500120322093507649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Jefe/Pasos
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/Jefe/Pasos
+  Guid:
+    Data1: 1863553904
+    Data2: 1351407603
+    Data3: 749446784
+    Data4: -406633408
+  Banks:
+  - {fileID: -9194930288831458847}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1149
+--- !u!114 &-8282445510589117295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Jefe/ImpactoOrbe
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/Jefe/ImpactoOrbe
+  Guid:
+    Data1: 674651519
+    Data2: 1349114089
+    Data3: 228654269
+    Data4: 1390743122
+  Banks:
+  - {fileID: -9194930288831458847}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2508
+--- !u!114 &-7897748336852012224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Jefe/Carga
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/Jefe/Carga
+  Guid:
+    Data1: -2130186000
+    Data2: 1359637430
+    Data3: 1480114866
+    Data4: 1478734624
+  Banks:
+  - {fileID: -9194930288831458847}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 819
 --- !u!114 &-7346052449625781331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,6 +291,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
+--- !u!114 &-3300056716888667854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Jefe/Herida
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/Jefe/Herida
+  Guid:
+    Data1: 172110313
+    Data2: 1374726054
+    Data3: -1686249836
+    Data4: 830005657
+  Banks:
+  - {fileID: -9194930288831458847}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1003
 --- !u!114 &-2791400485091887485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,6 +345,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
+--- !u!114 &-2772014876051404838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Jefe/Barrido
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/Jefe/Barrido
+  Guid:
+    Data1: 1089207852
+    Data2: 1365472272
+    Data3: 1926736779
+    Data4: -1098279819
+  Banks:
+  - {fileID: -9194930288831458847}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1230
 --- !u!114 &-2673223211290040153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,6 +399,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
+--- !u!114 &-2097866999818620724
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Jefe/Preparacion
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/Jefe/Preparacion
+  Guid:
+    Data1: -2073807212
+    Data2: 1484250981
+    Data3: -466989174
+    Data4: -343497217
+  Banks:
+  - {fileID: -9194930288831458847}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1070
 --- !u!114 &-2092580249895906811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,13 +568,26 @@ MonoBehaviour:
   - {fileID: -2673223211290040153}
   - {fileID: -2791400485091887485}
   - {fileID: 309522697278135507}
+  - {fileID: 7497133953715595744}
+  - {fileID: -8872414543627273128}
+  - {fileID: -2772014876051404838}
+  - {fileID: 6180972900659753130}
+  - {fileID: -8500120322093507649}
+  - {fileID: -8282445510589117295}
+  - {fileID: -2097866999818620724}
+  - {fileID: 216025847079465449}
+  - {fileID: 8843230704309885812}
+  - {fileID: 222203003072827652}
+  - {fileID: 3673324924172795180}
+  - {fileID: -3300056716888667854}
+  - {fileID: -7897748336852012224}
   EditorParameters: []
   MasterBanks:
   - {fileID: -9194930288831458847}
   StringsBanks:
   - {fileID: 8128512609427801552}
   cacheVersion: 132096
-  cacheTime: 639302004433519008
+  cacheTime: 639303865775427559
   SerializableEventsDict:
   - key: event:/PruebaConexion
     index: 0
@@ -423,6 +625,32 @@ MonoBehaviour:
     index: 16
   - key: event:/SFX/Mago/Recoger
     index: 17
+  - key: event:/MUS/Jefe
+    index: 18
+  - key: event:/SFX/Jefe/Invocacion
+    index: 19
+  - key: event:/SFX/Jefe/Barrido
+    index: 20
+  - key: event:/SFX/Jefe/Impacto
+    index: 21
+  - key: event:/SFX/Jefe/Pasos
+    index: 22
+  - key: event:/SFX/Jefe/ImpactoOrbe
+    index: 23
+  - key: event:/SFX/Jefe/Preparacion
+    index: 24
+  - key: event:/SFX/Jefe/Alas
+    index: 25
+  - key: event:/SFX/Jefe/Transformacion
+    index: 26
+  - key: event:/SFX/Jefe/Muerte
+    index: 27
+  - key: event:/SFX/Jefe/Lanzamiento
+    index: 28
+  - key: event:/SFX/Jefe/Herida
+    index: 29
+  - key: event:/SFX/Jefe/Carga
+    index: 30
 --- !u!114 &181988870041282784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,6 +675,60 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &216025847079465449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Jefe/Alas
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/Jefe/Alas
+  Guid:
+    Data1: -9153643
+    Data2: 1499304309
+    Data3: -2116966777
+    Data4: -2111264860
+  Banks:
+  - {fileID: -9194930288831458847}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3023
+--- !u!114 &222203003072827652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Jefe/Muerte
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/Jefe/Muerte
+  Guid:
+    Data1: -1666039611
+    Data2: 1423926036
+    Data3: -1076722783
+    Data4: -569595194
+  Banks:
+  - {fileID: -9194930288831458847}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1774
 --- !u!114 &309522697278135507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -474,6 +756,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 650
+--- !u!114 &3673324924172795180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Jefe/Lanzamiento
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/Jefe/Lanzamiento
+  Guid:
+    Data1: -302088493
+    Data2: 1560277545
+    Data3: 642504083
+    Data4: 409695925
+  Banks:
+  - {fileID: -9194930288831458847}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 979
 --- !u!114 &3750042997838833044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -529,6 +838,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
+--- !u!114 &6180972900659753130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Jefe/Impacto
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/Jefe/Impacto
+  Guid:
+    Data1: -458023568
+    Data2: 1430754983
+    Data3: 883180461
+    Data4: 1926323692
+  Banks:
+  - {fileID: -9194930288831458847}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1624
 --- !u!114 &6354122013970455394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -607,6 +943,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
+--- !u!114 &7497133953715595744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/MUS/Jefe
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/MUS/Jefe
+  Guid:
+    Data1: -431803874
+    Data2: 1347956418
+    Data3: -1139648082
+    Data4: -1781527258
+  Banks:
+  - {fileID: -9194930288831458847}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 8287693001530736763}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 117647
 --- !u!114 &7852180202702593234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -649,8 +1013,59 @@ MonoBehaviour:
   Path: Audio/FMOD/TorreDelEclipseAudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639302004433519008
+  lastModified: 639303865775427559
   FileSizes:
   - Name: Desktop
-    Value: 1864
+    Value: 2458
   Exists: 1
+--- !u!114 &8287693001530736763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Jefe/Fase
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorParamRef
+  Name: Fase
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2917953534
+    data2: 4116537466
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &8843230704309885812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Jefe/Transformacion
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/SFX/Jefe/Transformacion
+  Guid:
+    Data1: -832709709
+    Data2: 1352334050
+    Data3: -1464622183
+    Data4: 1664813695
+  Banks:
+  - {fileID: -9194930288831458847}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3938

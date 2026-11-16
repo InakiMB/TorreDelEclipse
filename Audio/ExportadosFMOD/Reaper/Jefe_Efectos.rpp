@@ -1,0 +1,545 @@
+<REAPER_PROJECT 0.1 "7.80/win64" 0
+  SAMPLERATE 48000 1 0
+  TEMPO 90
+  RENDER_FMT 0 2 48000
+  RENDER_PATTERN "$region"
+  RENDER_FILE "../Bloque12"
+  <RENDER_CFG
+    ZXZhdxAAAQ==
+  >
+  MARKER 1 0.00000000 "Jefe_Paso_01" 1
+  MARKER 1 0.58258333 "" 1
+  MARKER 2 4.00000000 "Jefe_Barrido_01" 1
+  MARKER 2 4.63566667 "" 1
+  MARKER 3 8.00000000 "Jefe_Impacto_01" 1
+  MARKER 3 8.87602083 "" 1
+  MARKER 4 12.00000000 "Jefe_Herida_01" 1
+  MARKER 4 12.82833333 "" 1
+  MARKER 5 16.00000000 "Jefe_Paso_02" 1
+  MARKER 5 16.56687500 "" 1
+  MARKER 6 20.00000000 "Jefe_Barrido_02" 1
+  MARKER 6 20.61906250 "" 1
+  MARKER 7 24.00000000 "Jefe_Impacto_02" 1
+  MARKER 7 24.99666667 "" 1
+  MARKER 8 28.00000000 "Jefe_Herida_02" 1
+  MARKER 8 28.90354167 "" 1
+  MARKER 9 32.00000000 "Jefe_Paso_03" 1
+  MARKER 9 33.04993750 "" 1
+  MARKER 10 36.00000000 "Jefe_Barrido_03" 1
+  MARKER 10 37.13052083 "" 1
+  MARKER 11 40.00000000 "Jefe_Impacto_03" 1
+  MARKER 11 41.52437500 "" 1
+  MARKER 12 44.00000000 "Jefe_Herida_03" 1
+  MARKER 12 44.90354167 "" 1
+  MARKER 13 48.00000000 "Jefe_Preparacion" 1
+  MARKER 13 48.97056250 "" 1
+  MARKER 14 52.00000000 "Jefe_Carga" 1
+  MARKER 14 52.71975000 "" 1
+  MARKER 15 56.00000000 "Jefe_Invocacion" 1
+  MARKER 15 57.68337500 "" 1
+  MARKER 16 60.00000000 "Jefe_Transformacion" 1
+  MARKER 16 63.83850000 "" 1
+  MARKER 17 64.83850000 "Jefe_Alas" 1
+  MARKER 17 67.76160417 "" 1
+  MARKER 18 68.83850000 "Jefe_Lanzamiento" 1
+  MARKER 18 69.71762500 "" 1
+  MARKER 19 72.83850000 "Jefe_ImpactoOrbe" 1
+  MARKER 19 75.24693750 "" 1
+  MARKER 20 76.83850000 "Jefe_Muerte" 1
+  MARKER 20 78.51329167 "" 1
+  <TRACK
+    NAME "Metal_y_Madera"
+    VOLPAN 1 0 1 -1
+    MUTESOLO 0 0 0
+    <ITEM
+      POSITION 0.00000000
+      LENGTH 0.45075000
+      VOLPAN 1.03189180 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "Metal_y_Madera_wood_hit_01"
+      PLAYRATE 0.75000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/Metal_y_Madera_wood_hit_01.wav"
+      >
+    >
+    <ITEM
+      POSITION 8.00000000
+      LENGTH 0.77504167
+      VOLPAN 0.38743740 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "Metal_y_Madera_hammer_01"
+      PLAYRATE 0.65000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/Metal_y_Madera_hammer_01.wav"
+      >
+    >
+    <ITEM
+      POSITION 12.00000000
+      LENGTH 0.33591667
+      VOLPAN 0.43795638 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "Metal_y_Madera_metal_hit_01"
+      PLAYRATE 0.80000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/Metal_y_Madera_metal_hit_01.wav"
+      >
+    >
+    <ITEM
+      POSITION 16.00000000
+      LENGTH 0.51354167
+      VOLPAN 0.94676594 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "Metal_y_Madera_wood_hit_02"
+      PLAYRATE 0.75000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/Metal_y_Madera_wood_hit_02.wav"
+      >
+    >
+    <ITEM
+      POSITION 24.00000000
+      LENGTH 0.36481250
+      VOLPAN 0.74857589 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "Metal_y_Madera_hammer_02"
+      PLAYRATE 0.65000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/Metal_y_Madera_hammer_02.wav"
+      >
+    >
+    <ITEM
+      POSITION 28.00000000
+      LENGTH 0.54341667
+      VOLPAN 0.46579834 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "Metal_y_Madera_metal_hit_02"
+      PLAYRATE 0.80000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/Metal_y_Madera_metal_hit_02.wav"
+      >
+    >
+    <ITEM
+      POSITION 32.00000000
+      LENGTH 0.54270833
+      VOLPAN 0.69681204 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "Metal_y_Madera_wood_hit_03"
+      PLAYRATE 0.75000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/Metal_y_Madera_wood_hit_03.wav"
+      >
+    >
+    <ITEM
+      POSITION 40.00000000
+      LENGTH 0.34910417
+      VOLPAN 0.74546507 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "Metal_y_Madera_hammer_03"
+      PLAYRATE 0.65000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/Metal_y_Madera_hammer_03.wav"
+      >
+    >
+    <ITEM
+      POSITION 44.00000000
+      LENGTH 0.49375000
+      VOLPAN 0.56116746 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "Metal_y_Madera_metal_hit_03"
+      PLAYRATE 0.80000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/Metal_y_Madera_metal_hit_03.wav"
+      >
+    >
+    <ITEM
+      POSITION 52.00000000
+      LENGTH 0.61718750
+      VOLPAN 0.15655440 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "Metal_y_Madera_metal_sheet_02"
+      PLAYRATE 0.70000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/Metal_y_Madera_metal_sheet_02.wav"
+      >
+    >
+    <ITEM
+      POSITION 60.18000000
+      LENGTH 2.97664583
+      VOLPAN 0.40480998 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "Metal_y_Madera_metal_falling_01"
+      PLAYRATE 0.60000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/Metal_y_Madera_metal_falling_01.wav"
+      >
+    >
+    <ITEM
+      POSITION 77.23850000
+      LENGTH 1.27479167
+      VOLPAN 0.14252287 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "Metal_y_Madera_metal_falling_02"
+      PLAYRATE 0.75000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/Metal_y_Madera_metal_falling_02.wav"
+      >
+    >
+  >
+  <TRACK
+    NAME "RPG_SFX"
+    VOLPAN 1 0 1 -1
+    MUTESOLO 0 0 0
+    <ITEM
+      POSITION 0.02000000
+      LENGTH 0.56258333
+      VOLPAN 0.24765403 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "RPG_SFX_chain_01"
+      PLAYRATE 0.90000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/RPG_SFX_chain_01.wav"
+      >
+    >
+    <ITEM
+      POSITION 4.00000000
+      LENGTH 0.42779167
+      VOLPAN 0.45404514 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "RPG_SFX_blade_01"
+      PLAYRATE 0.68000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/RPG_SFX_blade_01.wav"
+      >
+    >
+    <ITEM
+      POSITION 4.04000000
+      LENGTH 0.59566667
+      VOLPAN 0.14188911 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "RPG_SFX_chain_01"
+      PLAYRATE 0.85000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/RPG_SFX_chain_01.wav"
+      >
+    >
+    <ITEM
+      POSITION 8.02500000
+      LENGTH 0.85102083
+      VOLPAN 0.19371870 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "RPG_SFX_stones_01"
+      PLAYRATE 0.80000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/RPG_SFX_stones_01.wav"
+      >
+    >
+    <ITEM
+      POSITION 12.00000000
+      LENGTH 0.82833333
+      VOLPAN 0.35832795 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "RPG_SFX_creature_hurt_01"
+      PLAYRATE 0.75000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/RPG_SFX_creature_hurt_01.wav"
+      >
+    >
+    <ITEM
+      POSITION 16.02000000
+      LENGTH 0.54687500
+      VOLPAN 0.22722383 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "RPG_SFX_chain_02"
+      PLAYRATE 0.90000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/RPG_SFX_chain_02.wav"
+      >
+    >
+    <ITEM
+      POSITION 20.00000000
+      LENGTH 0.46085417
+      VOLPAN 0.40158106 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "RPG_SFX_blade_02"
+      PLAYRATE 0.68000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/RPG_SFX_blade_02.wav"
+      >
+    >
+    <ITEM
+      POSITION 20.04000000
+      LENGTH 0.57906250
+      VOLPAN 0.12549408 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "RPG_SFX_chain_02"
+      PLAYRATE 0.85000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/RPG_SFX_chain_02.wav"
+      >
+    >
+    <ITEM
+      POSITION 24.02500000
+      LENGTH 0.97166667
+      VOLPAN 0.37428795 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "RPG_SFX_stones_02"
+      PLAYRATE 0.80000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/RPG_SFX_stones_02.wav"
+      >
+    >
+    <ITEM
+      POSITION 28.00000000
+      LENGTH 0.90354167
+      VOLPAN 0.38110773 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "RPG_SFX_creature_hurt_02"
+      PLAYRATE 0.75000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/RPG_SFX_creature_hurt_02.wav"
+      >
+    >
+    <ITEM
+      POSITION 32.02000000
+      LENGTH 1.02993750
+      VOLPAN 0.16723489 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "RPG_SFX_chain_03"
+      PLAYRATE 0.90000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/RPG_SFX_chain_03.wav"
+      >
+    >
+    <ITEM
+      POSITION 36.00000000
+      LENGTH 0.58214583
+      VOLPAN 0.41620474 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "RPG_SFX_blade_03"
+      PLAYRATE 0.68000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/RPG_SFX_blade_03.wav"
+      >
+    >
+    <ITEM
+      POSITION 36.04000000
+      LENGTH 1.09052083
+      VOLPAN 0.13006398 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "RPG_SFX_chain_03"
+      PLAYRATE 0.85000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/RPG_SFX_chain_03.wav"
+      >
+    >
+    <ITEM
+      POSITION 40.02500000
+      LENGTH 1.49937500
+      VOLPAN 0.37273254 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "RPG_SFX_stones_03"
+      PLAYRATE 0.80000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/RPG_SFX_stones_03.wav"
+      >
+    >
+    <ITEM
+      POSITION 44.00000000
+      LENGTH 0.90354167
+      VOLPAN 0.45913701 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "RPG_SFX_creature_hurt_02"
+      PLAYRATE 0.75000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/RPG_SFX_creature_hurt_02.wav"
+      >
+    >
+    <ITEM
+      POSITION 48.00000000
+      LENGTH 0.75722917
+      VOLPAN 0.32737237 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "RPG_SFX_chain_02"
+      PLAYRATE 0.65000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/RPG_SFX_chain_02.wav"
+      >
+    >
+    <ITEM
+      POSITION 48.06000000
+      LENGTH 0.91056250
+      VOLPAN 0.32737237 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "RPG_SFX_spell_02"
+      PLAYRATE 0.60000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/RPG_SFX_spell_02.wav"
+      >
+    >
+    <ITEM
+      POSITION 52.00000000
+      LENGTH 0.71975000
+      VOLPAN 0.36529361 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "RPG_SFX_blade_03"
+      PLAYRATE 0.55000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/RPG_SFX_blade_03.wav"
+      >
+    >
+    <ITEM
+      POSITION 56.15000000
+      LENGTH 1.53337500
+      VOLPAN 0.44887015 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "RPG_SFX_creature_roar_02"
+      PLAYRATE 0.68000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/RPG_SFX_creature_roar_02.wav"
+      >
+    >
+    <ITEM
+      POSITION 56.00000000
+      LENGTH 1.00202083
+      VOLPAN 0.41146430 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "RPG_SFX_spell_fire_07"
+      PLAYRATE 0.65000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/RPG_SFX_spell_fire_07.wav"
+      >
+    >
+    <ITEM
+      POSITION 60.00000000
+      LENGTH 1.52408333
+      VOLPAN 0.50601247 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "RPG_SFX_creature_monster_03"
+      PLAYRATE 0.65000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/RPG_SFX_creature_monster_03.wav"
+      >
+    >
+    <ITEM
+      POSITION 68.83850000
+      LENGTH 0.87912500
+      VOLPAN 0.38091558 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "RPG_SFX_spell_01"
+      PLAYRATE 0.72000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/RPG_SFX_spell_01.wav"
+      >
+    >
+    <ITEM
+      POSITION 68.83850000
+      LENGTH 0.39172917
+      VOLPAN 0.08570601 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "RPG_SFX_blade_02"
+      PLAYRATE 0.80000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/RPG_SFX_blade_02.wav"
+      >
+    >
+    <ITEM
+      POSITION 72.83850000
+      LENGTH 2.40843750
+      VOLPAN 2.15159114 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "RPG_SFX_spell_fire_03"
+      PLAYRATE 0.80000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/RPG_SFX_spell_fire_03.wav"
+      >
+    >
+    <ITEM
+      POSITION 76.83850000
+      LENGTH 1.55856250
+      VOLPAN 0.28504573 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "RPG_SFX_creature_die_01"
+      PLAYRATE 0.68000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/RPG_SFX_creature_die_01.wav"
+      >
+    >
+    <ITEM
+      POSITION 77.43850000
+      LENGTH 0.54768750
+      VOLPAN 0.14252287 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "RPG_SFX_stones_04"
+      PLAYRATE 0.70000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/RPG_SFX_stones_04.wav"
+      >
+    >
+  >
+  <TRACK
+    NAME "Large_Wings_Flap"
+    VOLPAN 1 0 1 -1
+    MUTESOLO 0 0 0
+    <ITEM
+      POSITION 60.55000000
+      LENGTH 3.28850000
+      VOLPAN 0.55661372 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "Large_Wings_Flap_wings_flap_large"
+      PLAYRATE 0.80000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/Large_Wings_Flap_wings_flap_large.wav"
+      >
+    >
+    <ITEM
+      POSITION 64.83850000
+      LENGTH 2.92310417
+      VOLPAN 1.49850814 0 1 -1
+      FADEIN 1 0.04 0 1 0 0 0
+      FADEOUT 1 0.04 0 1 0 0 0
+      NAME "Large_Wings_Flap_wings_flap_large"
+      PLAYRATE 0.90000000 0 0 -1 0 0.0025
+      <SOURCE WAVE
+        FILE "Media/Jefe/Large_Wings_Flap_wings_flap_large.wav"
+      >
+    >
+  >
+>

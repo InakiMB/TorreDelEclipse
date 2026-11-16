@@ -11,10 +11,12 @@ public sealed class PlayerMovement : MonoBehaviour
 
     private CharacterController characterController;
     private float verticalSpeed;
+    private PlayerDodge dodge;
 
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
+        dodge = GetComponent<PlayerDodge>();
         if (viewCamera == null) viewCamera = Camera.main;
 
         if (viewCamera == null)
@@ -36,17 +38,8 @@ public sealed class PlayerMovement : MonoBehaviour
             return;
         }
 
-        Vector2 input = ReadMovement();
-
-        // Los ejes de movimiento pertenecen a la vista, independientemente del apuntado.
-        Vector3 forward = Vector3.ProjectOnPlane(viewCamera.transform.forward, Vector3.up);
-        if (forward.sqrMagnitude < 0.0001f)
-        {
-            forward = Vector3.ProjectOnPlane(viewCamera.transform.up, Vector3.up);
-        }
-        forward.Normalize();
-        Vector3 right = Vector3.Cross(Vector3.up, forward).normalized;
-        Vector3 velocity = (right * input.x + forward * input.y) * moveSpeed;
+        bool dodging = dodge != null && dodge.IsBusy;
+        Vector3 displacement = dodging ? dodge.ConsumeDisplacement(Time.deltaTime) : ReadDirection() * moveSpeed * Time.deltaTime;
 
         if (characterController.isGrounded && verticalSpeed < 0f)
         {
@@ -54,8 +47,21 @@ public sealed class PlayerMovement : MonoBehaviour
         }
 
         verticalSpeed += gravity * Time.deltaTime;
-        velocity.y = verticalSpeed;
-        characterController.Move(velocity * Time.deltaTime);
+        displacement.y = verticalSpeed * Time.deltaTime;
+        CollisionFlags collisions = characterController.Move(displacement);
+        if (dodging && (collisions & CollisionFlags.Sides) != 0) dodge.StopAtObstacle();
+    }
+
+    public Vector3 ReadDirection()
+    {
+        if (viewCamera == null) return Vector3.zero;
+        Vector2 input = ReadMovement();
+        // Los ejes pertenecen a la camara y no a la direccion del apuntado.
+        Vector3 forward = Vector3.ProjectOnPlane(viewCamera.transform.forward, Vector3.up);
+        if (forward.sqrMagnitude < 0.0001f) forward = Vector3.ProjectOnPlane(viewCamera.transform.up, Vector3.up);
+        forward.Normalize();
+        Vector3 right = Vector3.Cross(Vector3.up, forward).normalized;
+        return right * input.x + forward * input.y;
     }
 
     private static Vector2 ReadMovement()

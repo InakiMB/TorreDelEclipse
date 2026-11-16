@@ -1,0 +1,12 @@
+Custodio del Eclipse - Torre del Eclipse
+Base: Warrior.blend, RPG Character Pack, Quaternius.
+https://quaternius.com/packs/rpgcharacters.html
+License: CC0 1.0 Universal - https://creativecommons.org/publicdomain/zero/1.0/
+
+Adaptation: dark armor and palette, gray beard/eyebrows, cape, shoulder details,
+eclipse emblem, large hammer, black feather wings and eleven adapted animations.
+Body, head and bone-attached pieces use a Generic skeleton with baked animations.
+Wing deployment and small flaps are animated by BossPresentation in Unity.
+Editable source: Art/Blender/CustodioDelEclipse.blend (Blender 5.3).
+Exports: Custodio.fbx and CustodioWings.fbx.
+Ketheric Thorm was a visual reference; no Baldur's Gate 3 model or texture is included.

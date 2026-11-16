@@ -9,10 +9,12 @@ public sealed class PlayerAnimation : MonoBehaviour
 
     private static readonly int SpeedParameter = Animator.StringToHash("Speed");
     private CharacterController characterController;
+    private PlayerDodge dodge;
 
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
+        dodge = GetComponent<PlayerDodge>();
         if (visualAnimator == null)
         {
             visualAnimator = GetComponentInChildren<Animator>();
@@ -39,6 +41,6 @@ public sealed class PlayerAnimation : MonoBehaviour
 
         Vector3 planarVelocity = characterController.velocity;
         planarVelocity.y = 0f;
-        visualAnimator.SetFloat(SpeedParameter, planarVelocity.magnitude);
+        visualAnimator.SetFloat(SpeedParameter, dodge != null && dodge.IsBusy ? 0f : planarVelocity.magnitude);
     }
 }

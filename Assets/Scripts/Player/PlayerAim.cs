@@ -8,10 +8,12 @@ public sealed class PlayerAim : MonoBehaviour
     [SerializeField] private Camera viewCamera = null;
     [SerializeField] private Transform aimOrigin = null;
     [SerializeField, Min(0f)] private float aimDeadZone = 0.05f;
+    private PlayerDodge dodge;
 
     private void Awake()
     {
         if (viewCamera == null) viewCamera = Camera.main;
+        dodge = GetComponent<PlayerDodge>();
 
         if (viewCamera == null)
         {
@@ -23,7 +25,7 @@ public sealed class PlayerAim : MonoBehaviour
     private void LateUpdate()
     {
         Mouse mouse = Mouse.current;
-        if (mouse == null || viewCamera == null || Time.deltaTime <= 0f)
+        if (mouse == null || viewCamera == null || Time.deltaTime <= 0f || (dodge != null && dodge.IsBusy))
         {
             return;
         }

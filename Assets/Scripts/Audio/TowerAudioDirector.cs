@@ -30,6 +30,8 @@ public sealed class TowerAudioDirector : MonoBehaviour
     private float zone;
     private float combat;
     private float musicGain = 1f;
+    [SerializeField] private BossEncounter bossEncounter;
+    private EncounterStage lastStage = EncounterStage.Fighting;
 
     public float Zone => zone;
     public float Combat => combat;
@@ -105,7 +107,8 @@ public sealed class TowerAudioDirector : MonoBehaviour
         zone = Mathf.MoveTowards(zone, CalculateZone(), Time.deltaTime / zoneTransitionTime);
         float targetCombat = !ended && HasEngagedEnemy() ? 1f : 0f;
         combat = Mathf.MoveTowards(combat, targetCombat, Time.deltaTime / combatTransitionTime);
-        musicGain = Mathf.MoveTowards(musicGain, ended ? 0.2f : 1f, Time.deltaTime);
+        float desiredMusic = ended ? 0.2f : bossEncounter != null && bossEncounter.ArenaSealed ? 0f : 1f;
+        musicGain = Mathf.MoveTowards(musicGain, desiredMusic, Time.deltaTime);
         ambience.setParameterByName("Zona", zone);
         music.setParameterByName("Combate", combat);
         music.setVolume(musicGain);
@@ -141,10 +144,11 @@ public sealed class TowerAudioDirector : MonoBehaviour
         Vector3 position = playerHealth != null ? playerHealth.transform.position : transform.position;
         switch (stage)
         {
-            case EncounterStage.ExitUnlocked: FmodOneShot.Play(accessEvent, position); break;
+            case EncounterStage.ExitUnlocked: if (lastStage == EncounterStage.Fighting) FmodOneShot.Play(accessEvent, position); break;
             case EncounterStage.Completed: FmodOneShot.Play(victoryEvent, position); break;
             case EncounterStage.Defeated: FmodOneShot.Play(defeatEvent, position); break;
         }
+        lastStage = stage;
     }
 
     private void StopAudio()

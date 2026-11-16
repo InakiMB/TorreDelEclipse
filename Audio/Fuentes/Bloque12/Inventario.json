@@ -1,0 +1,528 @@
+{
+  "sample_rate": 48000,
+  "pcm_bits": 16,
+  "source_files": {
+    "Metal_y_Madera_wood_hit_01": {
+      "original": "Metal_y_Madera/wood_hit_01.ogg",
+      "duration": 0.33808333333333335
+    },
+    "RPG_SFX_chain_01": {
+      "original": "RPG_SFX/chain_01.ogg",
+      "duration": 0.5063333333333333
+    },
+    "RPG_SFX_blade_01": {
+      "original": "RPG_SFX/blade_01.ogg",
+      "duration": 0.29091666666666666
+    },
+    "Metal_y_Madera_hammer_01": {
+      "original": "Metal_y_Madera/hammer_01.ogg",
+      "duration": 0.5037916666666666
+    },
+    "RPG_SFX_stones_01": {
+      "original": "RPG_SFX/stones_01.ogg",
+      "duration": 0.6808333333333333
+    },
+    "Metal_y_Madera_metal_hit_01": {
+      "original": "Metal_y_Madera/metal_hit_01.ogg",
+      "duration": 0.26875
+    },
+    "RPG_SFX_creature_hurt_01": {
+      "original": "RPG_SFX/creature_hurt_01.ogg",
+      "duration": 0.6212708333333333
+    },
+    "Metal_y_Madera_wood_hit_02": {
+      "original": "Metal_y_Madera/wood_hit_02.ogg",
+      "duration": 0.38516666666666666
+    },
+    "RPG_SFX_chain_02": {
+      "original": "RPG_SFX/chain_02.ogg",
+      "duration": 0.49220833333333336
+    },
+    "RPG_SFX_blade_02": {
+      "original": "RPG_SFX/blade_02.ogg",
+      "duration": 0.3133958333333333
+    },
+    "Metal_y_Madera_hammer_02": {
+      "original": "Metal_y_Madera/hammer_02.ogg",
+      "duration": 0.23714583333333333
+    },
+    "RPG_SFX_stones_02": {
+      "original": "RPG_SFX/stones_02.ogg",
+      "duration": 0.7773541666666667
+    },
+    "Metal_y_Madera_metal_hit_02": {
+      "original": "Metal_y_Madera/metal_hit_02.ogg",
+      "duration": 0.43475
+    },
+    "RPG_SFX_creature_hurt_02": {
+      "original": "RPG_SFX/creature_hurt_02.ogg",
+      "duration": 0.6776666666666666
+    },
+    "Metal_y_Madera_wood_hit_03": {
+      "original": "Metal_y_Madera/wood_hit_03.ogg",
+      "duration": 0.4070416666666667
+    },
+    "RPG_SFX_chain_03": {
+      "original": "RPG_SFX/chain_03.ogg",
+      "duration": 0.9269583333333333
+    },
+    "RPG_SFX_blade_03": {
+      "original": "RPG_SFX/blade_03.ogg",
+      "duration": 0.395875
+    },
+    "Metal_y_Madera_hammer_03": {
+      "original": "Metal_y_Madera/hammer_03.ogg",
+      "duration": 0.2269375
+    },
+    "RPG_SFX_stones_03": {
+      "original": "RPG_SFX/stones_03.ogg",
+      "duration": 1.1995208333333334
+    },
+    "Metal_y_Madera_metal_hit_03": {
+      "original": "Metal_y_Madera/metal_hit_03.ogg",
+      "duration": 0.3950208333333333
+    },
+    "RPG_SFX_spell_02": {
+      "original": "RPG_SFX/spell_02.ogg",
+      "duration": 0.5463541666666667
+    },
+    "Metal_y_Madera_metal_sheet_02": {
+      "original": "Metal_y_Madera/metal_sheet_02.ogg",
+      "duration": 0.43204166666666666
+    },
+    "RPG_SFX_creature_roar_02": {
+      "original": "RPG_SFX/creature_roar_02.ogg",
+      "duration": 1.0427083333333333
+    },
+    "RPG_SFX_spell_fire_07": {
+      "original": "RPG_SFX/spell_fire_07.ogg",
+      "duration": 0.6513333333333333
+    },
+    "RPG_SFX_creature_monster_03": {
+      "original": "RPG_SFX/creature_monster_03.ogg",
+      "duration": 0.9906666666666667
+    },
+    "Metal_y_Madera_metal_falling_01": {
+      "original": "Metal_y_Madera/metal_falling_01.ogg",
+      "duration": 1.786
+    },
+    "Large_Wings_Flap_wings_flap_large": {
+      "original": "Large_Wings_Flap/wings_flap_large.flac",
+      "duration": 2.6308125
+    },
+    "RPG_SFX_spell_01": {
+      "original": "RPG_SFX/spell_01.ogg",
+      "duration": 0.6329791666666666
+    },
+    "RPG_SFX_spell_fire_03": {
+      "original": "RPG_SFX/spell_fire_03.ogg",
+      "duration": 1.9267708333333333
+    },
+    "RPG_SFX_creature_die_01": {
+      "original": "RPG_SFX/creature_die_01.ogg",
+      "duration": 1.0598333333333334
+    },
+    "Metal_y_Madera_metal_falling_02": {
+      "original": "Metal_y_Madera/metal_falling_02.ogg",
+      "duration": 0.9561041666666666
+    },
+    "RPG_SFX_stones_04": {
+      "original": "RPG_SFX/stones_04.ogg",
+      "duration": 0.3833958333333333
+    }
+  },
+  "exports": [
+    {
+      "file": "Jefe_Paso_01.wav",
+      "duration": 0.5825833333333333,
+      "peak": 0.75,
+      "layers": [
+        {
+          "source": "Metal_y_Madera_wood_hit_01",
+          "rate": 0.75,
+          "gain": 1.0318918001027169,
+          "offset": 0
+        },
+        {
+          "source": "RPG_SFX_chain_01",
+          "rate": 0.9,
+          "gain": 0.24765403202465205,
+          "offset": 0.02
+        }
+      ]
+    },
+    {
+      "file": "Jefe_Barrido_01.wav",
+      "duration": 0.6356666666666667,
+      "peak": 0.75,
+      "layers": [
+        {
+          "source": "RPG_SFX_blade_01",
+          "rate": 0.68,
+          "gain": 0.45404513636424326,
+          "offset": 0
+        },
+        {
+          "source": "RPG_SFX_chain_01",
+          "rate": 0.85,
+          "gain": 0.14188910511382602,
+          "offset": 0.04
+        }
+      ]
+    },
+    {
+      "file": "Jefe_Impacto_01.wav",
+      "duration": 0.8760208333333334,
+      "peak": 0.75,
+      "layers": [
+        {
+          "source": "Metal_y_Madera_hammer_01",
+          "rate": 0.65,
+          "gain": 0.3874373981125266,
+          "offset": 0
+        },
+        {
+          "source": "RPG_SFX_stones_01",
+          "rate": 0.8,
+          "gain": 0.1937186990562633,
+          "offset": 0.025
+        }
+      ]
+    },
+    {
+      "file": "Jefe_Herida_01.wav",
+      "duration": 0.8283333333333334,
+      "peak": 0.75,
+      "layers": [
+        {
+          "source": "Metal_y_Madera_metal_hit_01",
+          "rate": 0.8,
+          "gain": 0.4379563795394948,
+          "offset": 0
+        },
+        {
+          "source": "RPG_SFX_creature_hurt_01",
+          "rate": 0.75,
+          "gain": 0.35832794689595027,
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "file": "Jefe_Paso_02.wav",
+      "duration": 0.566875,
+      "peak": 0.75,
+      "layers": [
+        {
+          "source": "Metal_y_Madera_wood_hit_02",
+          "rate": 0.75,
+          "gain": 0.9467659449000387,
+          "offset": 0
+        },
+        {
+          "source": "RPG_SFX_chain_02",
+          "rate": 0.9,
+          "gain": 0.2272238267760093,
+          "offset": 0.02
+        }
+      ]
+    },
+    {
+      "file": "Jefe_Barrido_02.wav",
+      "duration": 0.6190625,
+      "peak": 0.75,
+      "layers": [
+        {
+          "source": "RPG_SFX_blade_02",
+          "rate": 0.68,
+          "gain": 0.40158105895205215,
+          "offset": 0
+        },
+        {
+          "source": "RPG_SFX_chain_02",
+          "rate": 0.85,
+          "gain": 0.1254940809225163,
+          "offset": 0.04
+        }
+      ]
+    },
+    {
+      "file": "Jefe_Impacto_02.wav",
+      "duration": 0.9966666666666667,
+      "peak": 0.75,
+      "layers": [
+        {
+          "source": "Metal_y_Madera_hammer_02",
+          "rate": 0.65,
+          "gain": 0.7485758932643761,
+          "offset": 0
+        },
+        {
+          "source": "RPG_SFX_stones_02",
+          "rate": 0.8,
+          "gain": 0.37428794663218806,
+          "offset": 0.025
+        }
+      ]
+    },
+    {
+      "file": "Jefe_Herida_02.wav",
+      "duration": 0.9035416666666667,
+      "peak": 0.75,
+      "layers": [
+        {
+          "source": "Metal_y_Madera_metal_hit_02",
+          "rate": 0.8,
+          "gain": 0.4657983378906258,
+          "offset": 0
+        },
+        {
+          "source": "RPG_SFX_creature_hurt_02",
+          "rate": 0.75,
+          "gain": 0.3811077310014211,
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "file": "Jefe_Paso_03.wav",
+      "duration": 1.0499375,
+      "peak": 0.75,
+      "layers": [
+        {
+          "source": "Metal_y_Madera_wood_hit_03",
+          "rate": 0.75,
+          "gain": 0.6968120418468933,
+          "offset": 0
+        },
+        {
+          "source": "RPG_SFX_chain_03",
+          "rate": 0.9,
+          "gain": 0.16723489004325437,
+          "offset": 0.02
+        }
+      ]
+    },
+    {
+      "file": "Jefe_Barrido_03.wav",
+      "duration": 1.1305208333333334,
+      "peak": 0.75,
+      "layers": [
+        {
+          "source": "RPG_SFX_blade_03",
+          "rate": 0.68,
+          "gain": 0.4162047438675691,
+          "offset": 0
+        },
+        {
+          "source": "RPG_SFX_chain_03",
+          "rate": 0.85,
+          "gain": 0.13006398245861533,
+          "offset": 0.04
+        }
+      ]
+    },
+    {
+      "file": "Jefe_Impacto_03.wav",
+      "duration": 1.524375,
+      "peak": 0.75,
+      "layers": [
+        {
+          "source": "Metal_y_Madera_hammer_03",
+          "rate": 0.65,
+          "gain": 0.7454650705829304,
+          "offset": 0
+        },
+        {
+          "source": "RPG_SFX_stones_03",
+          "rate": 0.8,
+          "gain": 0.3727325352914652,
+          "offset": 0.025
+        }
+      ]
+    },
+    {
+      "file": "Jefe_Herida_03.wav",
+      "duration": 0.9035416666666667,
+      "peak": 0.75,
+      "layers": [
+        {
+          "source": "Metal_y_Madera_metal_hit_03",
+          "rate": 0.8,
+          "gain": 0.5611674576791239,
+          "offset": 0
+        },
+        {
+          "source": "RPG_SFX_creature_hurt_02",
+          "rate": 0.75,
+          "gain": 0.4591370108283741,
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "file": "Jefe_Preparacion.wav",
+      "duration": 0.9705625,
+      "peak": 0.75,
+      "layers": [
+        {
+          "source": "RPG_SFX_chain_02",
+          "rate": 0.65,
+          "gain": 0.32737237227392885,
+          "offset": 0
+        },
+        {
+          "source": "RPG_SFX_spell_02",
+          "rate": 0.6,
+          "gain": 0.32737237227392885,
+          "offset": 0.06
+        }
+      ]
+    },
+    {
+      "file": "Jefe_Carga.wav",
+      "duration": 0.71975,
+      "peak": 0.75,
+      "layers": [
+        {
+          "source": "RPG_SFX_blade_03",
+          "rate": 0.55,
+          "gain": 0.3652936088495557,
+          "offset": 0
+        },
+        {
+          "source": "Metal_y_Madera_metal_sheet_02",
+          "rate": 0.7,
+          "gain": 0.15655440379266675,
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "file": "Jefe_Invocacion.wav",
+      "duration": 1.683375,
+      "peak": 0.75,
+      "layers": [
+        {
+          "source": "RPG_SFX_creature_roar_02",
+          "rate": 0.68,
+          "gain": 0.4488701470904571,
+          "offset": 0.15
+        },
+        {
+          "source": "RPG_SFX_spell_fire_07",
+          "rate": 0.65,
+          "gain": 0.4114643014995857,
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "file": "Jefe_Transformacion.wav",
+      "duration": 3.8385,
+      "peak": 0.7500000596046448,
+      "layers": [
+        {
+          "source": "RPG_SFX_creature_monster_03",
+          "rate": 0.65,
+          "gain": 0.5060124739803695,
+          "offset": 0
+        },
+        {
+          "source": "Metal_y_Madera_metal_falling_01",
+          "rate": 0.6,
+          "gain": 0.4048099791842956,
+          "offset": 0.18
+        },
+        {
+          "source": "Large_Wings_Flap_wings_flap_large",
+          "rate": 0.8,
+          "gain": 0.5566137213784065,
+          "offset": 0.55
+        }
+      ]
+    },
+    {
+      "file": "Jefe_Alas.wav",
+      "duration": 2.9231041666666666,
+      "peak": 0.75,
+      "layers": [
+        {
+          "source": "Large_Wings_Flap_wings_flap_large",
+          "rate": 0.9,
+          "gain": 1.498508143014566,
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "file": "Jefe_Lanzamiento.wav",
+      "duration": 0.879125,
+      "peak": 0.75,
+      "layers": [
+        {
+          "source": "RPG_SFX_spell_01",
+          "rate": 0.72,
+          "gain": 0.38091558118488494,
+          "offset": 0
+        },
+        {
+          "source": "RPG_SFX_blade_02",
+          "rate": 0.8,
+          "gain": 0.0857060057665991,
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "file": "Jefe_ImpactoOrbe.wav",
+      "duration": 2.4084375,
+      "peak": 0.75,
+      "layers": [
+        {
+          "source": "RPG_SFX_spell_fire_03",
+          "rate": 0.8,
+          "gain": 2.1515911406764516,
+          "offset": 0
+        }
+      ]
+    },
+    {
+      "file": "Jefe_Muerte.wav",
+      "duration": 1.6747916666666667,
+      "peak": 0.75,
+      "layers": [
+        {
+          "source": "RPG_SFX_creature_die_01",
+          "rate": 0.68,
+          "gain": 0.28504573211652867,
+          "offset": 0
+        },
+        {
+          "source": "Metal_y_Madera_metal_falling_02",
+          "rate": 0.75,
+          "gain": 0.14252286605826434,
+          "offset": 0.4
+        },
+        {
+          "source": "RPG_SFX_stones_04",
+          "rate": 0.7,
+          "gain": 0.14252286605826434,
+          "offset": 0.6
+        }
+      ]
+    },
+    {
+      "file": "Jefe_Musica_Fase1.wav",
+      "duration": 117.64704166666667,
+      "channels": 2,
+      "original": "Blackmoor Colossus Loop (No Vocals).wav"
+    },
+    {
+      "file": "Jefe_Musica_Fase2.wav",
+      "duration": 117.64704166666667,
+      "channels": 2,
+      "original": "Blackmoor Colossus Loop.wav"
+    }
+  ]
+}

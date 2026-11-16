@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [DisallowMultipleComponent]
@@ -9,6 +10,19 @@ public sealed class Health : MonoBehaviour, IDamageable
     public int CurrentHealth { get; private set; }
     public int MaxHealth => maxHealth;
     public bool IsDead => CurrentHealth <= 0;
+    private readonly List<MonoBehaviour> guards = new List<MonoBehaviour>();
+    public bool IsDamageBlocked
+    {
+        get
+        {
+            guards.Clear();
+            GetComponents(guards);
+            foreach (var component in guards)
+                if (component != null && component.isActiveAndEnabled && component is IDamageGuard guard && guard.PreventsDamage)
+                    return true;
+            return false;
+        }
+    }
 
     public event Action<int, int> Changed;
     public event Action<int> Damaged;
@@ -22,7 +36,7 @@ public sealed class Health : MonoBehaviour, IDamageable
 
     public void TakeDamage(int amount)
     {
-        if (amount <= 0 || IsDead) return;
+        if (amount <= 0 || IsDead || IsDamageBlocked) return;
 
         int actualDamage = Mathf.Min(amount, CurrentHealth);
         CurrentHealth -= actualDamage;
@@ -41,5 +55,11 @@ public sealed class Health : MonoBehaviour, IDamageable
         Changed?.Invoke(CurrentHealth, maxHealth);
         Healed?.Invoke(actualHealing);
         return actualHealing;
+    }
+
+    public void RestoreCheckpoint(int amount)
+    {
+        CurrentHealth = Mathf.Clamp(amount, 1, maxHealth);
+        Changed?.Invoke(CurrentHealth, maxHealth);
     }
 }

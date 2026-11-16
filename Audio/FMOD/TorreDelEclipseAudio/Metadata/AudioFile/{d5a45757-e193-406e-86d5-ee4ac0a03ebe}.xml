@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.04.00">
+	<object class="AudioFile" id="{d5a45757-e193-406e-86d5-ee4ac0a03ebe}">
+		<property name="assetPath">
+			<value>Jefe_Transformacion.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>3.8384999999999998</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c09831a2-9380-44e7-8124-d295badcc8cf}</destination>
+		</relationship>
+	</object>
+</objects>

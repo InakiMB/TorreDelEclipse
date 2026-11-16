@@ -15,12 +15,14 @@ public sealed class PlayerSpellCaster : MonoBehaviour
     private PlayerStaffAttack staffAttack;
     private Camera viewCamera;
     private float nextShotTime;
+    private PlayerDodge dodge;
 
     public event Action ShotFired;
 
     private void Awake()
     {
         health = GetComponent<Health>();
+        dodge = GetComponent<PlayerDodge>();
         staffAttack = GetComponent<PlayerStaffAttack>();
         viewCamera = Camera.main;
         if (projectilePrefab == null || castOrigin == null)
@@ -35,7 +37,7 @@ public sealed class PlayerSpellCaster : MonoBehaviour
         Mouse mouse = Mouse.current;
         if (health.IsDead || mouse == null || Time.deltaTime <= 0f
             || !mouse.leftButton.isPressed || Time.time < nextShotTime
-            || (staffAttack != null && staffAttack.IsAttacking)) return;
+            || (staffAttack != null && staffAttack.IsAttacking) || (dodge != null && dodge.IsBusy)) return;
         if (viewCamera != null && !viewCamera.pixelRect.Contains(mouse.position.ReadValue())) return;
 
         Vector3 direction = transform.forward;

@@ -74,4 +74,12 @@ public sealed class EncounterObjective : MonoBehaviour
         Stage = stage;
         StageChanged?.Invoke(stage);
     }
+
+    public bool RestoreBossCheckpoint()
+    {
+        if (!ready || playerHealth.IsDead || RemainingEnemies != 0) return false;
+        gateBlocker.SetActive(false);
+        SetStage(EncounterStage.ExitUnlocked);
+        return true;
+    }
 }

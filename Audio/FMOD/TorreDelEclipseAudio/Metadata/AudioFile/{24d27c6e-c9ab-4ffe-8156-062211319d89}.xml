@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.04.00">
+	<object class="AudioFile" id="{24d27c6e-c9ab-4ffe-8156-062211319d89}">
+		<property name="assetPath">
+			<value>Jefe_Invocacion.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.6833750000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{c09831a2-9380-44e7-8124-d295badcc8cf}</destination>
+		</relationship>
+	</object>
+</objects>

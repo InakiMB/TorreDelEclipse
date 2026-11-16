@@ -2,7 +2,7 @@
 
 Responsable de todas las tareas: **Iñaki Bertran (InakiMB)**. Trabajo individual.
 
-Actualizado al **14/11/2026**: Hitos 0, 1 y 2 completos; Producción en curso con maqueta de audio, planta baja, terraza, guerrero, mago y apoyo enemigos integrados. Cada tarea registra su estado y una evidencia: commit, captura o prueba reproducible. Estados: Pendiente / En curso / Preparado / Hecho. Preparado significa que existe el material, pero falta incorporarlo o verificarlo en el proyecto.
+Actualizado al **16/11/2026**: Hitos 0, 1 y 2 completos; Producción en curso con maqueta de audio, planta baja, terraza, tres variantes enemigas, rodada y jefe de dos fases integrados. Cada tarea registra su estado y una evidencia: commit, captura o prueba reproducible. Estados: Pendiente / En curso / Preparado / Hecho. Preparado significa que existe el material, pero falta incorporarlo o verificarlo en el proyecto.
 
 ## Hito 0 - Preproducción
 
@@ -25,7 +25,7 @@ Actualizado al **14/11/2026**: Hitos 0, 1 y 2 completos; Producción en curso co
 
 ## Hito 2 - Vertical slice
 
-La versión corta del prototipo integra combate a distancia y cuerpo a cuerpo, loot, consumo de pociones, apertura de un acceso y victoria o derrota con reinicio. La planta baja y la terraza se incorporaron durante Producción; el jefe y la victoria final siguen pendientes.
+La versión corta del prototipo integra combate a distancia y cuerpo a cuerpo, loot, consumo de pociones, apertura de un acceso y victoria o derrota con reinicio. La planta baja, la terraza y el jefe con victoria final se incorporaron durante Producción.
 
 |ID|Tarea|Estado|Terminado cuando|
 |-|-|-|-|
@@ -37,7 +37,7 @@ La versión corta del prototipo integra combate a distancia y cuerpo a cuerpo, l
 
 ## Hito 3 - Producción
 
-La maqueta de audio está integrada en el prototipo y en TorreEclipse. Se conservan fuentes, sesiones de Reaper, proyecto de FMOD y bancos. El encuentro actual de planta baja combina tres guerreros, tres magos y dos clérigos de apoyo; permite ascender a la terraza. El jefe y los menús continúan pendientes, junto con el balance final.
+La maqueta de audio está integrada en el prototipo y en TorreEclipse. Se conservan fuentes, sesiones de Reaper, proyecto de FMOD y bancos. La planta baja combina veinte enemigos entre guerreros, magos y clérigos de apoyo. Tras despejarla se puede ascender e invocar al Custodio del Eclipse, con dos fases, música propia y reintento desde la terraza. El jugador dispone de una rodada defensiva. Continúan pendientes los menús y el balance final.
 
 |ID|Tarea|Estado|Terminado cuando|
 |-|-|-|-|
@@ -50,8 +50,9 @@ La maqueta de audio está integrada en el prototipo y en TorreEclipse. Se conser
 |H3-E1|Guerrero enemigo|Hecho|Persigue y ataca cuerpo a cuerpo; dispone de vida, daño, velocidad y cadencia configurables y se distingue visual y sonoramente.|
 |H3-E2|Mago enemigo|Hecho|Se posiciona a distancia y lanza proyectiles evitables; sus valores de combate son configurables y su ataque tiene una señal audiovisual reconocible.|
 |H3-E3|Enemigo de apoyo|Hecho|Se posiciona cerca de aliados y cura un 15% de la vida máxima de uno cada 6 segundos. Dentro de 8 metros y sin paredes intermedias otorga +20% de movimiento y +25% de velocidad de ataque, sin aumentar daño ni acumular apoyos. Vida, velocidades y tiempos son configurables; presenta señales audiovisuales y morir cancela la cura y retira el aura.|
-|H3-J0|Definir el diseño del jefe|Pendiente|Diseño definido antes de la implementación: apariencia, identidad, arena, movimientos, ataques, fases, defensas, debilidades, vida, daño, dificultad, señales visuales, sonidos, música, recompensas y cierre del nivel.|
-|H3-02|Combinar variantes y desarrollar jefe|Pendiente|Guerrero, mago y apoyo cumplen roles diferentes en un encuentro; sus valores se ajustan tras probarlos y el jefe tiene ataques legibles y evitables.|
+|H3-P1|Esquive del jugador|Hecho|Espacio inicia una rodada animada en la dirección de WASD o del apuntado al estar quieto. Distancia, duración, recuperación, recarga y ventana parcial de invulnerabilidad son configurables. Respeta obstáculos, impide atacar o usar objetos durante la acción, reproduce sonido y muestra su disponibilidad; morir cancela el esquive y reiniciar restablece su estado.|
+|H3-J0|Definir el diseño del jefe|Hecho|Custodio del Eclipse: caballero de gran tamaño con rostro visible, barba canosa, martillo y alas negras en segunda fase. Invocación mediante círculo, fase física y fase con proyectiles al 50%, señales audiovisuales, música orquestal con coros, reintento con recursos guardados y victoria final definidos.|
+|H3-02|Combinar variantes y desarrollar jefe|Hecho|Guerrero, mago y apoyo conviven en planta baja. El jefe dispone de combo, golpe cargado, embestida, abanicos, anillos, espirales y salto; los ataques permiten esquivar o salir de las marcas. Vida y daño son configurables. El balance con jugadores se revisa en H4-02.|
 |H3-03|Menús, HUD y volumen|Pendiente|Play, Créditos, Opciones y Exit funcionan; se muestran vida, pociones y objetivos; el volumen general controla todo el audio y hay controles independientes de música, ambiente, efectos e interfaz, con preferencias guardadas entre sesiones.|
 |H3-04|Integrar modelos y efectos|En curso|Se distinguen ataques, enemigos y objetos desde la cámara superior; se registran las fuentes.|
 |H3-I1|Cajas o barriles destructibles con poción garantizada|Hecho|Reciben daño de los proyectiles, se rompen una sola vez y dejan exactamente una poción con probabilidad 100%; tienen feedback de impacto y rotura, y se restauran al reiniciar el nivel.|
@@ -61,7 +62,7 @@ La maqueta de audio está integrada en el prototipo y en TorreEclipse. Se conser
 |ID|Tarea|Estado|Terminado cuando|
 |-|-|-|-|
 |H4-01|Revisar requisitos|Pendiente|Todos los sistemas obligatorios están implementados y hay al menos tres minutos de juego efectivo.|
-|H4-02|Corregir y balancear|Pendiente|Se prueban victoria, derrota, reinicio y audio; no hay errores bloqueantes; el jefe se puede vencer sin la vara.|
+|H4-02|Corregir y balancear|Pendiente|Se prueban victoria, derrota, reinicio y audio; no hay errores bloqueantes; el jefe se puede vencer con magia, bastón, esquive y las pociones disponibles.|
 |H4-03|Revisar arquitectura y explicación|Pendiente|Las responsabilidades de las clases, la comunicación entre sistemas y las decisiones de código están revisadas y pueden explicarse con ejemplos del proyecto.|
 
 ## Hito 5 - Release
@@ -71,12 +72,9 @@ La maqueta de audio está integrada en el prototipo y en TorreEclipse. Se conser
 |H5-01|Generar y probar ejecutable|Pendiente|El juego funciona fuera del editor, con sonido, volumen y todos los finales.|
 |H5-02|Preparar entrega|Pendiente|Incluye ejecutable, repositorio final, documentación, créditos y proyectos completos de Unity y FMOD con sus fuentes.|
 
-## Ampliaciones - solo después de completar la base
+## Alcance de la entrega
 
-|ID|Tarea|Estado|Terminado cuando|
-|-|-|-|-|
-|X-01|Acertijo y vara secreta|Pendiente|Las pistas permiten resolver el acertijo; la vara se obtiene y solo permite un rayo por partida, con feedback audiovisual.|
-|X-02|Guerrero y arquero|Pendiente|Se seleccionan y completan el nivel sin romper el ciclo de juego ni la entrega base.|
+La entrega se centra en el mago jugable, la planta baja y el jefe de la terraza. El acertijo con vara secreta y los personajes jugables adicionales quedan fuera del alcance de esta entrega.
 
 ## Muestra del viernes 13/11
 
@@ -106,3 +104,5 @@ La escena `PrototipoTorre` incorpora cambio de ambiente por desplazamiento, tran
 |13/11/2026|H3-E1|Guerrero con modelo, espada, escudo y audio; animaciones originales de reposo, carrera, ataque y muerte conectadas. El tajo aplica un único impacto tras la preparación y permite esquivarlo; la muerte desactiva colisiones y termina antes de retirar el cuerpo.|12 comprobaciones del guerrero y 24 del nivel correctas en Play; prefab EnemyWarrior y escena TorreEclipse guardados.|
 |13/11/2026|H3-E2|Dos magos de túnica rojo oscuro integrados. Se aproximan y retroceden por NavMesh, cargan hechizos animados, disparan en una dirección fija y pueden morir durante la carga. Los proyectiles respetan coberturas y no dañan aliados; la música reconoce su estado de combate.|15 comprobaciones del mago y 24 del ciclo del nivel correctas en Play, en copia de validación; 10/10 enemigos accesibles y cero observaciones de navegación. Prefabs EnemyMage y EnemyMagicBolt, y escena TorreEclipse integrados.|
 |14/11/2026|H3-E3 / H3-A3|Dos clérigos de Quaternius sustituyen a los magos de las alas laterales, conservando el encuentro actual de ocho enemigos. Curación individual, aura de aceleración, animaciones y señales audiovisuales integradas; guerreros y magos aceleran sus acciones sin aumentar el daño. El apoyo también mantiene la música de combate.|31 comprobaciones del apoyo, 2 de música y 24 del ciclo del nivel correctas en Play, en copia de validación; 8/8 enemigos accesibles y cero observaciones de navegación. Prefab EnemySupport y escena TorreEclipse integrados.|
+|15/11/2026|H3-P1|Rodada del mago integrada en TorreEclipse y PrototipoTorre con la animación nativa Roll, sonido reutilizado, recarga visible e invulnerabilidad parcial. Cancela el golpe pendiente del bastón y respeta paredes y restricciones de acciones.|Prueba de jugabilidad en Unity: distancia y diagonal, controles, recarga, daño, proyectiles, animación, obstáculos, pociones y muerte verificados. Ciclo de planta baja, terraza y reinicio comprobado con el encuentro actual de veinte enemigos.|
+|16/11/2026|H3-J0 / H3-02 / H3-A3 / H3-04, avance|Custodio del Eclipse integrado: modelo de Quaternius adaptado en Blender, once animaciones, martillo, alas, dos fases, patrones de proyectiles, cámara, invocación, victoria y reintento desde terraza. Veinte efectos y dos mezclas musicales incorporados a FMOD con parámetro Fase y fuentes registradas.|47 comprobaciones del jefe y 24 del recorrido correctas en Play, en copia de validación. Veinte enemigos accesibles, seis suministros y navegación sin observaciones; proyecto FMOD validado y bancos compilados. El balance final y los menús siguen pendientes.|
