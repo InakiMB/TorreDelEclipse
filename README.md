@@ -16,7 +16,7 @@ Actualizado al **16/11/2026**. Hitos **0, 1 y 2 completos**; **Producción en cu
 - Mago enemigo de túnica rojo oscuro: combate a distancia, retrocede al acercarse el jugador y anuncia sus proyectiles con carga y animación. Sus disparos pueden esquivarse o detenerse con coberturas y no dañan a sus aliados; morir cancela la carga pendiente.
 - Clérigo de apoyo con ropa verde oscuro y armadura color hueso: cura a un aliado herido un 15% de su vida máxima cada 6 segundos y otorga +20% de movimiento y +25% de velocidad de ataque a aliados visibles dentro de 8 metros. Las bonificaciones no se acumulan entre apoyos y se retiran al salir del alcance o morir el clérigo; el daño de cada golpe no aumenta.
 - Ascenso y regreso con E al despejar la planta baja; entrar en el círculo de la terraza invoca al Custodio del Eclipse y sella el acceso.
-- Jefe de 1800 de vida con martillo: combo, golpe cargado y embestida; al 50% despliega alas negras y añade abanicos, anillos, espirales y saltos. La introducción y la transformación tienen protección temporal para ambos participantes.
+- Jefe de 1800 de vida con martillo: combo con avance y reorientación del segundo golpe, golpe cargado y embestida. Al 50% despliega alas negras, acelera y combina los golpes físicos con abanicos, anillos, espirales y saltos. La introducción y la transformación tienen protección temporal para ambos participantes.
 - Barra del jefe, señales de ataque, cámara de combate y victoria final. Al morir se puede reintentar desde la terraza con la vida y las pociones guardadas al activar el círculo, conservando despejada la planta baja.
 - Ambiente variable, música de exploración/combate y efectos integrados mediante FMOD.
 
@@ -47,6 +47,8 @@ Siguen pendientes los menús con Opciones y Créditos, el balance con jugadores 
 El inventario admite cinco pociones; cada una recupera hasta 35 de vida. El reinicio completo restaura enemigos, suministros, inventario y progreso. El reintento del jefe restaura el estado guardado al activar el círculo y comienza otra vez su primera fase; ese punto de control dura durante la partida actual.
 
 La rodada recorre 3,2 metros en 0,5 segundos, seguida de 0,15 segundos de recuperación. Se puede iniciar otra cada 0,95 segundos y hay invulnerabilidad entre los segundos 0,04 y 0,30. Durante la acción no se puede atacar, consumir pociones ni interactuar; las paredes y los cuerpos siguen bloqueando el paso. Cada pulsación inicia como máximo una rodada. Sus valores se ajustan en `PlayerDodge`.
+
+El jefe persigue a 4,6 m/s en fase uno y aproximadamente 5,06 m/s en fase dos. Sus preparaciones y pausas son cortas, con posición o dirección anunciada antes del impacto. La fase dos emite abanicos de cuatro tandas de once orbes, anillos de tres tandas de veinticuatro y espirales de tres brazos con 72 orbes; los proyectiles salen de forma progresiva, respetan coberturas y se limitan a 160 simultáneos. Vida, daño, ritmo, preparación y densidad se ajustan en el prefab `CustodioDelEclipse`.
 
 ## Herramientas y audio
 

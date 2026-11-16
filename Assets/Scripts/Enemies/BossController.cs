@@ -12,16 +12,34 @@ public sealed class BossController : MonoBehaviour, IEnemyCombatant, IDamageGuar
 {
     [SerializeField] private Health target;
     [SerializeField] private BossProjectile projectilePrefab;
-    [SerializeField, Min(0.1f)] private float moveSpeed = 3.8f;
+    [SerializeField, Min(0.1f)] private float moveSpeed = 4.6f;
+    [SerializeField, Min(1f)] private float phaseTwoMoveMultiplier = 1.1f;
+    [SerializeField, Min(1f)] private float phaseTwoAttackMultiplier = 1.12f;
+    [SerializeField, Min(0f)] private float attackRecovery = 0.22f;
+    [SerializeField, Min(0f)] private float phaseTwoRecovery = 0.14f;
     [SerializeField, Min(1)] private int normalDamage = 24;
     [SerializeField, Min(1)] private int heavyDamage = 35;
     [SerializeField, Min(1)] private int chargeDamage = 30;
     [SerializeField, Min(1)] private int projectileDamage = 11;
     [SerializeField, Min(0.1f)] private float meleeRange = 4f;
-    [SerializeField, Min(0.1f)] private float slamRadius = 2.8f;
-    [SerializeField, Min(0.1f)] private float chargeSpeed = 12f;
+    [SerializeField, Min(0.1f)] private float slamRadius = 3.1f;
+    [SerializeField, Min(0.1f)] private float chargeSpeed = 16f;
     [SerializeField, Min(0.1f)] private float targetHitInterval = 0.2f;
-    [SerializeField, Min(0.1f)] private float projectileSpeed = 6f;
+    [SerializeField, Min(0.1f)] private float projectileSpeed = 7.6f;
+    [Header("Preparacion de ataques")]
+    [SerializeField, Min(0.25f)] private float comboWindup = 0.48f;
+    [SerializeField, Min(0.35f)] private float comboHitInterval = 0.72f;
+    [SerializeField, Range(0f, 4f)] private float comboStepDistance = 2.2f;
+    [SerializeField, Min(0.4f)] private float slamWindup = 0.95f;
+    [SerializeField, Min(0.4f)] private float chargeWindup = 0.7f;
+    [Header("Patrones de segunda fase")]
+    [SerializeField, Range(3, 21)] private int fanProjectiles = 11;
+    [SerializeField, Range(1, 6)] private int fanVolleys = 4;
+    [SerializeField, Range(8, 36)] private int ringProjectiles = 24;
+    [SerializeField, Range(1, 5)] private int ringVolleys = 3;
+    [SerializeField, Range(2, 5)] private int spiralArms = 3;
+    [SerializeField, Range(6, 36)] private int spiralPulses = 24;
+    [SerializeField, Range(50, 240)] private int maximumProjectiles = 160;
     [SerializeField, Min(0.1f)] private float summonDuration = 3.2f;
     [SerializeField, Min(0.1f)] private float transformDuration = 2.8f;
     private Health health;
@@ -29,8 +47,15 @@ public sealed class BossController : MonoBehaviour, IEnemyCombatant, IDamageGuar
     private float since, duration, nextAttackAt, nextSpecialAt, nextPlayerHitAt, nextStepAt;
     private int hits, volleys, sequence;
     private bool locked;
+    private float firstStepProgress, secondStepProgress;
     private Vector3 attackDirection, attackPoint, leapStart, leapEnd;
     private readonly HashSet<BossProjectile> projectiles = new HashSet<BossProjectile>();
+    private const float ChargeTravelTime = 0.8f;
+    private const float LeapWindup = 0.72f;
+    private const float LeapFlightTime = 0.55f;
+    private float AttackTempo => Phase == 2 ? phaseTwoAttackMultiplier : 1f;
+    private float AttackElapsed => ActionElapsed * AttackTempo;
+    private float ComboSecondHit => comboWindup + comboHitInterval;
     public BossAction Action { get; private set; } = BossAction.Dormant;
     public int Phase { get; private set; } = 1;
     public Health Health => health;
@@ -41,6 +66,11 @@ public sealed class BossController : MonoBehaviour, IEnemyCombatant, IDamageGuar
     public float ActionElapsed => Mathf.Max(0, Time.time - since);
     public float ActionProgress => duration > 0 ? Mathf.Clamp01(ActionElapsed / duration) : 0;
     public float SlamRadius => slamRadius;
+    public float ChargeTravelDuration => ChargeTravelTime / AttackTempo;
+    public float ChargeWarningLength => chargeSpeed * ChargeTravelTime;
+    public bool AttackWarningVisible => Action == BossAction.Charge && AttackElapsed < chargeWindup
+        || Action == BossAction.Slam && AttackElapsed < slamWindup
+        || Action == BossAction.Leap && AttackElapsed < LeapWindup + LeapFlightTime;
     public float MoveSpeed => agent != null && agent.enabled ? agent.velocity.magnitude : 0f;
     public int ActiveProjectiles => projectiles.Count;
     public bool IsEngaged => isActiveAndEnabled && !health.IsDead && Action != BossAction.Dormant
@@ -76,7 +106,7 @@ public sealed class BossController : MonoBehaviour, IEnemyCombatant, IDamageGuar
         {
             if (ActionElapsed >= duration)
             {
-                EnableAgent(); SetAction(BossAction.Hunt); nextAttackAt = Time.time + 0.65f;
+                EnableAgent(); SetAction(BossAction.Hunt); nextAttackAt = Time.time + 0.45f;
                 if (Phase == 2) Emit(BossCue.Wings);
             }
             return;
@@ -85,14 +115,14 @@ public sealed class BossController : MonoBehaviour, IEnemyCombatant, IDamageGuar
         TickAttack();
         if (ActionElapsed >= duration && Action != BossAction.Hunt)
         {
-            EndLeap(); SetAction(BossAction.Hunt); nextAttackAt = Time.time + 0.55f;
+            EndLeap(); SetAction(BossAction.Hunt); nextAttackAt = Time.time + (Phase == 2 ? phaseTwoRecovery : attackRecovery);
         }
     }
     private void Hunt()
     {
         if (!agent.enabled || !agent.isOnNavMesh) { EnableAgent(); return; }
         Vector3 delta = Flat(target.transform.position - transform.position); float distance = delta.magnitude;
-        agent.speed = moveSpeed; agent.stoppingDistance = meleeRange - 0.4f;
+        agent.speed = moveSpeed * (Phase == 2 ? phaseTwoMoveMultiplier : 1f); agent.stoppingDistance = meleeRange - 0.4f;
         agent.isStopped = false; agent.SetDestination(target.transform.position);
         if (agent.velocity.sqrMagnitude > 0.2f && Time.time >= nextStepAt) { Emit(BossCue.Step); nextStepAt = Time.time + 0.6f; }
         if (Time.time < nextAttackAt) return;
@@ -101,7 +131,7 @@ public sealed class BossController : MonoBehaviour, IEnemyCombatant, IDamageGuar
             BossAction pattern = (sequence / 2) % 3 == 0 ? BossAction.Fan : (sequence / 2) % 3 == 1 ? BossAction.Rings : BossAction.Spiral;
             StartAttack(pattern); return;
         }
-        if (distance > 6f && Time.time >= nextSpecialAt) { StartAttack(Phase == 2 && sequence % 3 == 0 ? BossAction.Leap : BossAction.Charge); nextSpecialAt = Time.time + 5f; }
+        if (distance > 5.5f && Time.time >= nextSpecialAt) { StartAttack(Phase == 2 && sequence % 3 == 0 ? BossAction.Leap : BossAction.Charge); nextSpecialAt = Time.time + (Phase == 2 ? 2.6f : 3.2f); }
         else if (distance <= meleeRange + 0.3f) StartAttack(sequence % 3 == 1 ? BossAction.Slam : BossAction.Combo);
     }
     public bool StartAttack(BossAction attack)
@@ -109,60 +139,78 @@ public sealed class BossController : MonoBehaviour, IEnemyCombatant, IDamageGuar
         if (health.IsDead || target == null || target.IsDead || (Action != BossAction.Hunt && Action != BossAction.Dormant)) return false;
         if (Phase == 1 && (attack == BossAction.Fan || attack == BossAction.Rings || attack == BossAction.Spiral || attack == BossAction.Leap)) return false;
         StopAgent(); attackPoint = target.transform.position; attackDirection = DirectionToTarget(); Face(attackDirection);
-        float length = attack == BossAction.Combo ? 2.4f : attack == BossAction.Slam ? 2.4f
-            : attack == BossAction.Charge ? 2.0f : attack == BossAction.Spiral ? 3.5f : attack == BossAction.Leap ? 2.8f : 2.5f;
-        SetAction(attack, length); sequence++; Emit(BossCue.Windup); return true;
+        float length = attack == BossAction.Combo ? ComboSecondHit + 0.6f : attack == BossAction.Slam ? slamWindup + 0.7f
+            : attack == BossAction.Charge ? chargeWindup + ChargeTravelTime + 0.35f
+            : attack == BossAction.Spiral ? 0.55f + (spiralPulses - 1) * 0.1f + 0.5f
+            : attack == BossAction.Leap ? LeapWindup + LeapFlightTime + 0.65f
+            : attack == BossAction.Fan ? 0.55f + (fanVolleys - 1) * 0.32f + 0.55f
+            : 0.65f + (ringVolleys - 1) * 0.45f + 0.55f;
+        SetAction(attack, length / AttackTempo); sequence++; Emit(BossCue.Windup); return true;
     }
     private void TickAttack()
     {
-        float elapsed = ActionElapsed;
-        float lockAt = Action == BossAction.Charge ? 0.55f : Action == BossAction.Leap ? 0.65f : 0.7f;
-        if (!locked && elapsed < lockAt)
+        float elapsed = AttackElapsed;
+        float lockAt = Action == BossAction.Charge ? Mathf.Max(0, chargeWindup - 0.28f)
+            : Action == BossAction.Leap ? 0.5f : Action == BossAction.Slam ? Mathf.Max(0, slamWindup - 0.35f)
+            : Mathf.Max(0, comboWindup - 0.16f);
+        bool followSecondHit = Action == BossAction.Combo && hits == 1 && elapsed >= comboWindup + 0.12f && elapsed < ComboSecondHit - 0.22f;
+        if (!locked && elapsed < lockAt || followSecondHit)
         {
             attackPoint = target.transform.position; attackDirection = DirectionToTarget(); Face(attackDirection);
         }
         else locked = true;
         if (Action == BossAction.Combo)
         {
-            if (hits == 0 && elapsed >= 0.65f) { hits++; Melee(normalDamage, 145f); }
-            if (hits == 1 && elapsed >= 1.65f) { hits++; Melee(normalDamage, 165f); }
+            ComboStep(elapsed, comboWindup, comboStepDistance, ref firstStepProgress);
+            if (hits == 0 && elapsed >= comboWindup) { hits++; Melee(normalDamage, 145f); }
+            if (hits >= 1) ComboStep(elapsed, ComboSecondHit, comboStepDistance * 0.8f, ref secondStepProgress);
+            if (hits == 1 && elapsed >= ComboSecondHit)
+            {
+                hits++; Melee(normalDamage, 165f);
+                if (Phase == 2) { Fan(attackDirection, 5, 80f); Emit(BossCue.Cast); }
+            }
         }
-        else if (Action == BossAction.Slam && hits == 0 && elapsed >= 1.4f)
+        else if (Action == BossAction.Slam && hits == 0 && elapsed >= slamWindup)
         {
             hits++; Emit(BossCue.Slam, attackPoint); AreaDamage(attackPoint, slamRadius, heavyDamage);
+            if (Phase == 2) { Ring(20, 9f); Emit(BossCue.Cast); }
         }
         else if (Action == BossAction.Charge)
         {
-            if (elapsed >= 0.85f && elapsed < 1.4f)
+            if (elapsed >= chargeWindup && elapsed < chargeWindup + ChargeTravelTime)
             {
                 if (volleys++ == 0) Emit(BossCue.Charge);
-                MoveCharge(attackDirection * chargeSpeed * Time.deltaTime);
-                if (hits == 0 && Flat(target.transform.position - transform.position).magnitude <= 2.2f)
+                MoveCharge(attackDirection * chargeSpeed * AttackTempo * Time.deltaTime);
+                if (hits == 0 && Flat(target.transform.position - transform.position).magnitude <= 2.2f && ClearPath(target.transform.position))
                 { hits++; TryDamagePlayer(chargeDamage); Emit(BossCue.Swing); }
             }
         }
         else if (Action == BossAction.Fan)
         {
-            if (volleys < 3 && elapsed >= 0.7f + volleys * 0.4f)
-            { volleys++; Fan(DirectionToTarget(), 7, 100f); Emit(BossCue.Cast); }
+            if (volleys < fanVolleys && elapsed >= 0.55f + volleys * 0.32f)
+            {
+                float offset = volleys % 2 == 0 ? -4f : 4f;
+                Fan(Quaternion.Euler(0, offset, 0) * DirectionToTarget(), fanProjectiles, 110f);
+                volleys++; Emit(BossCue.Cast);
+            }
         }
         else if (Action == BossAction.Rings)
         {
-            if (volleys < 2 && elapsed >= 0.8f + volleys * 0.55f)
-            { Ring(16, volleys * 11.25f); volleys++; Emit(BossCue.Cast); }
+            if (volleys < ringVolleys && elapsed >= 0.65f + volleys * 0.45f)
+            { Ring(ringProjectiles, volleys * (180f / ringProjectiles)); volleys++; Emit(BossCue.Cast); }
         }
         else if (Action == BossAction.Spiral)
         {
-            if (volleys < 18 && elapsed >= 0.7f + volleys * 0.12f)
+            if (volleys < spiralPulses && elapsed >= 0.55f + volleys * 0.1f)
             {
-                float yaw = volleys * 19f; SpawnOrb(Quaternion.Euler(0, yaw, 0) * Vector3.forward, 0.85f);
-                SpawnOrb(Quaternion.Euler(0, yaw + 180, 0) * Vector3.forward, 0.85f);
+                float yaw = volleys * 17f * (sequence % 2 == 0 ? 1 : -1);
+                for (int arm = 0; arm < spiralArms; arm++) SpawnOrb(Quaternion.Euler(0, yaw + 360f * arm / spiralArms, 0) * Vector3.forward, 0.9f);
                 if (volleys % 4 == 0) Emit(BossCue.Cast); volleys++;
             }
         }
         else if (Action == BossAction.Leap)
         {
-            if (elapsed >= 0.95f && hits == 0)
+            if (elapsed >= LeapWindup && hits == 0)
             {
                 hits = 1; leapStart = transform.position; leapEnd = attackPoint;
                 if (NavMesh.SamplePosition(attackPoint, out NavMeshHit hit, 2f, NavMesh.AllAreas)) leapEnd = hit.position + Vector3.up * agent.baseOffset;
@@ -172,9 +220,9 @@ public sealed class BossController : MonoBehaviour, IEnemyCombatant, IDamageGuar
             }
             if (hits == 1)
             {
-                float t = Mathf.Clamp01((elapsed - 0.95f) / 0.65f);
+                float t = Mathf.Clamp01((elapsed - LeapWindup) / LeapFlightTime);
                 transform.position = Vector3.Lerp(leapStart, leapEnd, t) + Vector3.up * (Mathf.Sin(t * Mathf.PI) * 2.7f);
-                if (t >= 1f) { hits = 2; EndLeap(); AreaDamage(transform.position, slamRadius, heavyDamage); Ring(16, 0); Emit(BossCue.Slam); }
+                if (t >= 1f) { hits = 2; EndLeap(); AreaDamage(transform.position, slamRadius, heavyDamage); Ring(ringProjectiles, 0); Emit(BossCue.Slam); }
             }
         }
     }
@@ -208,7 +256,17 @@ public sealed class BossController : MonoBehaviour, IEnemyCombatant, IDamageGuar
         if (!agent.enabled || !agent.isOnNavMesh) return;
         Vector3 start = agent.nextPosition - Vector3.up * agent.baseOffset;
         if (NavMesh.Raycast(start, start + delta + delta.normalized * 0.8f, out _, agent.areaMask)) return;
+        Vector3 origin = start + Vector3.up * 1.1f;
+        foreach (RaycastHit hit in Physics.SphereCastAll(origin, agent.radius, delta.normalized, delta.magnitude + 0.05f, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore))
+            if (!hit.transform.IsChildOf(transform) && !hit.transform.IsChildOf(target.transform)) return;
         agent.Move(delta);
+    }
+    private void ComboStep(float elapsed, float impactTime, float distance, ref float progress)
+    {
+        float current = Mathf.Clamp01((elapsed - impactTime + 0.24f) / 0.24f);
+        float travel = Mathf.Max(0, current - progress) * distance; progress = current;
+        float space = Mathf.Max(0, Flat(target.transform.position - transform.position).magnitude - 1.4f);
+        if (travel > 0 && space > 0) MoveCharge(attackDirection * Mathf.Min(travel, space));
     }
     private void EnableAgent()
     {
@@ -223,6 +281,7 @@ public sealed class BossController : MonoBehaviour, IEnemyCombatant, IDamageGuar
     private void SetAction(BossAction action, float seconds = 0)
     {
         Action = action; since = Time.time; duration = seconds; hits = 0; volleys = 0; locked = false;
+        firstStepProgress = secondStepProgress = 0;
         if (action != BossAction.Hunt) StopAgent();
         ActionChanged?.Invoke(action);
     }
@@ -235,7 +294,7 @@ public sealed class BossController : MonoBehaviour, IEnemyCombatant, IDamageGuar
     { for (int i = 0; i < count; i++) SpawnOrb(Quaternion.Euler(0, offset + 360f * i / count, 0) * Vector3.forward, 0.85f); }
     private void SpawnOrb(Vector3 direction, float speedFactor)
     {
-        if (projectilePrefab == null || projectiles.Count >= 100) return;
+        if (projectilePrefab == null || projectiles.Count >= maximumProjectiles) return;
         Vector3 origin = transform.position - Vector3.up * Mathf.Max(0, agent.baseOffset - 1.1f) + direction * 1.2f;
         BossProjectile orb = Instantiate(projectilePrefab, origin, Quaternion.identity);
         projectiles.Add(orb); orb.Initialize(this, direction, projectileSpeed * speedFactor, projectileDamage);

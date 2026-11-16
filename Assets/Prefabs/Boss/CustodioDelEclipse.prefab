@@ -6247,7 +6247,7 @@ NavMeshAgent:
   m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.85
-  m_Speed: 3.8
+  m_Speed: 4.6
   m_Acceleration: 14
   avoidancePriority: 20
   m_AngularSpeed: 500
@@ -6296,16 +6296,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BossController
   target: {fileID: 0}
   projectilePrefab: {fileID: 7567930914612757629, guid: 89199e62a83629e4b8bc99c6c53fb70c, type: 3}
-  moveSpeed: 3.8
+  moveSpeed: 4.6
+  phaseTwoMoveMultiplier: 1.1
+  phaseTwoAttackMultiplier: 1.12
+  attackRecovery: 0.22
+  phaseTwoRecovery: 0.14
   normalDamage: 24
   heavyDamage: 35
   chargeDamage: 30
   projectileDamage: 11
   meleeRange: 4
-  slamRadius: 2.8
-  chargeSpeed: 12
+  slamRadius: 3.1
+  chargeSpeed: 16
   targetHitInterval: 0.2
-  projectileSpeed: 6
+  projectileSpeed: 7.6
+  comboWindup: 0.48
+  comboHitInterval: 0.72
+  comboStepDistance: 2.2
+  slamWindup: 0.95
+  chargeWindup: 0.7
+  fanProjectiles: 11
+  fanVolleys: 4
+  ringProjectiles: 24
+  ringVolleys: 3
+  spiralArms: 3
+  spiralPulses: 24
+  maximumProjectiles: 160
   summonDuration: 3.2
   transformDuration: 2.8
 --- !u!114 &6716157204438078795

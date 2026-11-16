@@ -51,9 +51,9 @@ public sealed class BossPresentation : MonoBehaviour
     {
         if (boss.Action == BossAction.Hunt && animator != null)
         {
-            string state = boss.MoveSpeed > 0.2f ? "BossWalk" : "BossIdle";
+            string state = boss.MoveSpeed > 4f ? "BossRun" : boss.MoveSpeed > 0.2f ? "BossWalk" : "BossIdle";
             if (!animator.GetCurrentAnimatorStateInfo(0).IsName(state) && !animator.IsInTransition(0)) Play(state, 0);
-            animator.speed = state == "BossWalk" ? Mathf.Clamp(boss.MoveSpeed / 2.8f, 0.5f, 1.6f) : 1;
+            animator.speed = state == "BossIdle" ? 1f : Mathf.Clamp(boss.MoveSpeed / (state == "BossRun" ? 4.2f : 2.8f), 0.5f, 1.7f);
         }
         float desired = boss.Phase == 2 && boss.Action != BossAction.Dead && boss.Action != BossAction.Defeated ? 1f : 0f;
         wingAmount = Mathf.MoveTowards(wingAmount, desired, Time.deltaTime * 0.7f);
@@ -71,8 +71,8 @@ public sealed class BossPresentation : MonoBehaviour
     private void DrawWarning()
     {
         if (warning == null) return;
-        bool charge = boss.Action == BossAction.Charge && boss.ActionElapsed < 0.85f;
-        bool circle = boss.Action == BossAction.Slam && boss.ActionElapsed < 1.4f || boss.Action == BossAction.Leap && boss.ActionElapsed < 1.6f;
+        bool charge = boss.Action == BossAction.Charge && boss.AttackWarningVisible;
+        bool circle = (boss.Action == BossAction.Slam || boss.Action == BossAction.Leap) && boss.AttackWarningVisible;
         warning.enabled = charge || circle;
         if (!warning.enabled) return;
         float floor = transform.position.y - GetComponent<UnityEngine.AI.NavMeshAgent>().baseOffset + 0.08f;
@@ -82,7 +82,7 @@ public sealed class BossPresentation : MonoBehaviour
         if (charge)
         {
             Vector3 start = transform.position; start.y = floor;
-            warning.SetPosition(0, start); warning.SetPosition(1, start + boss.AttackDirection * 8f);
+            warning.SetPosition(0, start); warning.SetPosition(1, start + boss.AttackDirection * boss.ChargeWarningLength);
         }
         else for (int i = 0; i < 48; i++)
         {
@@ -92,7 +92,7 @@ public sealed class BossPresentation : MonoBehaviour
     }
     private void OnCue(BossCue cue, Vector3 point)
     {
-        if (cue == BossCue.Charge && animator != null) Play("BossCharge", .55f);
+        if (cue == BossCue.Charge && animator != null) Play("BossCharge", boss.ChargeTravelDuration);
         if (burst != null && (cue == BossCue.Spawn || cue == BossCue.Transform || cue == BossCue.Slam || cue == BossCue.Death))
         { burst.transform.position = point; burst.Play(); }
     }
