@@ -832,6 +832,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1001 &10230244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -928,6 +932,82 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 212553da34a2f454881f51dbecf74f7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySupport
+--- !u!1 &14042002
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 14042003}
+  - component: {fileID: 14042005}
+  - component: {fileID: 14042004}
+  m_Layer: 0
+  m_Name: SanctuaryEncounter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &14042003
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14042002}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.5, z: 21}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1441252446}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &14042004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14042002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 217e22cbdad87014994b7349f2aac0e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyEncounterGroup
+  playerHealth: {fileID: 687046386}
+  activationArea: {fileID: 14042005}
+  members:
+  - {fileID: 522005570}
+  - {fileID: 2107707729}
+  - {fileID: 1530069605}
+  - {fileID: 370260965}
+  - {fileID: 932996082}
+  - {fileID: 1729310868}
+  - {fileID: 634826164}
+--- !u!65 &14042005
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14042002}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 24, y: 4, z: 18}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &14192139
 GameObject:
   m_ObjectHideFlags: 0
@@ -1587,6 +1667,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &29939360
 GameObject:
   m_ObjectHideFlags: 0
@@ -2560,6 +2644,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 687046382}
     - target: {fileID: 4542939568315865112, guid: 1e8e1d4919455c14c9314bcd72ffe5bf, type: 3}
+      propertyPath: castWindup
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4542939568315865112, guid: 1e8e1d4919455c14c9314bcd72ffe5bf, type: 3}
+      propertyPath: healInterval
+      value: 5.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4542939568315865112, guid: 1e8e1d4919455c14c9314bcd72ffe5bf, type: 3}
       propertyPath: detectionRange
       value: 6
       objectReference: {fileID: 0}
@@ -2610,6 +2702,10 @@ PrefabInstance:
     - target: {fileID: 6204116126757924475, guid: 1e8e1d4919455c14c9314bcd72ffe5bf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8611451806958592822, guid: 1e8e1d4919455c14c9314bcd72ffe5bf, type: 3}
+      propertyPath: m_Speed
+      value: 2.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2783,6 +2879,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &66368296
 GameObject:
   m_ObjectHideFlags: 0
@@ -4343,6 +4443,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &101171016
 GameObject:
   m_ObjectHideFlags: 0
@@ -4830,6 +4934,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &106975151
 GameObject:
   m_ObjectHideFlags: 0
@@ -5214,6 +5322,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &112120838
 GameObject:
   m_ObjectHideFlags: 0
@@ -5313,6 +5425,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &113809984
 GameObject:
   m_ObjectHideFlags: 0
@@ -5804,6 +5920,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &119277298
 GameObject:
   m_ObjectHideFlags: 0
@@ -6593,6 +6713,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &140456250
 GameObject:
   m_ObjectHideFlags: 0
@@ -6638,6 +6762,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &140465761
 GameObject:
   m_ObjectHideFlags: 0
@@ -7206,6 +7334,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &161244985
 GameObject:
   m_ObjectHideFlags: 0
@@ -7251,6 +7383,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &161562998
 GameObject:
   m_ObjectHideFlags: 0
@@ -7418,6 +7554,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &163678895
 GameObject:
   m_ObjectHideFlags: 0
@@ -7933,6 +8073,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &185263726
 GameObject:
   m_ObjectHideFlags: 0
@@ -8068,6 +8212,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &188249262
 GameObject:
   m_ObjectHideFlags: 0
@@ -9393,6 +9541,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &224850240
 GameObject:
   m_ObjectHideFlags: 0
@@ -9470,6 +9622,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &228002326
 GameObject:
   m_ObjectHideFlags: 0
@@ -9755,6 +9911,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &238408735
 GameObject:
   m_ObjectHideFlags: 0
@@ -11378,6 +11538,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &274056627
 GameObject:
   m_ObjectHideFlags: 0
@@ -11519,6 +11683,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &278474291
 GameObject:
   m_ObjectHideFlags: 0
@@ -12167,6 +12335,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &294777919
 GameObject:
   m_ObjectHideFlags: 0
@@ -13529,6 +13701,8 @@ MonoBehaviour:
   target: {fileID: 687046382}
   offset: {x: 0, y: 17, z: -9.8}
   smoothTime: 0.12
+  combatFocusWeight: 0.5
+  combatZoom: 1.35
 --- !u!114 &330585550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13545,6 +13719,7 @@ MonoBehaviour:
   walls:
     serializedVersion: 2
     m_Bits: 8
+  bossEncounter: {fileID: 1549818981}
 --- !u!1 &330959137
 GameObject:
   m_ObjectHideFlags: 0
@@ -14209,6 +14384,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 1
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials:
+  - original: {fileID: 2100000, guid: bc91a1266e307af4e8a45a1c0511bdc4, type: 2}
+    transparent: {fileID: 2100000, guid: 4958bb0f3ede2844bb8a7424b7e95b94, type: 2}
+  - original: {fileID: 2100000, guid: ce816e65b70267d4cae8c1d879f71529, type: 2}
+    transparent: {fileID: 2100000, guid: 7621bb0998b0c4e4781f997fdf90c924, type: 2}
 --- !u!1 &343530947
 GameObject:
   m_ObjectHideFlags: 0
@@ -14592,6 +14775,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &353745424
 GameObject:
   m_ObjectHideFlags: 0
@@ -14759,6 +14946,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &358967178
 GameObject:
   m_ObjectHideFlags: 0
@@ -15677,6 +15868,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &380635378
 GameObject:
   m_ObjectHideFlags: 0
@@ -18489,6 +18684,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1001 &450878402
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18504,6 +18703,10 @@ PrefabInstance:
     - target: {fileID: 751225459070996094, guid: 5ccd5deb466d5064fb3a7239ad96c0df, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2066191821338774053, guid: 5ccd5deb466d5064fb3a7239ad96c0df, type: 3}
+      propertyPath: m_Speed
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 5217964594135693710, guid: 5ccd5deb466d5064fb3a7239ad96c0df, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18570,8 +18773,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 687046382}
     - target: {fileID: 7987260039827744132, guid: 5ccd5deb466d5064fb3a7239ad96c0df, type: 3}
+      propertyPath: attackWindup
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987260039827744132, guid: 5ccd5deb466d5064fb3a7239ad96c0df, type: 3}
+      propertyPath: attackInterval
+      value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987260039827744132, guid: 5ccd5deb466d5064fb3a7239ad96c0df, type: 3}
+      propertyPath: attackRecovery
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987260039827744132, guid: 5ccd5deb466d5064fb3a7239ad96c0df, type: 3}
       propertyPath: detectionRange
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7987260039827744132, guid: 5ccd5deb466d5064fb3a7239ad96c0df, type: 3}
       propertyPath: attackEvent.Path
@@ -18644,6 +18859,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 1
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials:
+  - original: {fileID: 2100000, guid: bc91a1266e307af4e8a45a1c0511bdc4, type: 2}
+    transparent: {fileID: 2100000, guid: 4958bb0f3ede2844bb8a7424b7e95b94, type: 2}
+  - original: {fileID: 2100000, guid: ce816e65b70267d4cae8c1d879f71529, type: 2}
+    transparent: {fileID: 2100000, guid: 7621bb0998b0c4e4781f997fdf90c924, type: 2}
 --- !u!1 &453388176
 GameObject:
   m_ObjectHideFlags: 0
@@ -18869,6 +19092,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &455999380
 GameObject:
   m_ObjectHideFlags: 0
@@ -20567,6 +20794,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &512069429
 GameObject:
   m_ObjectHideFlags: 0
@@ -21183,6 +21414,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1001 &547962678
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21239,6 +21474,22 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 687046382}
+    - target: {fileID: 5202627695583300035, guid: d5aefad069744cd478393d9afbaa92cb, type: 3}
+      propertyPath: castWindup
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202627695583300035, guid: d5aefad069744cd478393d9afbaa92cb, type: 3}
+      propertyPath: castInterval
+      value: 1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202627695583300035, guid: d5aefad069744cd478393d9afbaa92cb, type: 3}
+      propertyPath: castRecovery
+      value: 0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 7057492766371713158, guid: d5aefad069744cd478393d9afbaa92cb, type: 3}
+      propertyPath: m_Speed
+      value: 2.9
+      objectReference: {fileID: 0}
     - target: {fileID: 8880359529223144168, guid: d5aefad069744cd478393d9afbaa92cb, type: 3}
       propertyPath: m_Name
       value: EnemyMage07
@@ -22081,6 +22332,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &574924920
 GameObject:
   m_ObjectHideFlags: 0
@@ -22377,6 +22632,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &581297294
 GameObject:
   m_ObjectHideFlags: 0
@@ -23162,6 +23421,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &597143433
 GameObject:
   m_ObjectHideFlags: 0
@@ -23716,6 +23979,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &608952848
 GameObject:
   m_ObjectHideFlags: 0
@@ -24059,6 +24326,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &617618913
 GameObject:
   m_ObjectHideFlags: 0
@@ -24425,6 +24696,22 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 687046382}
+    - target: {fileID: 5202627695583300035, guid: d5aefad069744cd478393d9afbaa92cb, type: 3}
+      propertyPath: castWindup
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202627695583300035, guid: d5aefad069744cd478393d9afbaa92cb, type: 3}
+      propertyPath: castInterval
+      value: 1.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202627695583300035, guid: d5aefad069744cd478393d9afbaa92cb, type: 3}
+      propertyPath: castRecovery
+      value: 0.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 7057492766371713158, guid: d5aefad069744cd478393d9afbaa92cb, type: 3}
+      propertyPath: m_Speed
+      value: 2.9
+      objectReference: {fileID: 0}
     - target: {fileID: 8880359529223144168, guid: d5aefad069744cd478393d9afbaa92cb, type: 3}
       propertyPath: m_Name
       value: EnemyMage08
@@ -25242,6 +25529,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &643553509
 GameObject:
   m_ObjectHideFlags: 0
@@ -26260,6 +26551,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1001 &658773987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26751,6 +27046,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &667236321
 GameObject:
   m_ObjectHideFlags: 0
@@ -28268,6 +28567,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &710920554
 GameObject:
   m_ObjectHideFlags: 0
@@ -28485,6 +28788,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1001 &725770004
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29208,6 +29515,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &743154792
 GameObject:
   m_ObjectHideFlags: 0
@@ -29677,6 +29988,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &759599245
 GameObject:
   m_ObjectHideFlags: 0
@@ -30185,6 +30500,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &774244467
 GameObject:
   m_ObjectHideFlags: 0
@@ -30352,6 +30671,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &778680559
 GameObject:
   m_ObjectHideFlags: 0
@@ -31043,6 +31366,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &786267559
 GameObject:
   m_ObjectHideFlags: 0
@@ -32994,6 +33321,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &835730124
 GameObject:
   m_ObjectHideFlags: 0
@@ -33039,6 +33370,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &837042105
 GameObject:
   m_ObjectHideFlags: 0
@@ -33658,6 +33993,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1001 &848983653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34447,6 +34786,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &862056024
 GameObject:
   m_ObjectHideFlags: 0
@@ -34820,6 +35163,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2066191821338774053, guid: 5ccd5deb466d5064fb3a7239ad96c0df, type: 3}
+      propertyPath: m_Speed
+      value: 3.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5217964594135693710, guid: 5ccd5deb466d5064fb3a7239ad96c0df, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.8359427
@@ -34885,8 +35232,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 687046382}
     - target: {fileID: 7987260039827744132, guid: 5ccd5deb466d5064fb3a7239ad96c0df, type: 3}
+      propertyPath: attackWindup
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987260039827744132, guid: 5ccd5deb466d5064fb3a7239ad96c0df, type: 3}
+      propertyPath: attackInterval
+      value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987260039827744132, guid: 5ccd5deb466d5064fb3a7239ad96c0df, type: 3}
+      propertyPath: attackRecovery
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987260039827744132, guid: 5ccd5deb466d5064fb3a7239ad96c0df, type: 3}
       propertyPath: detectionRange
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7987260039827744132, guid: 5ccd5deb466d5064fb3a7239ad96c0df, type: 3}
       propertyPath: attackEvent.Path
@@ -35452,6 +35811,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &882766932
 GameObject:
   m_ObjectHideFlags: 0
@@ -37041,6 +37404,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &911525824
 GameObject:
   m_ObjectHideFlags: 0
@@ -37266,6 +37633,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &918723149
 GameObject:
   m_ObjectHideFlags: 0
@@ -38116,6 +38487,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &937409298
 GameObject:
   m_ObjectHideFlags: 0
@@ -38501,6 +38876,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &942313648
 GameObject:
   m_ObjectHideFlags: 0
@@ -38813,6 +39192,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &948678891
 GameObject:
   m_ObjectHideFlags: 0
@@ -38890,6 +39273,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &955451604
 GameObject:
   m_ObjectHideFlags: 0
@@ -39524,6 +39911,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &974645390
 GameObject:
   m_ObjectHideFlags: 0
@@ -39782,6 +40173,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 1
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials:
+  - original: {fileID: 2100000, guid: bc91a1266e307af4e8a45a1c0511bdc4, type: 2}
+    transparent: {fileID: 2100000, guid: 4958bb0f3ede2844bb8a7424b7e95b94, type: 2}
+  - original: {fileID: 2100000, guid: ce816e65b70267d4cae8c1d879f71529, type: 2}
+    transparent: {fileID: 2100000, guid: 7621bb0998b0c4e4781f997fdf90c924, type: 2}
 --- !u!1 &977585009
 GameObject:
   m_ObjectHideFlags: 0
@@ -40691,6 +41090,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1001 &1004737012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40810,6 +41213,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1008681998
 GameObject:
   m_ObjectHideFlags: 0
@@ -41336,6 +41743,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1037016329
 GameObject:
   m_ObjectHideFlags: 0
@@ -42267,6 +42678,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1059245478
 GameObject:
   m_ObjectHideFlags: 0
@@ -42457,6 +42872,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1062988948
 GameObject:
   m_ObjectHideFlags: 0
@@ -43687,6 +44106,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1081584035
 GameObject:
   m_ObjectHideFlags: 0
@@ -43764,6 +44187,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1085510800
 GameObject:
   m_ObjectHideFlags: 0
@@ -44257,6 +44684,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2066191821338774053, guid: 5ccd5deb466d5064fb3a7239ad96c0df, type: 3}
+      propertyPath: m_Speed
+      value: 3.2
+      objectReference: {fileID: 0}
     - target: {fileID: 5217964594135693710, guid: 5ccd5deb466d5064fb3a7239ad96c0df, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.32988
@@ -44322,8 +44753,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 687046382}
     - target: {fileID: 7987260039827744132, guid: 5ccd5deb466d5064fb3a7239ad96c0df, type: 3}
+      propertyPath: attackWindup
+      value: 0.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987260039827744132, guid: 5ccd5deb466d5064fb3a7239ad96c0df, type: 3}
+      propertyPath: attackInterval
+      value: 1.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987260039827744132, guid: 5ccd5deb466d5064fb3a7239ad96c0df, type: 3}
+      propertyPath: attackRecovery
+      value: 0.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 7987260039827744132, guid: 5ccd5deb466d5064fb3a7239ad96c0df, type: 3}
       propertyPath: detectionRange
-      value: 6
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7987260039827744132, guid: 5ccd5deb466d5064fb3a7239ad96c0df, type: 3}
       propertyPath: attackEvent.Path
@@ -44811,6 +45254,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1108883962
 GameObject:
   m_ObjectHideFlags: 0
@@ -45299,6 +45746,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1119168945
 GameObject:
   m_ObjectHideFlags: 0
@@ -46727,6 +47178,137 @@ Transform:
   - {fileID: 78675165}
   m_Father: {fileID: 2140044741}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1157937782
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1157937783}
+  - component: {fileID: 1157937787}
+  - component: {fileID: 1157937786}
+  - component: {fileID: 1157937785}
+  - component: {fileID: 1157937784}
+  m_Layer: 3
+  m_Name: TowerBase03
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1157937783
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157937782}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: -0.7071068}
+  m_LocalPosition: {x: 90, y: 12, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1625395955}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1157937784
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157937782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifierVolume
+  m_SerializedVersion: 0
+  m_Size: {x: 9.3, y: 10, z: 9.3}
+  m_Center: {x: 1.35, y: 3, z: 1.35}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
+--- !u!64 &1157937785
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157937782}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 6cea06aa7f4f95a46ac7f068bf1b21fd, type: 2}
+--- !u!23 &1157937786
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157937782}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: b01df3f8762b07e48857b531f275eceb, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1157937787
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1157937782}
+  m_Mesh: {fileID: 4300000, guid: 6cea06aa7f4f95a46ac7f068bf1b21fd, type: 2}
 --- !u!1 &1158050687
 GameObject:
   m_ObjectHideFlags: 0
@@ -47076,6 +47658,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1171901988
 GameObject:
   m_ObjectHideFlags: 0
@@ -47921,6 +48507,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1203749408
 GameObject:
   m_ObjectHideFlags: 0
@@ -48349,6 +48939,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1210018861
 GameObject:
   m_ObjectHideFlags: 0
@@ -48720,6 +49314,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1216107483
 GameObject:
   m_ObjectHideFlags: 0
@@ -48851,6 +49449,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1217999332
 GameObject:
   m_ObjectHideFlags: 0
@@ -50368,6 +50970,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1001 &1263809646
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -50887,6 +51493,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1273521899
 GameObject:
   m_ObjectHideFlags: 0
@@ -51623,6 +52233,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1286899827
 GameObject:
   m_ObjectHideFlags: 0
@@ -53278,6 +53892,137 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1331593450}
   m_Mesh: {fileID: -370000206234711255, guid: c7fd8389c29e78449b5d618ddca8a178, type: 3}
+--- !u!1 &1334834409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1334834410}
+  - component: {fileID: 1334834414}
+  - component: {fileID: 1334834413}
+  - component: {fileID: 1334834412}
+  - component: {fileID: 1334834411}
+  m_Layer: 3
+  m_Name: TowerBase02
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1334834410
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334834409}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 110, y: 12, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1625395955}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1334834411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334834409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifierVolume
+  m_SerializedVersion: 0
+  m_Size: {x: 9.3, y: 10, z: 9.3}
+  m_Center: {x: 1.35, y: 3, z: 1.35}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
+--- !u!64 &1334834412
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334834409}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 6cea06aa7f4f95a46ac7f068bf1b21fd, type: 2}
+--- !u!23 &1334834413
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334834409}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: b01df3f8762b07e48857b531f275eceb, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1334834414
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334834409}
+  m_Mesh: {fileID: 4300000, guid: 6cea06aa7f4f95a46ac7f068bf1b21fd, type: 2}
 --- !u!1 &1336366606
 GameObject:
   m_ObjectHideFlags: 0
@@ -55438,6 +56183,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1379259837
 GameObject:
   m_ObjectHideFlags: 0
@@ -56552,6 +57301,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1398035450
 GameObject:
   m_ObjectHideFlags: 0
@@ -56597,6 +57350,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1399424687
 GameObject:
   m_ObjectHideFlags: 0
@@ -56642,6 +57399,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1403357519
 GameObject:
   m_ObjectHideFlags: 0
@@ -57149,6 +57910,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1422582475
 GameObject:
   m_ObjectHideFlags: 0
@@ -57226,6 +57991,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1423993016
 GameObject:
   m_ObjectHideFlags: 0
@@ -57764,6 +58533,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1438053969
 GameObject:
   m_ObjectHideFlags: 0
@@ -57809,6 +58582,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1440032799
 GameObject:
   m_ObjectHideFlags: 0
@@ -57854,6 +58631,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1440470068
 GameObject:
   m_ObjectHideFlags: 0
@@ -57989,6 +58770,7 @@ Transform:
   - {fileID: 621235740}
   - {fileID: 522005561}
   - {fileID: 634826173}
+  - {fileID: 14042003}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1445445813
@@ -58799,6 +59581,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1455480475
 GameObject:
   m_ObjectHideFlags: 0
@@ -59162,6 +59948,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1464939839
 GameObject:
   m_ObjectHideFlags: 0
@@ -59531,6 +60321,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1480749589
 GameObject:
   m_ObjectHideFlags: 0
@@ -60586,6 +61380,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1514679917
 GameObject:
   m_ObjectHideFlags: 0
@@ -61192,6 +61990,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1525393071
 GameObject:
   m_ObjectHideFlags: 0
@@ -61481,6 +62283,141 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
+--- !u!1 &1532747368
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1532747369}
+  - component: {fileID: 1532747373}
+  - component: {fileID: 1532747372}
+  - component: {fileID: 1532747371}
+  - component: {fileID: 1532747370}
+  m_Layer: 3
+  m_Name: TowerBase04
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1532747369
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532747368}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 110, y: 12, z: 10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1625395955}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1532747370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532747368}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifierVolume
+  m_SerializedVersion: 0
+  m_Size: {x: 9.3, y: 10, z: 9.3}
+  m_Center: {x: 1.35, y: 3, z: 1.35}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
+--- !u!64 &1532747371
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532747368}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 6cea06aa7f4f95a46ac7f068bf1b21fd, type: 2}
+--- !u!23 &1532747372
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532747368}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: b01df3f8762b07e48857b531f275eceb, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1532747373
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532747368}
+  m_Mesh: {fileID: 4300000, guid: 6cea06aa7f4f95a46ac7f068bf1b21fd, type: 2}
 --- !u!1001 &1533261431
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61888,6 +62825,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1538853359
 GameObject:
   m_ObjectHideFlags: 0
@@ -61933,6 +62874,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1539095207
 GameObject:
   m_ObjectHideFlags: 0
@@ -62155,6 +63100,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1545390200
 GameObject:
   m_ObjectHideFlags: 0
@@ -62322,6 +63271,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1546132828
 GameObject:
   m_ObjectHideFlags: 0
@@ -62840,6 +63793,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1571948409
 GameObject:
   m_ObjectHideFlags: 0
@@ -63115,6 +64072,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1582472880
 GameObject:
   m_ObjectHideFlags: 0
@@ -63160,6 +64121,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1001 &1583289337
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63993,6 +64958,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1608396632
 GameObject:
   m_ObjectHideFlags: 0
@@ -64639,6 +65608,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1623320082
 GameObject:
   m_ObjectHideFlags: 0
@@ -64815,6 +65788,41 @@ Transform:
   m_Children:
   - {fileID: 1698110557}
   m_Father: {fileID: 400032447}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1625395954
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1625395955}
+  m_Layer: 0
+  m_Name: TowerBases
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1625395955
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625395954}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1707915454}
+  - {fileID: 1334834410}
+  - {fileID: 1157937783}
+  - {fileID: 1532747369}
+  m_Father: {fileID: 2122208542}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1626347671
 GameObject:
@@ -65073,6 +66081,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1635246447
 GameObject:
   m_ObjectHideFlags: 0
@@ -65278,6 +66290,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1640322673
 GameObject:
   m_ObjectHideFlags: 0
@@ -65799,6 +66815,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1657452270
 GameObject:
   m_ObjectHideFlags: 0
@@ -66201,6 +67221,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1669059770
 GameObject:
   m_ObjectHideFlags: 0
@@ -67826,6 +68850,137 @@ Transform:
   - {fileID: 380635379}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1707915453
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1707915454}
+  - component: {fileID: 1707915458}
+  - component: {fileID: 1707915457}
+  - component: {fileID: 1707915456}
+  - component: {fileID: 1707915455}
+  m_Layer: 3
+  m_Name: TowerBase01
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &1707915454
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707915453}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: -0.00000004371139}
+  m_LocalPosition: {x: 90, y: 12, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1625395955}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1707915455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707915453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshModifierVolume
+  m_SerializedVersion: 0
+  m_Size: {x: 9.3, y: 10, z: 9.3}
+  m_Center: {x: 1.35, y: 3, z: 1.35}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
+--- !u!64 &1707915456
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707915453}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 6cea06aa7f4f95a46ac7f068bf1b21fd, type: 2}
+--- !u!23 &1707915457
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707915453}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: b01df3f8762b07e48857b531f275eceb, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1707915458
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707915453}
+  m_Mesh: {fileID: 4300000, guid: 6cea06aa7f4f95a46ac7f068bf1b21fd, type: 2}
 --- !u!1001 &1710747697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -68099,6 +69254,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1717907028
 GameObject:
   m_ObjectHideFlags: 0
@@ -69243,6 +70402,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1755164551
 GameObject:
   m_ObjectHideFlags: 0
@@ -69288,6 +70451,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1755888615
 GameObject:
   m_ObjectHideFlags: 0
@@ -69833,6 +71000,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1773944386
 GameObject:
   m_ObjectHideFlags: 0
@@ -70113,6 +71284,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1001 &1781423044
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70416,6 +71591,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 1
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials:
+  - original: {fileID: 2100000, guid: bc91a1266e307af4e8a45a1c0511bdc4, type: 2}
+    transparent: {fileID: 2100000, guid: 4958bb0f3ede2844bb8a7424b7e95b94, type: 2}
+  - original: {fileID: 2100000, guid: ce816e65b70267d4cae8c1d879f71529, type: 2}
+    transparent: {fileID: 2100000, guid: 7621bb0998b0c4e4781f997fdf90c924, type: 2}
 --- !u!1001 &1791518349
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70941,6 +72124,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1802360449
 GameObject:
   m_ObjectHideFlags: 0
@@ -70986,6 +72173,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1804135103
 GameObject:
   m_ObjectHideFlags: 0
@@ -71085,6 +72276,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1806888338
 GameObject:
   m_ObjectHideFlags: 0
@@ -74340,6 +75535,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1890853337
 GameObject:
   m_ObjectHideFlags: 0
@@ -74385,6 +75584,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1894229255
 GameObject:
   m_ObjectHideFlags: 0
@@ -74552,6 +75755,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1899141217
 GameObject:
   m_ObjectHideFlags: 0
@@ -76261,6 +77468,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1938534953
 GameObject:
   m_ObjectHideFlags: 0
@@ -77845,6 +79056,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1980902232
 GameObject:
   m_ObjectHideFlags: 0
@@ -77890,6 +79105,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1984708091
 GameObject:
   m_ObjectHideFlags: 0
@@ -78080,6 +79299,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1001 &1989247043
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -78096,6 +79319,14 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 687046382}
+    - target: {fileID: 4542939568315865112, guid: 1e8e1d4919455c14c9314bcd72ffe5bf, type: 3}
+      propertyPath: castWindup
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4542939568315865112, guid: 1e8e1d4919455c14c9314bcd72ffe5bf, type: 3}
+      propertyPath: healInterval
+      value: 5.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4542939568315865112, guid: 1e8e1d4919455c14c9314bcd72ffe5bf, type: 3}
       propertyPath: detectionRange
       value: 6
@@ -78147,6 +79378,10 @@ PrefabInstance:
     - target: {fileID: 6204116126757924475, guid: 1e8e1d4919455c14c9314bcd72ffe5bf, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8611451806958592822, guid: 1e8e1d4919455c14c9314bcd72ffe5bf, type: 3}
+      propertyPath: m_Speed
+      value: 2.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -78776,6 +80011,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &1998399617
 GameObject:
   m_ObjectHideFlags: 0
@@ -79259,6 +80498,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &2013594133
 GameObject:
   m_ObjectHideFlags: 0
@@ -79663,6 +80906,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &2019519762
 GameObject:
   m_ObjectHideFlags: 0
@@ -79974,6 +81221,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &2027839486
 GameObject:
   m_ObjectHideFlags: 0
@@ -80256,6 +81507,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &2031714732
 GameObject:
   m_ObjectHideFlags: 0
@@ -82197,6 +83452,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &2072101409
 GameObject:
   m_ObjectHideFlags: 0
@@ -84138,6 +85397,7 @@ Transform:
   - {fileID: 450881236}
   - {fileID: 341577110}
   - {fileID: 923879787}
+  - {fileID: 1625395955}
   m_Father: {fileID: 125797005}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2123899337
@@ -84271,6 +85531,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &2130052627
 GameObject:
   m_ObjectHideFlags: 0
@@ -84903,6 +86167,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 984972ff59514f540a63f023f79a2986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TowerWallCutaway
+  fadeInsteadOfHide: 0
+  occludedOpacity: 0.3
+  fadeDuration: 0.2
+  fadeMaterials: []
 --- !u!1 &2140915558
 GameObject:
   m_ObjectHideFlags: 0

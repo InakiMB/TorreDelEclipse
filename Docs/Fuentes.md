@@ -27,6 +27,8 @@ La escena `Assets/Scenes/TorreEclipse.unity` utiliza pisos, paredes, columnas, a
 
 El suelo octogonal de la terraza, pretiles simples, alfombra, estandartes con motivo de eclipse y partes de los braseros se construyeron con geometría básica del proyecto. La rotura utiliza partículas simples. Los guerreros, magos y clérigos de apoyo utilizan modelos animados de Quaternius; las pociones mantienen su representación de prueba. Las esferas de carga y los proyectiles son primitivas de Unity con materiales propios. El enlace de curación, los anillos de aceleración y las partículas verdes del apoyo se construyeron con LineRenderer y ParticleSystem de Unity.
 
+Las cuatro bases pentagonales de los torreones se construyeron con una malla del proyecto y el material de piedra oscura ya registrado. Las variantes transparentes de ladrillo y piedra reutilizan las texturas de Kenney y conservan sus fuentes; modifican el modo de mezcla para atenuar los torreones al tapar al jugador o al jefe. No se incorporaron nuevos paquetes de recursos para este ajuste.
+
 Alzaluna se utilizó como referencia de organización espacial y ambientación mediante las páginas de [Moonrise Towers](https://bg3.wiki/wiki/Moonrise_Towers) y [Moonrise Towers Rooftop](https://bg3.wiki/wiki/Moonrise_Towers_Rooftop). Sus imágenes y mapas se consultaron como referencia; no se incorporaron como texturas ni modelos de esta escena.
 
 ## Audio

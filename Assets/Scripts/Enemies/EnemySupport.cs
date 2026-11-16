@@ -39,6 +39,7 @@ public sealed class EnemySupport : MonoBehaviour, IEnemyCombatant
     private float nextScanAt;
 
     public SupportSpell CastingSpell { get; private set; }
+    public void AlertToPlayer() { if (health != null && !health.IsDead) provoked = true; }
     public bool IsCasting => CastingSpell != SupportSpell.None;
     public float ChargeProgress => IsCasting && spellPending ? Mathf.Clamp01(1f - (spellAt - Time.time) / castWindup) : 0f;
     public Health HealingTarget => healingTarget;

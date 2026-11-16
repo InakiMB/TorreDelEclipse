@@ -18,6 +18,7 @@ public sealed class EnemyChaser : MonoBehaviour, IEnemyCombatant
     [SerializeField, Min(0f)] private float destroyDelay = 0f;
 
     public event Action AttackStarted;
+    public void AlertToPlayer() { if (health != null && !health.IsDead) provoked = true; }
     public bool IsAttacking { get; private set; }
     public float AttackPlaybackSpeed { get; private set; } = 1f;
 

@@ -40,6 +40,7 @@ public sealed class EnemyMage : MonoBehaviour, IEnemyCombatant
         && agent != null && agent.enabled && agent.isOnNavMesh && targetHealth != null && !targetHealth.IsDead
         && (provoked || (target.position - transform.position).sqrMagnitude <= detectionRange * detectionRange);
     public event Action CastStarted;
+    public void AlertToPlayer() { if (health != null && !health.IsDead) provoked = true; }
     public event Action ShotFired;
 
     private void Awake()
