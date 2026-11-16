@@ -67,7 +67,7 @@ public sealed class PlayerStaffAttack : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (health.IsDead || Time.deltaTime <= 0f || (dodge != null && dodge.IsBusy)) return;
+        if (EclipseGameUI.BlocksGameplay || health.IsDead || Time.deltaTime <= 0f || (dodge != null && dodge.IsBusy)) return;
         if (pendingImpact && Time.time >= impactAt)
         {
             pendingImpact = false;

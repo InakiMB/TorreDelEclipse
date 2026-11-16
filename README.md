@@ -6,7 +6,7 @@ Juego de acción 3D con cámara superior y estética de fantasía oscura low pol
 
 ## Estado del proyecto
 
-Actualizado al **16/11/2026**. Hitos **0, 1 y 2 completos**; **Producción en curso**, con los tres enemigos de planta baja, esquive y jefe de dos fases implementados.
+Actualizado al **16/11/2026**. Hitos **0, 1 y 2 completos**; **Producción en curso**, con los tres enemigos de planta baja, esquive, jefe de dos fases e interfaces implementados.
 
 - Movimiento con WASD y apuntado independiente con mouse; ataques con magia y bastón.
 - Rodada con Espacio en la dirección de movimiento o del apuntado al estar quieto, con animación, sonido, invulnerabilidad parcial y recarga visible en el HUD.
@@ -21,13 +21,15 @@ Actualizado al **16/11/2026**. Hitos **0, 1 y 2 completos**; **Producción en cu
 - Los cuatro torreones de la terraza pasan gradualmente al 30% de opacidad cuando tapan al jugador o al jefe. Sus bases visibles cierran los rincones contra el pretil y la navegación reserva espacio para el cuerpo del jefe.
 - Los siete guardias del santuario responden juntos al entrar en la sala o atacar a uno: tres guerreros, dos magos y dos apoyos tienen ajustes propios de velocidad y cadencia. Los otros trece enemigos conservan sus valores.
 - Ambiente variable, música de exploración/combate y efectos integrados mediante FMOD.
+- Menú principal, pausa, opciones de audio, derrota, victoria con la torre purificada y créditos. Las cinco categorías de volumen guardan sus preferencias.
+- HUD con esfera de vida, magia, bastón, recarga de esquive y pociones; barras discretas sobre enemigos durante el combate, incluidas las curaciones. La cámara de combate reserva espacio para la interfaz y la hotbar se atenúa si un personaje pasa por detrás.
 
-Siguen pendientes los menús con Opciones y Créditos, el balance con jugadores y la revisión final de requisitos y ejecutable. Llegar a la terraza permite prepararse; la victoria requiere derrotar al jefe.
+Siguen pendientes el balance final con jugadores y la revisión final de requisitos y ejecutable. Llegar a la terraza permite prepararse; la victoria requiere derrotar al jefe.
 
 ## Abrir y probar
 
 1. Añadir la carpeta del repositorio a Unity Hub y abrirla con **Unity 6000.3.10f1**.
-2. Abrir `Assets/Scenes/TorreEclipse.unity`, entrar en Play y hacer clic dentro de Game.
+2. Abrir `Assets/Scenes/MenuPrincipal.unity`, entrar en Play y pulsar **Jugar**. `TorreEclipse.unity` permite entrar directamente al nivel para trabajar en él.
 3. Eliminar a los veinte enemigos de la planta baja para habilitar el ascenso del santuario; acercarse a la escalera y pulsar E. En la terraza hay un acceso de regreso.
 4. Prepararse antes de entrar en el círculo: ese momento guarda vida y pociones para los reintentos. Derrotar al Custodio completa el nivel.
 
@@ -44,7 +46,8 @@ Siguen pendientes los menús con Opciones y Créditos, el balance con jugadores 
 | Espacio | Rodar hacia WASD; sin movimiento, hacia donde apunta el mago. |
 | E | Recoger pociones o utilizar la escalera. |
 | Q | Consumir una poción si falta vida. |
-| R | Reintentar al jefe tras morir en su arena; en los demás casos, reiniciar el nivel. |
+| Esc | Pausar o volver a la pantalla anterior del menú. |
+| R | Reintentar tras la derrota; durante la partida, solicitar un reinicio completo del nivel. |
 
 El inventario admite cinco pociones; cada una recupera hasta 35 de vida. El reinicio completo restaura enemigos, suministros, inventario y progreso. El reintento del jefe restaura el estado guardado al activar el círculo y comienza otra vez su primera fase; ese punto de control dura durante la partida actual.
 
@@ -52,7 +55,9 @@ La rodada recorre 3,2 metros en 0,5 segundos, seguida de 0,15 segundos de recupe
 
 El jefe persigue a 4,6 m/s en fase uno y aproximadamente 5,06 m/s en fase dos. Sus preparaciones y pausas son cortas, con posición o dirección anunciada antes del impacto. La fase dos emite abanicos de cuatro tandas de once orbes, anillos de tres tandas de veinticuatro y espirales de tres brazos con 72 orbes; los proyectiles salen de forma progresiva, respetan coberturas y se limitan a 160 simultáneos. Vida, daño, ritmo, preparación y densidad se ajustan en el prefab `CustodioDelEclipse`.
 
-En el santuario, los guerreros se mueven a 3,2 m/s y atacan cada 1,05 s; los magos se mueven a 2,9 m/s y lanzan cada 1,9 s; los apoyos se mueven a 2,7 m/s y curan cada 5,2 s. Son valores base antes de recibir bonificaciones. Se conservan su vida y daño por golpe. `Enemies/SanctuaryEncounter` coordina exclusivamente ese grupo; las barras de vida de enemigos quedan pendientes del bloque final de interfaces.
+En el santuario, los guerreros se mueven a 3,2 m/s y atacan cada 1,05 s; los magos se mueven a 2,9 m/s y lanzan cada 1,9 s; los apoyos se mueven a 2,7 m/s y curan cada 5,2 s. Son valores base antes de recibir bonificaciones. Se conservan su vida y daño por golpe. `Enemies/SanctuaryEncounter` coordina exclusivamente ese grupo. Las barras de vida muestran el daño y las curaciones durante el combate.
+
+Las pantallas y sus controles están en el objeto `UI` de cada escena. Las opciones controlan Volumen general, Música, Ambiente, Efectos e Interfaz. Reiniciar el nivel, abandonar la partida desde pausa o salir desde ella solicita confirmación. La victoria continúa a los créditos, donde se incluyen las fuentes y licencias.
 
 ## Herramientas y audio
 
@@ -68,6 +73,8 @@ El ambiente cambia entre interior y exterior; la música responde al combate de 
 El esquive reutiliza el evento de barrido de bastón con tono y nivel reducidos, y un paso al aterrizar. Los pasos de caminata se suspenden durante la rodada; no se requieren nuevos eventos ni bancos de FMOD.
 
 El jefe incorpora doce eventos en `SFX/Jefe` y `MUS/Jefe`, con el parámetro `Fase`: cambia de la versión instrumental a la versión con coros de **Blackmoor Colossus**, de **Matthew Pablo**, sin reiniciar la música. Ambas son mezclas alternativas completas, no pistas instrumentales separadas. Los efectos salen por Efectos y la música por Música, dentro de Master; se conservan las sesiones `Jefe_Efectos.rpp` y `Jefe_Musica.rpp`. Fuentes, atribuciones y licencias están en el registro de créditos.
+
+Los eventos 2D `UI/Seleccionar` y `UI/Confirmar` utilizan el grupo Interfaz. Sus dos fuentes de síntesis y exportaciones se conservan en `Audio/Fuentes/Interfaz/` y `Audio/ExportadosFMOD/Interfaz/`.
 
 ## Documentación
 

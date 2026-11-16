@@ -35,7 +35,7 @@ public sealed class PlayerSpellCaster : MonoBehaviour
     private void LateUpdate()
     {
         Mouse mouse = Mouse.current;
-        if (health.IsDead || mouse == null || Time.deltaTime <= 0f
+        if (EclipseGameUI.BlocksGameplay || health.IsDead || mouse == null || Time.deltaTime <= 0f
             || !mouse.leftButton.isPressed || Time.time < nextShotTime
             || (staffAttack != null && staffAttack.IsAttacking) || (dodge != null && dodge.IsBusy)) return;
         if (viewCamera != null && !viewCamera.pixelRect.Contains(mouse.position.ReadValue())) return;

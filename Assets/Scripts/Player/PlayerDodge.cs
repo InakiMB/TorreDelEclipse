@@ -83,7 +83,7 @@ public sealed class PlayerDodge : MonoBehaviour, IDamageGuard
 
     public bool TryRoll(Vector3 direction)
     {
-        if (!isActiveAndEnabled || health.IsDead || !controller.enabled || !controller.isGrounded
+        if (EclipseGameUI.BlocksGameplay || !isActiveAndEnabled || health.IsDead || !controller.enabled || !controller.isGrounded
             || !movement.isActiveAndEnabled || Time.timeScale <= 0f || IsBusy || Time.time < nextReadyAt) return false;
         direction = Vector3.ProjectOnPlane(direction, Vector3.up);
         if (direction.sqrMagnitude < 0.001f) direction = Vector3.ProjectOnPlane(transform.forward, Vector3.up);

@@ -25,7 +25,7 @@ public sealed class PlayerInteractor : MonoBehaviour
     private void LateUpdate()
     {
         CurrentPrompt = string.Empty;
-        if (health.IsDead || Time.deltaTime <= 0f || (dodge != null && dodge.IsBusy)) return;
+        if (EclipseGameUI.BlocksGameplay || health.IsDead || Time.deltaTime <= 0f || (dodge != null && dodge.IsBusy)) return;
 
         IInteractable closest = null;
         float closestDistance = float.PositiveInfinity;

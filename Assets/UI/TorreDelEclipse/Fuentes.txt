@@ -1,0 +1,25 @@
+FUENTES Y LICENCIAS
+
+Torre del Eclipse — Iñaki Bertran
+
+- Retro Fantasy Kit, por Kenney — kenney.nl: https://kenney.nl/assets/retro-fantasy-kit — CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/.
+- RPG Character Pack — Wizard, por Quaternius — quaternius.com: https://quaternius.com/packs/rpgcharacters.html — CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/.
+- RPG Character Pack — Cleric, por Quaternius — quaternius.com: https://quaternius.com/packs/rpgcharacters.html — CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/. Modelo, bastón, texturas y animaciones del enemigo de apoyo.
+- RPG Character Pack — Warrior, por Quaternius — Fuente original: https://quaternius.com/packs/rpgcharacters.html — CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/. Base del Custodio del Eclipse, con geometría, materiales y animaciones adaptados en Blender.
+- LowPoly Animated Knight, por Quaternius — Fuente original: https://quaternius.itch.io/lowpoly-animated-knight — CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/. Modelo, espada y animaciones originales del guerrero.
+- Impact Sounds, por Kenney — Fuente original: https://kenney.nl/assets/impact-sounds — CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/.
+- 20 Sword Sound Effects (Attacks and Clashes), por StarNinjas — Fuente original: https://opengameart.org/content/20-sword-sound-effects-attacks-and-clashes — CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/.
+- PSX Style Modular Low Poly Dungeon — Free Edition, por BlenderVoyage — Fuente original: https://blendervoyage.itch.io/psx-style-modular-low-poly-dungeon — CC BY 4.0: https://creativecommons.org/licenses/by/4.0/. Integración en Unity con reorganización de carpetas y ajustes de materiales/importación.
+- Blackmoor Colossus / Colossal Boss Battle Theme, por Matthew Pablo — Fuente original: https://opengameart.org/content/colossal-boss-battle-theme, compositor: https://www.matthewpablo.com/ — CC BY 3.0: https://creativecommons.org/licenses/by/3.0/. Conversión de formato, ajuste de mezcla y transición adaptativa entre los loops con y sin coros.
+- 100 CC0 metal and wood SFX y 80 CC0 RPG SFX, por rubberduck — Metal y madera: https://opengameart.org/content/100-cc0-metal-and-wood-sfx, RPG: https://opengameart.org/content/80-cc0-rpg-sfx — CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/. Selección, capas, cambios de velocidad/tono, niveles y fades para los efectos del jefe.
+- Large Wings Flap, por AntumDeluge, a partir de dave.des — Fuente original: https://opengameart.org/content/large-wings-flap, base: https://freesound.org/s/127197/ — CC0 1.0: https://creativecommons.org/publicdomain/zero/1.0/. Conversión y procesamiento para aleteos y transformación.
+
+Crimson Text — The Crimson Text Project Authors. SIL Open Font License 1.1.
+Fuente: https://github.com/google/fonts/tree/main/ofl/crimsontext
+Licencia incluida junto al archivo de la fuente.
+
+Ilustraciones e iconos de interfaz: recursos generados para Torre del Eclipse.
+
+Las marcas y juegos tomados como referencia no aportan modelos, grabaciones ni texturas a esta entrega.
+
+Audio de interfaz: dos efectos breves de síntesis (selección y confirmación), sin grabaciones de terceros.

@@ -29,7 +29,7 @@ public sealed class PlayerInventory : MonoBehaviour
 
     private void Update()
     {
-        if (health.IsDead || Time.deltaTime <= 0f) return;
+        if (EclipseGameUI.BlocksGameplay || health.IsDead || Time.deltaTime <= 0f) return;
         if (Keyboard.current != null && Keyboard.current.qKey.wasPressedThisFrame) TryUsePotion();
     }
 
@@ -51,7 +51,7 @@ public sealed class PlayerInventory : MonoBehaviour
 
     public bool TryUsePotion()
     {
-        if (health.IsDead || (dodge != null && dodge.IsBusy)) return false;
+        if (EclipseGameUI.BlocksGameplay || health.IsDead || (dodge != null && dodge.IsBusy)) return false;
         if (PotionCount <= 0)
         {
             Notify("No tenés pociones.");

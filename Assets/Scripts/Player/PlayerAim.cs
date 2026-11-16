@@ -25,7 +25,7 @@ public sealed class PlayerAim : MonoBehaviour
     private void LateUpdate()
     {
         Mouse mouse = Mouse.current;
-        if (mouse == null || viewCamera == null || Time.deltaTime <= 0f || (dodge != null && dodge.IsBusy))
+        if (EclipseGameUI.BlocksGameplay || mouse == null || viewCamera == null || Time.deltaTime <= 0f || (dodge != null && dodge.IsBusy))
         {
             return;
         }

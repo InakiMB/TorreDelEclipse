@@ -13,11 +13,15 @@ public sealed class TopDownCamera : MonoBehaviour
 
     private Vector3 followVelocity;
     private Transform combatFocus;
+    private Camera view;
+    private float normalOrthographicSize;
 
     public void SetCombatFocus(Transform focus) => combatFocus = focus;
 
     private void Start()
     {
+        view = GetComponent<Camera>();
+        normalOrthographicSize = view.orthographicSize;
         if (target == null)
         {
             Debug.LogError("TopDownCamera necesita un Target en el Inspector.", this);
@@ -45,10 +49,35 @@ public sealed class TopDownCamera : MonoBehaviour
         }
 
         Vector3 desiredPosition = target.position + offset;
+        float desiredSize = normalOrthographicSize;
         if (combatFocus != null)
         {
             Vector3 focus = combatFocus.position; focus.y = target.position.y;
-            desiredPosition = Vector3.Lerp(target.position, focus, combatFocusWeight) + offset * combatZoom;
+            Vector3 center = Vector3.Lerp(target.position, focus, combatFocusWeight);
+            float zoom = combatZoom;
+            desiredPosition = center + offset * zoom;
+            // Reservar espacio para la hotbar y la barra del jefe en la interfaz final.
+            if (EclipseGameUI.Active != null && view != null && view.orthographic)
+            {
+                Quaternion inverse = Quaternion.Inverse(Quaternion.Euler(60f, 0f, 0f));
+                Vector3 playerLocal = inverse * (target.position - desiredPosition);
+                Vector3 bossLocal = inverse * (combatFocus.position + Vector3.up * 3.5f - desiredPosition);
+                float low = Mathf.Min(playerLocal.y, bossLocal.y), high = Mathf.Max(playerLocal.y, bossLocal.y);
+                desiredSize = Mathf.Max(normalOrthographicSize, (high - low + 1f) / 1.24f,
+                    Mathf.Abs(playerLocal.x - bossLocal.x) / (view.aspect * 1.68f));
+                float shift = (low + high) * .5f - .06f * desiredSize;
+                desiredPosition += Quaternion.Euler(60f, 0f, 0f) * Vector3.up * shift;
+            }
+            else if (EclipseGameUI.Active != null && view != null)
+            {
+                for (int attempt = 0; attempt < 18; attempt++)
+                {
+                    if (FitsInterface(target.position, desiredPosition)
+                        && FitsInterface(combatFocus.position + Vector3.up * 3.5f, desiredPosition)) break;
+                    zoom += .06f;
+                    desiredPosition = center + offset * zoom;
+                }
+            }
         }
         transform.position = Vector3.SmoothDamp(
             transform.position,
@@ -56,5 +85,18 @@ public sealed class TopDownCamera : MonoBehaviour
             ref followVelocity,
             smoothTime);
         transform.rotation = Quaternion.Euler(60f, 0f, 0f);
+        if (view != null && view.orthographic)
+            view.orthographicSize = Mathf.Lerp(view.orthographicSize, desiredSize,
+                1f - Mathf.Exp(-Time.deltaTime / Mathf.Max(.01f, smoothTime)));
+    }
+
+    private bool FitsInterface(Vector3 point, Vector3 cameraPosition)
+    {
+        Vector3 local = Quaternion.Inverse(Quaternion.Euler(60f, 0f, 0f)) * (point - cameraPosition);
+        if (local.z <= .1f) return false;
+        float halfHeight = local.z * Mathf.Tan(view.fieldOfView * .5f * Mathf.Deg2Rad);
+        float x = .5f + local.x / (2f * halfHeight * view.aspect);
+        float y = .5f + local.y / (2f * halfHeight);
+        return x > .08f && x < .92f && y > .22f && y < .84f;
     }
 }

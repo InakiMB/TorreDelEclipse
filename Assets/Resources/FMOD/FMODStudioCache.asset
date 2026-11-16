@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: Audio/FMOD/TorreDelEclipseAudio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639303865775412350
+  lastModified: 639304055203799781
   FileSizes:
   - Name: Desktop
-    Value: 4197920
+    Value: 4201728
   Exists: 1
 --- !u!114 &-8872414543627273128
 MonoBehaviour:
@@ -101,6 +101,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2508
+--- !u!114 &-8004549803207103888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Seleccionar
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/UI/Seleccionar
+  Guid:
+    Data1: -928090439
+    Data2: 1436763395
+    Data3: 1455885239
+    Data4: 936833110
+  Banks:
+  - {fileID: -9194930288831458847}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 65
 --- !u!114 &-7897748336852012224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,6 +210,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2500
+--- !u!114 &-5325239034514152014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Confirmar
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/UI/Confirmar
+  Guid:
+    Data1: 2073088876
+    Data2: 1610231496
+    Data3: 1899311522
+    Data4: 2014202538
+  Banks:
+  - {fileID: -9194930288831458847}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 105
 --- !u!114 &-4651314045093272164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -581,13 +635,15 @@ MonoBehaviour:
   - {fileID: 3673324924172795180}
   - {fileID: -3300056716888667854}
   - {fileID: -7897748336852012224}
+  - {fileID: -5325239034514152014}
+  - {fileID: -8004549803207103888}
   EditorParameters: []
   MasterBanks:
   - {fileID: -9194930288831458847}
   StringsBanks:
   - {fileID: 8128512609427801552}
   cacheVersion: 132096
-  cacheTime: 639303865775427559
+  cacheTime: 639304055203821025
   SerializableEventsDict:
   - key: event:/PruebaConexion
     index: 0
@@ -651,6 +707,10 @@ MonoBehaviour:
     index: 29
   - key: event:/SFX/Jefe/Carga
     index: 30
+  - key: event:/UI/Confirmar
+    index: 31
+  - key: event:/UI/Seleccionar
+    index: 32
 --- !u!114 &181988870041282784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1013,10 +1073,10 @@ MonoBehaviour:
   Path: Audio/FMOD/TorreDelEclipseAudio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639303865775427559
+  lastModified: 639304055203821025
   FileSizes:
   - Name: Desktop
-    Value: 2458
+    Value: 2540
   Exists: 1
 --- !u!114 &8287693001530736763
 MonoBehaviour:

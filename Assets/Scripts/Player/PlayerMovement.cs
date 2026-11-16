@@ -33,7 +33,7 @@ public sealed class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (!characterController.enabled || viewCamera == null || Time.deltaTime <= 0f)
+        if (EclipseGameUI.BlocksGameplay || !characterController.enabled || viewCamera == null || Time.deltaTime <= 0f)
         {
             return;
         }

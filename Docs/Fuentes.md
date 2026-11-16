@@ -103,4 +103,14 @@ FMOD incorpora `SFX/Jefe/Pasos`, `Barrido`, `Impacto`, `Herida`, `Preparacion`, 
 - **100 CC0 metal and wood SFX** y **80 CC0 RPG SFX**, por **rubberduck** — [Metal y madera](https://opengameart.org/content/100-cc0-metal-and-wood-sfx), [RPG](https://opengameart.org/content/80-cc0-rpg-sfx) — [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). Selección, capas, cambios de velocidad/tono, niveles y fades para los efectos del jefe.
 - **Large Wings Flap**, por **AntumDeluge**, a partir de **dave.des** — [Fuente original](https://opengameart.org/content/large-wings-flap), [base](https://freesound.org/s/127197/) — [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/). Conversión y procesamiento para aleteos y transformación.
 
-Las atribuciones de BlenderVoyage y Matthew Pablo deben figurar también en la pantalla de créditos del juego con sus fuentes, licencias y modificaciones. Esa pantalla continúa pendiente junto con los menús; las atribuciones completas se conservan en este registro.
+Las atribuciones de BlenderVoyage y Matthew Pablo figuran en los créditos del juego, con acceso a sus fuentes y licencias e indicación de las modificaciones. La pantalla Fuentes y licencias conserva también el registro completo dentro del juego.
+
+
+## Interfaz
+
+- **Crimson Text Regular**, por **The Crimson Text Project Authors** — [Fuente oficial](https://github.com/google/fonts/tree/main/ofl/crimsontext) — **SIL Open Font License 1.1**. Archivo original y licencia incluidos en `Assets/UI/TorreDelEclipse/Fonts/`. Se utiliza para textos y controles de la interfaz.
+- Fondos del menú y la victoria, logotipo e iconos: ilustraciones generadas para Torre del Eclipse, tomando como referencia la torre y los personajes del proyecto. Los textos, botones, sliders, marcos y barras se componen por separado en Unity; las capturas y los logotipos de Baldur's Gate 3 no se incorporan como recursos del juego. Los archivos están en `Assets/UI/TorreDelEclipse/`.
+
+### Audio de interfaz
+
+`Interfaz_Seleccionar.wav` e `Interfaz_Confirmar.wav` son dos efectos breves de síntesis preparados para el proyecto, con osciladores, ruido filtrado y envolventes; no contienen grabaciones de terceros. Fuentes y exportaciones PCM mono de 16 bits a 48 kHz conservadas en `Audio/Fuentes/Interfaz/` y `Audio/ExportadosFMOD/Interfaz/`. FMOD los utiliza en los eventos 2D `UI/Seleccionar` y `UI/Confirmar`, ambos por el grupo Interfaz y compilados en Master.
