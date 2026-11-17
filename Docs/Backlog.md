@@ -2,7 +2,7 @@
 
 Responsable de todas las tareas: **Iñaki Bertran (InakiMB)**. Trabajo individual.
 
-Actualizado al **16/11/2026**: Hitos 0, 1 y 2 completos; Producción en curso con maqueta de audio, planta baja, terraza, tres variantes enemigas, rodada, jefe de dos fases e interfaces integrados. La revisión de requisitos está completada. Cada tarea registra su estado y una evidencia: commit, captura o prueba reproducible. Estados: Pendiente / En curso / Preparado / Hecho. Preparado significa que existe el material, pero falta incorporarlo o verificarlo en el proyecto.
+Actualizado al **17/11/2026**: Hitos 0, 1, 2 y 3 completos; Feature complete en curso con maqueta de audio, planta baja, terraza, tres variantes enemigas, rodada, jefe de dos fases e interfaces integrados. La revisión de requisitos está completada. Cada tarea registra su estado y una evidencia: commit, captura o prueba reproducible. Estados: Pendiente / En curso / Preparado / Hecho. Preparado significa que existe el material, pero falta incorporarlo o verificarlo en el proyecto.
 
 ## Hito 0 - Preproducción
 
@@ -37,7 +37,7 @@ La versión corta del prototipo integra combate a distancia y cuerpo a cuerpo, l
 
 ## Hito 3 - Producción
 
-La maqueta de audio está integrada en el prototipo y en TorreEclipse. Se conservan fuentes, sesiones de Reaper, proyecto de FMOD y bancos. La planta baja combina veinte enemigos entre guerreros, magos y clérigos de apoyo. Tras despejarla se puede ascender e invocar al Custodio del Eclipse, con dos fases, música propia y reintento desde la terraza. El jugador dispone de una rodada defensiva. Los menús están integrados; continúan pendientes la revisión visual final y el balance con jugadores.
+La maqueta de audio está integrada en el prototipo y en TorreEclipse. Se conservan fuentes, sesiones de Reaper, proyecto de FMOD y bancos. La planta baja combina veinte enemigos entre guerreros, magos y clérigos de apoyo. Tras despejarla se puede ascender e invocar al Custodio del Eclipse, con dos fases, música propia y reintento desde la terraza. El jugador dispone de una rodada defensiva. Los menús están integrados y la revisión visual final está aprobada.
 
 |ID|Tarea|Estado|Terminado cuando|
 |-|-|-|-|
@@ -52,17 +52,19 @@ La maqueta de audio está integrada en el prototipo y en TorreEclipse. Se conser
 |H3-E3|Enemigo de apoyo|Hecho|Se posiciona cerca de aliados y cura un 15% de la vida máxima de uno cada 6 segundos, o 5,2 en el santuario. La escena TorreEclipse utiliza +25% de movimiento y +35% de velocidad de ataque dentro de 8 metros y sin paredes intermedias, sin aumentar daño ni acumular apoyos. Vida, velocidades y tiempos son configurables; presenta señales audiovisuales y morir cancela la cura y retira el aura.|
 |H3-P1|Esquive del jugador|Hecho|Espacio inicia una rodada animada en la dirección de WASD o del apuntado al estar quieto. Distancia, duración, recuperación, recarga y ventana parcial de invulnerabilidad son configurables. Respeta obstáculos, impide atacar o usar objetos durante la acción, reproduce sonido y muestra su disponibilidad; morir cancela el esquive y reiniciar restablece su estado.|
 |H3-J0|Definir el diseño del jefe|Hecho|Custodio del Eclipse: caballero de gran tamaño con rostro visible, barba canosa, martillo y alas negras en segunda fase. Invocación mediante círculo, fase física y fase con proyectiles al 50%, señales audiovisuales, música orquestal con coros, reintento con recursos guardados y victoria final definidos.|
-|H3-02|Combinar variantes y desarrollar jefe|Hecho|Guerrero, mago y apoyo conviven en planta baja. El jefe dispone de combo, golpe cargado, embestida, abanicos, anillos, espirales y salto; los ataques permiten esquivar o salir de las marcas. Vida y daño son configurables. El balance con jugadores se revisa en H4-02.|
+|H3-02|Combinar variantes y desarrollar jefe|Hecho|Guerrero, mago y apoyo conviven en planta baja. El jefe dispone de combo, golpe cargado, embestida, abanicos, anillos, espirales y salto; los ataques permiten esquivar o salir de las marcas. Vida y daño son configurables. El balance se cierra en H4-02 con los valores actuales.|
 |H3-03|Menús, HUD y volumen|Hecho|Play, Créditos, Opciones y Exit funcionan; se muestran vida, pociones, objetivos y barras de enemigos durante el combate; el volumen general controla todo el audio y hay controles independientes de música, ambiente, efectos e interfaz, con preferencias guardadas entre sesiones.|
-|H3-04|Integrar modelos y efectos|En curso|Se distinguen ataques, enemigos y objetos desde la cámara superior; se registran las fuentes.|
+|H3-04|Integrar modelos y efectos|Hecho|Se distinguen ataques, enemigos y objetos desde la cámara superior; se registran las fuentes.|
 |H3-I1|Cajas o barriles destructibles con poción garantizada|Hecho|Reciben daño de los proyectiles, se rompen una sola vez y dejan exactamente una poción con probabilidad 100%; tienen feedback de impacto y rotura, y se restauran al reiniciar el nivel.|
 
 ## Hito 4 - Feature complete
 
+El balance queda cerrado el 17/11/2026 con los valores actuales. Continúa pendiente la revisión de arquitectura; la prueba del ejecutable definitivo se registra en H5-01.
+
 |ID|Tarea|Estado|Terminado cuando|
 |-|-|-|-|
 |H4-01|Revisar requisitos|Hecho|Todos los sistemas obligatorios están implementados y hay al menos tres minutos de juego efectivo.|
-|H4-02|Corregir y balancear|En curso|Se prueban victoria, derrota, reinicio y audio; no hay errores bloqueantes; el jefe se puede vencer con magia, bastón, esquive y las pociones disponibles.|
+|H4-02|Corregir y balancear|Hecho|Se prueban victoria, derrota, reinicio y audio; no hay errores bloqueantes; el jefe se puede vencer con magia, bastón, esquive y las pociones disponibles.|
 |H4-03|Revisar arquitectura y explicación|Pendiente|Las responsabilidades de las clases, la comunicación entre sistemas y las decisiones de código están revisadas y pueden explicarse con ejemplos del proyecto.|
 
 ## Hito 5 - Release
@@ -111,3 +113,5 @@ La escena `PrototipoTorre` incorpora cambio de ambiente por desplazamiento, tran
 |16/11/2026|H3-03|Menú principal, HUD con esfera de vida, barras de enemigos, pausa, cinco sliders de volumen, derrota, victoria y créditos integrados. Los textos usan una fuente distribuible y las pantallas conservan sus botones funcionales. Dos sonidos 2D de interfaz incorporados a FMOD.|Navegación, pausa y restricciones de acciones, buses de audio, registro de fuentes, daño y curación en barras, reintento del jefe con recursos guardados, victoria y regreso al menú comprobados en Play. Escenas MenuPrincipal y TorreEclipse guardadas.|
 |16/11/2026|H0-04, actualización|Game Concept v1.0 actualizado al juego implementado: rodada, tres variantes enemigas, Custodio de dos fases, reintento, interfaces y audio adaptativo. Se retiran las ampliaciones del documento.|Docs/GameConcept.pdf revisado en dos carillas.|
 |16/11/2026|H4-01|Requisitos de Programación y Audio revisados contra código, escenas y recursos. La partida supera tres minutos de juego efectivo, excluidos menús y esperas.|Revisión de sistemas y referencias; FMOD y seis sesiones de Reaper sin medios faltantes. Pruebas de jugabilidad previas y duración confirmada en partida. Balance, arquitectura y ejecutable definitivo continúan pendientes.|
+|17/11/2026|H3-04|Revisión visual aprobada: enemigos, ataques, proyectiles, objetos e interfaces se distinguen durante la partida.|Confirmación tras las pruebas de jugabilidad; se cierra la integración visual.|
+|17/11/2026|H4-02|Balance cerrado con los valores actuales de planta baja y jefe. Se conservan los ajustes probados y no se planifican nuevas rondas de balance.|Pruebas previas de combate y confirmación del cierre. La validación del ejecutable definitivo permanece pendiente en H5-01.|
