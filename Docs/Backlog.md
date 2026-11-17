@@ -2,7 +2,7 @@
 
 Responsable de todas las tareas: **Iñaki Bertran (InakiMB)**. Trabajo individual.
 
-Actualizado al **17/11/2026**: Hitos 0, 1, 2 y 3 completos; Feature complete en curso con maqueta de audio, planta baja, terraza, tres variantes enemigas, rodada, jefe de dos fases e interfaces integrados. La revisión de requisitos está completada. Cada tarea registra su estado y una evidencia: commit, captura o prueba reproducible. Estados: Pendiente / En curso / Preparado / Hecho. Preparado significa que existe el material, pero falta incorporarlo o verificarlo en el proyecto.
+Actualizado al **17/11/2026**: Hitos 0 a 4 completos; Release en preparación con maqueta de audio, planta baja, terraza, tres variantes enemigas, rodada, jefe de dos fases e interfaces integrados. La revisión de requisitos está completada. Cada tarea registra su estado y una evidencia: commit, captura o prueba reproducible. Estados: Pendiente / En curso / Preparado / Hecho. Preparado significa que existe el material, pero falta incorporarlo o verificarlo en el proyecto.
 
 ## Hito 0 - Preproducción
 
@@ -59,19 +59,19 @@ La maqueta de audio está integrada en el prototipo y en TorreEclipse. Se conser
 
 ## Hito 4 - Feature complete
 
-El balance queda cerrado el 17/11/2026 con los valores actuales. Continúa pendiente la revisión de arquitectura; la prueba del ejecutable definitivo se registra en H5-01.
+El balance queda cerrado el 17/11/2026 con los valores actuales. La revisión de arquitectura está completada; la prueba del ejecutable definitivo se registra en H5-01.
 
 |ID|Tarea|Estado|Terminado cuando|
 |-|-|-|-|
 |H4-01|Revisar requisitos|Hecho|Todos los sistemas obligatorios están implementados y hay al menos tres minutos de juego efectivo.|
 |H4-02|Corregir y balancear|Hecho|Se prueban victoria, derrota, reinicio y audio; no hay errores bloqueantes; el jefe se puede vencer con magia, bastón, esquive y las pociones disponibles.|
-|H4-03|Revisar arquitectura y explicación|Pendiente|Las responsabilidades de las clases, la comunicación entre sistemas y las decisiones de código están revisadas y pueden explicarse con ejemplos del proyecto.|
+|H4-03|Revisar arquitectura y explicación|Hecho|Las responsabilidades de las clases, la comunicación entre sistemas y las decisiones de código están revisadas y pueden explicarse con ejemplos del proyecto.|
 
 ## Hito 5 - Release
 
 |ID|Tarea|Estado|Terminado cuando|
 |-|-|-|-|
-|H5-01|Generar y probar ejecutable|Pendiente|El juego funciona fuera del editor, con sonido, volumen y todos los finales.|
+|H5-01|Generar y probar ejecutable|Hecho|El juego funciona fuera del editor, con sonido, volumen y todos los finales.|
 |H5-02|Preparar entrega|Pendiente|Incluye ejecutable, repositorio final, documentación, créditos y proyectos completos de Unity y FMOD con sus fuentes.|
 
 ## Alcance de la entrega
@@ -115,3 +115,5 @@ La escena `PrototipoTorre` incorpora cambio de ambiente por desplazamiento, tran
 |16/11/2026|H4-01|Requisitos de Programación y Audio revisados contra código, escenas y recursos. La partida supera tres minutos de juego efectivo, excluidos menús y esperas.|Revisión de sistemas y referencias; FMOD y seis sesiones de Reaper sin medios faltantes. Pruebas de jugabilidad previas y duración confirmada en partida. Balance, arquitectura y ejecutable definitivo continúan pendientes.|
 |17/11/2026|H3-04|Revisión visual aprobada: enemigos, ataques, proyectiles, objetos e interfaces se distinguen durante la partida.|Confirmación tras las pruebas de jugabilidad; se cierra la integración visual.|
 |17/11/2026|H4-02|Balance cerrado con los valores actuales de planta baja y jefe. Se conservan los ajustes probados y no se planifican nuevas rondas de balance.|Pruebas previas de combate y confirmación del cierre. La validación del ejecutable definitivo permanece pendiente en H5-01.|
+|17/11/2026|H4-03|Revisadas responsabilidades, contratos y comunicación de los sistemas de jugador, salud, enemigos, jefe, progresión, UI y audio. Se identifican ejemplos concretos de interfaces, eventos, estados, composición y gestión de recursos.|Revisión estática de 58 scripts y recorridos de daño, interacción, esquive, reintento y audio. Sin cambios de comportamiento; la prueba del ejecutable permanece en H5-01.|
+|17/11/2026|H5-01|Ejecutable Windows x64 v1.0.0 generado sin modo de desarrollo, con menú principal, nivel final y bancos de FMOD. ZIP comprobado con controles, créditos y licencia de tipografía.|55 comprobaciones correctas en ejecutable de validación: controles, recursos, pausa, derrota, reinicio, ascenso, jefe, reintento y victoria. Revisión manual del ejecutable de distribución: menú, opciones, volumen entre sesiones, créditos, fuentes, entrada al nivel y cierre. Cero errores de compilación y sin errores de ejecución en los registros revisados.|

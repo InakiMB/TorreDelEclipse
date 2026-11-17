@@ -6,7 +6,7 @@ Juego de acción 3D con cámara superior y estética de fantasía oscura low pol
 
 ## Estado del proyecto
 
-Actualizado al **17/11/2026**. Hitos **0, 1, 2 y 3 completos**; **Feature complete en curso**, con los tres enemigos de planta baja, esquive, jefe de dos fases e interfaces implementados.
+Actualizado al **17/11/2026**. Hitos **0 a 4 completos**; **Release en preparación**, con los tres enemigos de planta baja, esquive, jefe de dos fases e interfaces implementados.
 
 - Movimiento con WASD y apuntado independiente con mouse; ataques con magia y bastón.
 - Rodada con Espacio en la dirección de movimiento o del apuntado al estar quieto, con animación, sonido, invulnerabilidad parcial y recarga visible en el HUD.
@@ -24,7 +24,7 @@ Actualizado al **17/11/2026**. Hitos **0, 1, 2 y 3 completos**; **Feature comple
 - Menú principal, pausa, opciones de audio, derrota, victoria con la torre purificada y créditos. Las cinco categorías de volumen guardan sus preferencias.
 - HUD con esfera de vida, magia, bastón, recarga de esquive y pociones; barras discretas sobre enemigos durante el combate, incluidas las curaciones. La cámara de combate reserva espacio para la interfaz y la hotbar se atenúa si un personaje pasa por detrás.
 
-La revisión de requisitos está completada y la duración supera los tres minutos de juego efectivo. La revisión visual está aprobada y el balance queda cerrado con los valores actuales. Quedan la revisión de arquitectura y su explicación, la prueba del ejecutable definitivo y la preparación de la entrega. Llegar a la terraza permite prepararse; la victoria requiere derrotar al jefe.
+La revisión de requisitos está completada y la duración supera los tres minutos de juego efectivo. La revisión visual está aprobada y el balance queda cerrado con los valores actuales. La revisión de arquitectura y responsabilidades está completada. La build Windows x64 v1.0.0 está generada y validada. Queda preparar la entrega final. Llegar a la terraza permite prepararse; la victoria requiere derrotar al jefe.
 
 ## Abrir y probar
 
