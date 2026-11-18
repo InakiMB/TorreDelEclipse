@@ -2,7 +2,7 @@
 
 Responsable de todas las tareas: **Iñaki Bertran (InakiMB)**. Trabajo individual.
 
-Actualizado al **17/11/2026**: Hitos 0 a 4 completos; Release en preparación con maqueta de audio, planta baja, terraza, tres variantes enemigas, rodada, jefe de dos fases e interfaces integrados. La revisión de requisitos está completada. Cada tarea registra su estado y una evidencia: commit, captura o prueba reproducible. Estados: Pendiente / En curso / Preparado / Hecho. Preparado significa que existe el material, pero falta incorporarlo o verificarlo en el proyecto.
+Actualizado al **18/11/2026**: Hitos 0 a 4 completos; Release en preparación con maqueta de audio, planta baja, terraza, tres variantes enemigas, rodada, jefe de dos fases e interfaces integrados. La revisión de requisitos está completada. Cada tarea registra su estado y una evidencia: commit, captura o prueba reproducible. Estados: Pendiente / En curso / Preparado / Hecho. Preparado significa que existe el material, pero falta incorporarlo o verificarlo en el proyecto.
 
 ## Hito 0 - Preproducción
 
@@ -72,7 +72,9 @@ El balance queda cerrado el 17/11/2026 con los valores actuales. La revisión de
 |ID|Tarea|Estado|Terminado cuando|
 |-|-|-|-|
 |H5-01|Generar y probar ejecutable|Hecho|El juego funciona fuera del editor, con sonido, volumen y todos los finales.|
-|H5-02|Preparar entrega|Pendiente|Incluye ejecutable, repositorio final, documentación, créditos y proyectos completos de Unity y FMOD con sus fuentes.|
+|H5-02|Preparar entrega|En curso|Incluye ejecutable, repositorio final, documentación, créditos y proyectos completos de Unity y FMOD con sus fuentes.|
+
+El PDF de entrega de Programación reúne los enlaces al repositorio, la build y el Game Concept. Para completar la entrega de Audio y Sonido falta grabar y adjuntar el video explicativo.
 
 ## Alcance de la entrega
 
